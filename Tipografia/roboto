@@ -1,0 +1,8 @@
+Tipografia (Google Fonts):
+•	Títulos: Roboto ou Avenir, tamanho 1rem, weight 600.
+•	Subtítulos: Tamanho 0.75rem, weight 400.
+
+Roboto: <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+
