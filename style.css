@@ -116,3 +116,68 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+/* estilo dos numeros importantes */
+
+.counter-section {
+    background-color: #f29100; 
+    padding: 40px 0;
+    width: 100%;
+  }
+  
+  .counter-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .counter-item {
+    padding: 0 15px;
+  }
+  
+  .counter-value {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  
+  .suffix {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  
+  .counter-label {
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+  
+  /* Responsividade dos numeros importantes */
+  @media (max-width: 768px) {
+    .counter-container {
+      flex-direction: column;
+    }
+    
+    .counter-item {
+      margin-bottom: 30px;
+    }
+    
+    .counter-value {
+      font-size: 2.5rem;
+    }
+    
+    .counter-label {
+      font-size: 0.9rem;
+    }
+  }
