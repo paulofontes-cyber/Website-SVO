@@ -38,12 +38,12 @@ Solicitação de Remoção de Corpo
 •	Nome completo do solicitante
 •	CPF
 •	Endereço completo
-•	CEP (opcional)
+•	CEP 
 •     Sinalizar qual a parentesco com o falecido
 
 Requisitos Técnicos
 •	Tecnologias: HTML5, CSS3 e JavaScript.
-•	Frameworks Opcionais: React.js, Vue.js ou Bootstrap.
+•	Frameworks:Bootstrap.
 •	Design Responsivo: Compatível com dispositivos móveis e desktops.
 •	Acessibilidade:
 •	Suporte a Libras.
