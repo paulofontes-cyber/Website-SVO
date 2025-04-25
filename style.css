@@ -5,6 +5,13 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+  }
+  
+body{
+    background-color: #fffde0;
+}
 
 .navbar {
     position: fixed;
@@ -18,7 +25,7 @@
     padding: 0 20px;
     z-index: 1000;
     background-image: linear-gradient(to left, rgba(223, 221, 156, 0.591), rgba(255, 166, 0, 0.726));
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(1px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -181,21 +188,21 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 5;
-    width: 600px; 
-}
+    width: 600px;
+  }
 
-.sliding-text-container {
+  .sliding-text-container {
     position: relative;
     height: 200px;
     overflow: hidden;
-}
+  }
 
-.sliding-text {
+  .sliding-text {
     position: absolute;
     width: 100%;
     opacity: 0;
     font-size: 60px;
-    font-weight: 10px;
+    font-weight: 700;
     font-family: 'Raleway', sans-serif;
     color: #ffffff;
     text-align: left;
@@ -205,74 +212,313 @@
     transform: translateY(30px);
     text-transform: uppercase;
     transition: opacity 0.8s ease, transform 0.8s ease;
-}
+  }
 
-.sliding-text.active {
+  .sliding-text.active {
     opacity: 1;
     transform: translateY(0);
-}
+  }
 
+  /* Responsividade */
+  /* Telas grandes */
+  @media (max-width: 1200px) {
+    .sliding-text-wrapper {
+      width: 500px;
+    }
+    
+    .sliding-text {
+      font-size: 52px;
+    }
+  }
+
+  /* Tablets e laptops pequenos */
+  @media (max-width: 992px) {
+    .sliding-text-wrapper {
+      left: 60px;
+      width: 450px;
+    }
+    
+    .sliding-text-container {
+      height: 180px;
+    }
+    
+    .sliding-text {
+      font-size: 46px;
+    }
+  }
+
+  /* Tablets */
+  @media (max-width: 768px) {
+    .sliding-text-wrapper {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 85%;
+      max-width: 500px;
+    }
+    
+    .sliding-text-container {
+      height: 160px;
+    }
+    
+    .sliding-text {
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+
+  /* Smartphones grandes */
+  @media (max-width: 576px) {
+    .sliding-text-wrapper {
+      width: 90%;
+    }
+    
+    .sliding-text-container {
+      height: 140px;
+    }
+    
+    .sliding-text {
+      font-size: 32px;
+    }
+  }
+
+  /* Smartphones médios */
+  @media (max-width: 480px) {
+    .sliding-text-container {
+      height: 120px;
+    }
+    
+    .sliding-text {
+      font-size: 28px;
+    }
+  }
+
+  /* Smartphones pequenos */
+  @media (max-width: 375px) {
+    .sliding-text-container {
+      height: 100px;
+    }
+    
+    .sliding-text {
+      font-size: 24px;
+    }
+  }
 /* estilo dos numeros importantes */
 
 .counter-section {
-    background-color: #f29100; 
-    padding: 40px 0;
+    background-image: linear-gradient(to left, rgba(255, 115, 0, 0.965), rgb(255, 204, 0)); 
+    padding: 20px 0; 
     width: 100%;
-  }
-  
-  .counter-container {
+}
+
+.counter-container {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-  }
-  
-  .counter-item {
+    flex-wrap: wrap;
+}
+
+.counter-item {
     padding: 0 15px;
-  }
-  
-  .counter-value {
-    font-size: 3.5rem;
+    margin-bottom: 10px; 
+    flex: 1 1 200px; 
+}
+
+.counter-value {
+    font-size: 2rem; 
     font-weight: bold;
     color: white;
-    display: inline-block;
     line-height: 1;
-    margin-bottom: 10px;
-  }
-  
-  .suffix {
-    font-size: 3.5rem;
+    margin-bottom: 5px;
+}
+
+.suffix {
+    font-size: 2rem; 
     font-weight: bold;
     color: white;
-    display: inline-block;
     line-height: 1;
-    margin-bottom: 10px;
-  }
-  
-  .counter-label {
-    font-size: 1rem;
+}
+
+.counter-label {
+    font-size: 0.9rem; 
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1.2;
-  }
-  
-  /* Responsividade dos numeros importantes */
-  @media (max-width: 768px) {
-    .counter-container {
+}
+
+/* Responsividade dos numeros importantes */
+@media (max-width: 768px) {
+    .counter-section {
+        display: none; 
+    }
+}
+/*serviços svo*/
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel SVO Responsivo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .carrossel-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .carrossel {
+      display: flex;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      height: 300px; /* Altura fixa para desktop */
+    }
+
+    .image-container {
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content-container {
+      width: 50%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
       flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      visibility: hidden;
     }
-    
-    .counter-item {
-      margin-bottom: 30px;
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
     }
-    
-    .counter-value {
-      font-size: 2.5rem;
+
+    .slide h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
     }
-    
-    .counter-label {
-      font-size: 0.9rem;
+
+    .slide p {
+      font-size: 15px;
+      color: #555;
     }
-  }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #3498db;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 900px) {
+      .carrossel {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .image-container {
+        width: 100%;
+        height: 200px;
+      }
+
+      .content-container {
+        width: 100%;
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .image-container {
+        height: 150px;
+      }
+
+      .content-container {
+        height: 130px;
+      }
+
+      .slide {
+        padding: 15px;
+      }
+
+      .slide h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .slide p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-container {
+        display: none; /* Opcionalmente, remover a imagem em telas muito pequenas */
+      }
+
+      .content-container {
+        width: 100%;
+        height: 120px;
+      }
+
+      .slide {
+        padding: 10px;
+      }
+
+      .slide h2 {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .slide p {
+        font-size: 12px;
+      }
+    }
