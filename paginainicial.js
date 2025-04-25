@@ -186,10 +186,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const minSwipeDistance = 50;
     
     if (touchStartX - touchEndX > minSwipeDistance) {
-      // Swipe para esquerda - próximo slide
+      //  para esquerda - próximo slide
       nextSlide();
     } else if (touchEndX - touchStartX > minSwipeDistance) {
-      // Swipe para direita - slide anterior
+      //  para direita - slide anterior
       currentIndex = (currentIndex - 1 + slides.length) % slides.length;
       showSlide(currentIndex);
     }

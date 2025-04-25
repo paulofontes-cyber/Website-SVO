@@ -356,27 +356,16 @@ body{
     }
 }
 /*serviços svo*/
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrossel SVO Responsivo</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+    #Serviços{
+        margin-top: 50px;
+       
     }
-
     .carrossel-container {
+    
       width: 100%;
-      max-width: 1200px;
+      height: 400px;
+      max-width: 950px;
       margin: 0 auto;
       padding: 10px;
     }
@@ -384,10 +373,12 @@ body{
     .carrossel {
       display: flex;
       background-color: #f8f9fa;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.155);
       overflow: hidden;
-      height: 300px; /* Altura fixa para desktop */
+      height: 300px; 
+      width: 100%;
+      
     }
 
     .image-container {
@@ -403,7 +394,7 @@ body{
     }
 
     .content-container {
-      width: 50%;
+      width: 60%;
       height: 100%;
       position: relative;
     }
@@ -450,12 +441,13 @@ body{
       height: 10px;
       background-color: #ccc;
       border-radius: 50%;
-      margin: 0 5px;
+      margin: 0 8px;
       cursor: pointer;
+      
     }
 
     .dot.active {
-      background-color: #3498db;
+      background-color: #dbc234;
     }
 
     /* Estilos responsivos */
@@ -501,7 +493,7 @@ body{
 
     @media (max-width: 480px) {
       .image-container {
-        display: none; /* Opcionalmente, remover a imagem em telas muito pequenas */
+        display: none; 
       }
 
       .content-container {
@@ -521,4 +513,139 @@ body{
       .slide p {
         font-size: 12px;
       }
+    }
+
+    /*noticias*/
+
+    .noticias-container {
+        position: relative;
+        padding: 40px 20px;
+        overflow: hidden;
+        width: 100%;
+        min-height: 500px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    
+    .noticias-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #ff9966 0%, #ff7e5f 100%);
+        z-index: -2;
+    }
+
+    
+    .memphis-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('imagens/—Pngtree—seamless memphis geometric patterns_6862575.png');
+        background-size: cover;
+        opacity: 5%;
+        z-index: -1;
+    }
+
+    .noticias-content {
+        width: 900px;
+        margin: 20px auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .noticias-titulo {
+        color: #fff;
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 60px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .noticias-grid {
+        display: grid;
+        grid-template-columns: 500px 1fr;
+        grid-gap: 45px;
+    }
+
+   
+
+    .noticia-destaque {
+        
+        grid-row: 1 / span 2;
+    }
+
+    .noticia-card {
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        height: 100%;
+    }
+
+    .noticia-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .noticia-imagem {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 60%;
+        overflow: hidden;
+    }
+
+    .noticia-imagem img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .noticia-texto {
+        padding: 20px;
+    }
+
+    .noticia-titulo {
+        font-size: 20px;
+        color: #fff;
+        margin-bottom: 0px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    }
+
+    .btn-ver-mais {
+        display: inline-block;
+        background-image: linear-gradient(to left, #ff9966, #fff45fb3);
+        color: #fff;
+        padding: 15px 30px;
+        border-radius: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        margin-top: 30px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 10px rgba(114, 7, 7, 0.336);
+
+    }
+
+    .btn-ver-mais:hover {
+        background-color: #672b02;
+    }
+
+    .btn-container {
+        text-align: center;
+        margin-top: 20px;
     }
