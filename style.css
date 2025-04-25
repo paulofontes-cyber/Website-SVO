@@ -21,7 +21,6 @@
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(1px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
 }
 
 .logo {
@@ -52,7 +51,7 @@
 
 .nos_contate {
     background-image: linear-gradient(to left, #ff8661b8, #fbb9029d);
-    border: 1px solid, rgba(255, 255, 255, 0.307);
+    border: 1px solid rgba(255, 255, 255, 0.307);
     color: white;
     padding: 10px 20px;
     border-radius: 30px;
@@ -63,6 +62,102 @@
 
 .nos_contate:hover {
     background-color: #c0392b;
+}
+
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: 70px;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+    
+   
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        background-image: linear-gradient(to bottom, rgba(223, 221, 156, 0.95), rgba(255, 166, 0, 0.95));
+        transition: right 0.5s ease;
+        padding: 80px 0;
+        margin: 0;
+    }
+    
+    
+    .nav-links.active {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        height: 60px;
+        padding: 0 15px;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    .nav-links {
+        width: 100%;
+        padding-top: 60px;
+    }
+    
+    .nav-links li a {
+        font-size: 18px;
+    }
+    
+    .nos_contate {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
 
 .hero {
