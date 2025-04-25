@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="paginainicial.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -80,7 +81,7 @@
 
   <!-- numeros serviços SVO -->
 <div id="Serviços">
-  <div class="carrossel-container">
+  <div class="carrossel-container" data-aos="fade-up">
   <div class="carrossel">
     <div class="image-container">
       <img src="imagens/imagemSVO.jpg" alt="SVO - Serviço de Verificação de Óbito" class="placeholder-image">
@@ -126,5 +127,11 @@
   <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
   </script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>
