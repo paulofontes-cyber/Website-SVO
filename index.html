@@ -23,7 +23,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="#Inicio">Inicio</a></li>
-            <li><a href="#">Notícias</a></li>
+            <li><a href="#noticias">Notícias</a></li>
             <li><a href="#Serviços">Serviços</a></li>
             <li><a href="#">Profissionais</a></li>
             <li><a href="#">Remoção</a></li>
@@ -81,7 +81,7 @@
 
   <!-- numeros serviços SVO -->
 <div id="Serviços">
-  <div class="carrossel-container" data-aos="fade-up">
+  <div class="carrossel-container" data-aos="slide-up">
   <div class="carrossel">
     <div class="image-container">
       <img src="imagens/imagemSVO.jpg" alt="SVO - Serviço de Verificação de Óbito" class="placeholder-image">
@@ -116,53 +116,67 @@
 
 <!-- noticias -->
 
-<section class="noticias-container">
-  <div class="noticias-bg"></div>
-  <div class="memphis-pattern"></div>
-  
-  <div class="noticias-content">
-      <h2 class="noticias-titulo">Notícias</h2>
+ <div id="noticias">
+  <section class="news-section" data-aos="slide-up">
+    <div class="memphis-pattern"></div>
+    <h2 class="section-title">Notícias do SVO</h2>
+    
+    <div class="news-container">
+        <!-- Notícia 1 -->
+        <article class="news-card">
+            <img src="imagens/pexels-cottonbro-7584484.jpg" alt="Investigação de saúde pública" class="news-image">
+            <div class="news-content" data-aos="fade-up">
+                <h3 class="news-title">SVO investiga óbitos relacionados a doenças de interesse da saúde pública</h3>
+                <p class="news-preview">O SVO também investiga óbitos relacionados a doenças que são de interesse da saúde pública, ajudando a identificar e controlar surtos e epidemias.</p>
+                <a href="#" class="read-more">Ler mais</a>
+            </div>
+        </article>
+        
+        <!-- Notícia 2 -->
+        <article class="news-card">
+            <img src="imagens/pexels-jonathanborba-28736017.jpg" alt="Parceria com universidades" class="news-image">
+            <div class="news-content" data-aos="fade-up">
+                <h3 class="news-title">SVO firma parceria com universidades para ampliar pesquisas</h3>
+                <p class="news-preview">Nova parceria com instituições de ensino superior vai permitir avanços em pesquisas científicas e formação de novos profissionais na área.</p>
+                <a href="#" class="read-more">Ler mais</a>
+            </div>
+        </article>
+        
+        <!-- Notícia 3 -->
+        <article class="news-card" >
+            <img src="imagens/pexels-saul-siguenza-355267816-28510160.jpg" alt="Novos equipamentos" class="news-image">
+            <div class="news-content" data-aos="fade-up"> >
+                <h3 class="news-title">SVO recebe novos equipamentos</h3>
+                <p class="news-preview">Investimento em tecnologia e infraestrutura permitirá maior precisão nos diagnósticos e agilidade no atendimento aos casos recebidos pelo serviço.</p>
+                <a href="#" class="read-more">Ler mais</a>
+            </div>
+        </article>
+    </div>
+    
+    <a href="/noticias" class="view-all-btn">Ver todas as notícias</a>
+  </section>
+ </div>
+
+ 
+</div>
+  <!-- parte da remoçao -->
+  <div class="remocao_telinha" data-aos="slide-right">
+    <div class="imagemzinha">
+      <img src="imagens/image (8).png" alt="Imagem decorativa" class="overlay-image">
+    </div>
       
-      
-      <div class="noticias-grid">
-          <!-- Notícia de destaque -->
-          <div class="noticia-card noticia-destaque">
-              <a href="blablabla.html"> 
-                  <div class="noticia-imagem">
-                      <img src="imagens/pexels-cottonbro-7584484.jpg" alt="Nova Unidade SVO"> 
-                      <h3 class="noticia-titulo">O SVO também investiga óbitos relacionados a doenças que são de interesse da saúde pública, ajudando a identificar e controlar surtos e epidemias.</h3> 
-                  </div>
-              </a>
-          </div>
-          
-          <!-- Notícia 2 -->
-          <div class="noticia-card" data-aos="fade-up">
-              <a href="blablabla2.html"> 
-                  <div class="noticia-imagem">
-                      <img src="imagens/pexels-jonathanborba-28736017.jpg" alt="Parceria com universidades"> 
-                      <h3 class="noticia-titulo">SVO firma parceria com universidades para ampliar pesquisas</h3> 
-                  </div>
-              </a>
-          </div>
-          
-          <!-- Notícia 3 -->
-          <div class="noticia-card" data-aos="fade-up">
-              <a href="noticias/equipamentos.html"> 
-                  <div class="noticia-imagem">
-                      <img src="imagens/pexels-saul-siguenza-355267816-28510160.jpg" alt="Novos equipamentos"> 
-                      <h3 class="noticia-titulo">SVO recebe novos equipamentos</h3> 
-                  </div>
-              </a>
-          </div>
-      </div>
-      
-      
-      <div class="btn-container" data-aos="fade-up">
-          <a href="noticias.html" class="btn-ver-mais">Ver mais notícias</a> 
-      </div>
-  </div>
-</section>
-  
+    <div class="secao_gradiente">
+        <!-- Aqui você pode adicionar a imagem do médico -->
+        
+        <div class="texto_da_remocao">
+            <h1 class="titulo">Solicite a remoção</h1>
+            <button class="botao_remocao">Solicitar Remoção</button>
+            <p class="texto_placeholder">Este formulário contém informações importantes e deve ser preenchido com atenção e precisão.</p>
+        </div>
+    </div>
+</div>
+
+   
 
 
     <!-- VLibras Widget -->
