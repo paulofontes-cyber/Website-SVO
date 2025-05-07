@@ -94,82 +94,7 @@ body, html {
     transition: all 0.3s ease;
 }
 
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    .navbar {
-        height: 70px;
-    }
-    
-    .logo img {
-        height: 40px;
-    }
-    
-    
-    .menu-toggle {
-        display: flex;
-        z-index: 1001;
-    }
-    
-   
-    .menu-toggle.active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-    
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-    
-    
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        background-image: linear-gradient(to bottom, rgba(223, 221, 156, 0.95), rgba(255, 166, 0, 0.95));
-        transition: right 0.5s ease;
-        padding: 80px 0;
-        margin: 0;
-    }
-    
-    
-    .nav-links.active {
-        right: 0;
-    }
-}
 
-@media screen and (max-width: 480px) {
-    .navbar {
-        height: 60px;
-        padding: 0 15px;
-    }
-    
-    .logo img {
-        height: 35px;
-    }
-    
-    .nav-links {
-        width: 100%;
-        padding-top: 60px;
-    }
-    
-    .nav-links li a {
-        font-size: 18px;
-    }
-    
-    .nos_contate {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-}
 
 .hero {
     height: 100vh;
@@ -223,89 +148,7 @@ body, html {
     transform: translateY(0);
   }
 
-  /* Responsividade */
-  /* Telas grandes */
-  @media (max-width: 1200px) {
-    .sliding-text-wrapper {
-      width: 500px;
-    }
-    
-    .sliding-text {
-      font-size: 52px;
-    }
-  }
-
-  /* Tablets e laptops pequenos */
-  @media (max-width: 992px) {
-    .sliding-text-wrapper {
-      left: 60px;
-      width: 450px;
-    }
-    
-    .sliding-text-container {
-      height: 180px;
-    }
-    
-    .sliding-text {
-      font-size: 46px;
-    }
-  }
-
-  /* Tablets */
-  @media (max-width: 768px) {
-    .sliding-text-wrapper {
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 85%;
-      max-width: 500px;
-    }
-    
-    .sliding-text-container {
-      height: 160px;
-    }
-    
-    .sliding-text {
-      font-size: 40px;
-      text-align: center;
-    }
-  }
-
-  /* Smartphones grandes */
-  @media (max-width: 576px) {
-    .sliding-text-wrapper {
-      width: 90%;
-    }
-    
-    .sliding-text-container {
-      height: 140px;
-    }
-    
-    .sliding-text {
-      font-size: 32px;
-    }
-  }
-
-  /* Smartphones médios */
-  @media (max-width: 480px) {
-    .sliding-text-container {
-      height: 120px;
-    }
-    
-    .sliding-text {
-      font-size: 28px;
-    }
-  }
-
-  /* Smartphones pequenos */
-  @media (max-width: 375px) {
-    .sliding-text-container {
-      height: 100px;
-    }
-    
-    .sliding-text {
-      font-size: 24px;
-    }
-  }
+  
 /* estilo dos numeros importantes */
 
 .counter-section {
@@ -353,12 +196,6 @@ body, html {
     line-height: 1.2;
 }
 
-/* Responsividade dos numeros importantes */
-@media (max-width: 768px) {
-    .counter-section {
-        display: none; 
-    }
-}
 
 
 /*serviços svo*/
@@ -456,71 +293,7 @@ body, html {
       background-color: #dbc234;
     }
 
-    /* Estilos responsivos */
-    @media (max-width: 900px) {
-      .carrossel {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .image-container {
-        width: 100%;
-        height: 200px;
-      }
-
-      .content-container {
-        width: 100%;
-        height: 150px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .image-container {
-        height: 150px;
-      }
-
-      .content-container {
-        height: 130px;
-      }
-
-      .slide {
-        padding: 15px;
-      }
-
-      .slide h2 {
-        font-size: 18px;
-        margin-bottom: 8px;
-      }
-
-      .slide p {
-        font-size: 14px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .image-container {
-        display: none; 
-      }
-
-      .content-container {
-        width: 100%;
-        height: 120px;
-      }
-
-      .slide {
-        padding: 10px;
-      }
-
-      .slide h2 {
-        font-size: 16px;
-        margin-bottom: 5px;
-      }
-
-      .slide p {
-        font-size: 12px;
-      }
-    }
-
+    
     /*noticias*/
 
     .news-section {
@@ -655,31 +428,7 @@ body, html {
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 992px) {
-      .news-container {
-          flex-direction: column;
-      }
-      
-      .news-card {
-          max-width: 100%;
-      }
-  }
   
-  @media (max-width: 768px) {
-      .news-section {
-          padding: 50px 20px 30px;
-      }
-      
-      .section-title {
-          font-size: 28px;
-      }
-      
-      .news-image {
-          height: 160px;
-      }
-  }
-
   /* remoçao parte */
 
   .remocao_telinha {
@@ -880,53 +629,7 @@ body, html {
 }
 
 
-@media only screen and (max-width: 1400px) {
-  .profissionais_quadro {
-    transform: scale(0.9);
-    transform-origin: top center;
-    height: 940px;
-  }
-}
 
-@media only screen and (max-width: 1200px) {
-  .profissionais_quadro {
-    transform: scale(0.8);
-    transform-origin: top center;
-    height: 836px;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .profissionais_quadro {
-    transform: scale(0.7);
-    transform-origin: top center;
-    height: 731px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .profissionais_quadro {
-    transform: scale(0.55);
-    transform-origin: top center;
-    height: 575px;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .profissionais_quadro {
-    transform: scale(0.4);
-    transform-origin: top center;
-    height: 418px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .profissionais_quadro {
-    transform: scale(0.3);
-    transform-origin: top center;
-    height: 313px;
-  }
-}
 
 /* Agenda */
 .secao-agenda {
@@ -1081,19 +784,6 @@ body, html {
   }
 }
 
-@media (max-width: 600px) {
-  .item-horario {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 15px;
-  }
-  .tipo-atendimento {
-      margin-bottom: 5px;
-  }
-  .cabecalho-agenda h2 {
-      font-size: 22px;
-  }
-}
 
 /*contato*/
 
@@ -1194,18 +884,6 @@ body, html {
   line-height: 1.4;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .grupo_cartoes_contato {
-      flex-direction: column;
-      align-items: center;
-  }
-  
-  .cartao_contato_item {
-      width: 90%;
-      max-width: 300px;
-  }
-}
 /*Footer*/
 
 .rodape_principal_svo {
