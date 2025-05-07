@@ -9,24 +9,321 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="paginainicial.js"></script>
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- barra de navegação -->
-
     <nav class="navbar">
         <div class="logo">
             <img src="logo/Logo/logo svo branco.png" alt="Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="#Inicio">Inicio</a></li>
-            <li><a href="#">Notícias</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#noticias">Notícias</a></li>
             <li><a href="#Serviços">Serviços</a></li>
-            <li><a href="#">Profissionais</a></li>
-            <li><a href="#">Remoção</a></li>
-            <li><a href="#">Agenda</a></li>
+            <li><a href="#Profissionais">Profissionais</a></li>
+            <li><a href="#Remoção">Remoção</a></li>
+            <li><a href="#Agenda">Agenda</a></li>
         </ul>
-        <a href="#" class="nos_contate">Nos Contate</a> 
+        <a href="#Contato" class="nos_contate">Nos Contate</a>
+
+        
+        
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    </nav>
+
+    <header class="topo_institucional">
+        <h1><i class="fas fa-heartbeat"></i> Serviço de Verificação de Óbito (SVO)</h1>
+        <p>Excelência e compromisso para com a saúde pública</p>
+    </header>
+    
+    <div class="conteudo_institucional">
+        <!-- Apresentação das Atividades -->
+        <section class="bloco_institucional" id="atividades">
+            <h2><i class="fas fa-tasks"></i> Atividades do SVO</h2>
+            
+            <div class="quadro_atividades">
+                <h3>Apresentação Detalhada das Atividades</h3>
+                <p>O Serviço de Verificação de Óbito (SVO) é responsável pela determinação da causa mortis em casos de morte natural com diagnóstico não determinado, desempenhando papel crucial na vigilância epidemiológica e estatísticas de saúde pública.</p>
+                
+                <ul class="lista_atividades">
+                    <li><strong>Necropsia Clínica:</strong> Realização de exames post-mortem para determinar a causa de óbitos por morte natural sem diagnóstico definido.</li>
+                    <li><strong>Vigilância Epidemiológica:</strong> Coleta e análise de dados sobre doenças e mortes para orientar políticas públicas de saúde.</li>
+                    <li><strong>Emissão de Documentação:</strong> Fornecimento da Declaração de Óbito com causa mortis definida após investigação.</li>
+                    <li><strong>Apoio às Famílias:</strong> Orientação aos familiares sobre procedimentos após o óbito.</li>
+                    <li><strong>Suporte à Pesquisa:</strong> Colaboração com instituições de ensino e pesquisa para estudos científicos.</li>
+                    <li><strong>Treinamento Profissional:</strong> Capacitação de médicos e profissionais da saúde em necropsia clínica.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Estrutura Administrativa -->
+        <section class="bloco_institucional" id="estrutura">
+            <h2><i class="fas fa-sitemap"></i> Estrutura Administrativa</h2>
+            
+            <div class="organograma_institucional">
+                <h3>Setores e Responsáveis</h3>
+                <table class="tabela_institucional">
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-building"></i> Setor</th>
+                            <th><i class="fas fa-user-tie"></i> Responsável</th>
+                            <th><i class="fas fa-clipboard-list"></i> Atribuições</th>
+                            <th><i class="fas fa-envelope"></i> Contato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Setor">Direção Geral</td>
+                            <td data-label="Responsável">Dr. Nome do Diretor</td>
+                            <td data-label="Atribuições">Coordenação geral do SVO, representação institucional e gestão estratégica</td>
+                            <td data-label="Contato">direcao@svo.org</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Setor">Coordenação Médica</td>
+                            <td data-label="Responsável">Dra. Nome do Coordenador</td>
+                            <td data-label="Atribuições">Supervisão das atividades médicas, protocolos clínicos e qualidade dos laudos</td>
+                            <td data-label="Contato">coord.medica@svo.org</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Setor">Setor Administrativo</td>
+                            <td data-label="Responsável">Nome do Administrador</td>
+                            <td data-label="Atribuições">Gestão de recursos humanos, financeiros e infraestrutura</td>
+                            <td data-label="Contato">administracao@svo.org</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Setor">Laboratório</td>
+                            <td data-label="Responsável">Nome do Responsável</td>
+                            <td data-label="Atribuições">Análises laboratoriais, exames histopatológicos e toxicológicos</td>
+                            <td data-label="Contato">laboratorio@svo.org</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Setor">Atendimento Familiar</td>
+                            <td data-label="Responsável">Nome do Responsável</td>
+                            <td data-label="Atribuições">Acolhimento e orientação às famílias, entrega de documentação</td>
+                            <td data-label="Contato">atendimento@svo.org</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Setor">Vigilância Epidemiológica</td>
+                            <td data-label="Responsável">Nome do Responsável</td>
+                            <td data-label="Atribuições">Compilação e análise de dados, relatórios epidemiológicos</td>
+                            <td data-label="Contato">epidemiologia@svo.org</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Listagem dos Profissionais -->
+        <section class="bloco_institucional" id="profissionais">
+            <h2><i class="fas fa-users"></i> Nossa Equipe</h2>
+            
+            <div class="equipe_institucional">
+                <!-- Exemplo de card de profissional -->
+                <div class="pessoa_institucional">
+                    <img class="foto_institucional" src="imagens/kenny.jpeg" alt="Dr. Nome do Médico">
+                    <h3 class="nome_institucional">Dra. Kenny Salinas</h3>
+                    <p class="cargo_institucional">Médico Patologista</p>
+                    <a href="profissional-1.html" class="botao_institucional"><i class="fas fa-file-alt"></i> Ver Currículo</a>
+                </div>
+                
+                <div class="pessoa_institucional">
+                    <img class="foto_institucional" src="imagens/marie.jpeg" alt="Dra. Marie Darcy">
+                    <h3 class="nome_institucional">Dra. Marie Darcy</h3>
+                    <p class="cargo_institucional">Diretora Técnica</p>
+                    <a href="profissional-2.html" class="botao_institucional"><i class="fas fa-file-alt"></i> Ver Currículo</a>
+                </div>
+                
+                <div class="pessoa_institucional">
+                    <img class="foto_institucional" src="imagens/foto0033.jpeg" alt="Nome do Técnico">
+                    <h3 class="nome_institucional">Camila Fernandes</h3>
+                    <p class="cargo_institucional">Técnica de Necropsia</p>
+                    <a href="profissional-3.html" class="botao_institucional"><i class="fas fa-file-alt"></i> Ver Currículo</a>
+                </div>
+                
+                <div class="pessoa_institucional">
+                    <img class="foto_institucional" src="imagens/imagem0033.jpeg" alt="Nome do Auxiliar">
+                    <h3 class="nome_institucional">Olivia Thome</h3>
+                    <p class="cargo_institucional">Auxiliar Administrativo</p>
+                    <a href="profissional-4.html" class="botao_institucional"><i class="fas fa-file-alt"></i> Ver Currículo</a>
+                </div>
+                
+                <div class="pessoa_institucional">
+                    <img class="foto_institucional" src="imagens/imagem0090.jpeg" alt="Nome do Enfermeiro">
+                    <h3 class="nome_institucional">Marcelo Silva</h3>
+                    <p class="cargo_institucional">Enfermeiro</p>
+                    <a href="profissional-5.html" class="botao_institucional"><i class="fas fa-file-alt"></i> Ver Currículo</a>
+                </div>
+                
+                <div class="pessoa_institucional">
+                    <img class="foto_institucional" src="imagens/009000.jpeg" alt="Nome do Biomédico">
+                    <h3 class="nome_institucional">Caio Oliveira</h3>
+                    <p class="cargo_institucional">Biomédico</p>
+                    <a href="profissional-6.html" class="botao_institucional"><i class="fas fa-file-alt"></i> Ver Currículo</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Exemplo de página de profissional -->
+        <section class="bloco_institucional" id="exemplo-curriculo" style="display: none;">
+            <h2><i class="fas fa-user-md"></i> Currículo Detalhado</h2>
+            
+            <div class="moldura_institucional">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img class="foto_institucional" src="/api/placeholder/150/150" alt="Dr. Nome do Médico" style="margin-right: 20px;">
+                    <div>
+                        <h3 class="nome_institucional">Dr. Nome do Médico</h3>
+                        <p class="cargo_institucional">Médico Patologista</p>
+                    </div>
+                </div>
+                
+                <h3><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h3>
+                <ul>
+                    <li>Doutorado em Patologia - Universidade XYZ (2010-2014)</li>
+                    <li>Residência Médica em Patologia - Hospital ABC (2005-2008)</li>
+                    <li>Graduação em Medicina - Universidade XYZ (1999-2004)</li>
+                </ul>
+                
+                <h3><i class="fas fa-briefcase"></i> Experiência Profissional</h3>
+                <ul>
+                    <li>Médico Patologista - Serviço de Verificação de Óbito (2015-atual)</li>
+                    <li>Professor de Patologia - Universidade XYZ (2012-atual)</li>
+                    <li>Médico Patologista - Hospital ABC (2008-2015)</li>
+                </ul>
+                
+                <h3><i class="fas fa-book"></i> Publicações Científicas</h3>
+                <ul>
+                    <li>Autor de XX artigos em periódicos internacionais</li>
+                    <li>Co-autor de X livros na área de Patologia</li>
+                    <li>Apresentação de trabalhos em congressos nacionais e internacionais</li>
+                </ul>
+                
+                <h3><i class="fas fa-envelope"></i> Contato Profissional</h3>
+                <p>Email: medico@svo.org</p>
+                <p>Telefone: (XX) XXXX-XXXX (horário comercial)</p>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+      <!-- Rodapé principal -->
+      <footer class="rodape_principal_svo">
+        <div class="conteudo_rodape_svo">
+            <div class="grid_rodape_svo">
+                <!-- Coluna Sobre -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Sobre SVO</h3>
+                    <p class="texto_rodape_descricao">
+                        O Serviço de Verificação de Óbitos de Sergipe é gerido pela Fundação de Saúde Parreiras Horta (FSPH), 
+                        vinculada à Secretaria de Estado da Saúde (SES), atuando na verificação de causas de mortes naturais 
+                        e contribuindo para a saúde pública.
+                    </p>
+                </div>
+                
+                <!-- Coluna Links Úteis -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Links Úteis</h3>
+                    <ul class="lista_links_rodape">
+                        <li class="item_link_rodape">
+                            <a href="https://fsph.se.gov.br/" class="link_rodape_navegacao">Fundação de Saúde Parreiras Horta</a>
+                        </li>
+                        <li class="item_link_rodape">
+                            <a href="https://www.se.gov.br/" class="link_rodape_navegacao">Governo do Estado de Sergipe</a>
+                        </li>
+                        <li class="item_link_rodape">
+                            <a href="https://www.gov.br/saude./pt-br" class="link_rodape_navegacao">Ministério da Saúde</a>
+                        </li>
+                        <li class="item_link_rodape">
+                            <a href="https://saude.se.gov.br/" class="link_rodape_navegacao">Secretaria de Estado da Saúde</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Coluna Contato -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Contato</h3>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 1a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zm-1 2h-4v18h4V3z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">(79) 3234-6023</span>
+                    </div>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm9.06 8.683L5.648 6.238 4.353 7.762l7.72 6.555 7.581-6.56-1.308-1.513-6.285 5.439z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">svo@saude.se.gov.br</span>
+                    </div>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 20.9l4.95-4.95a7 7 0 1 0-9.9 0L12 20.9zm0 2.828l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">
+                            Rua Campo do Brito, 551<br>
+                            São José, Aracaju - SE<br>
+                            CEP: 49020-380
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Coluna Horários -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Horários</h3>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">Atendimento 24 horas</span>
+                    </div>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">Liberação de óbitos: 7h às 19h</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Barra de copyright -->
+            <div class="barra_copyright_rodape">
+                <p class="texto_copyright_rodape">
+                    © 2024 SVO - Serviço de Verificação de Óbitos de Sergipe. Todos os direitos reservados.
+                </p>
+                <div class="logos_parceiros_rodape">
+                    <!-- Placeholders para logos -->
+                    <div class="logo_parceiro_rodape">FSPH - Fundação de Saúde Parreiras Horta</div>
+                    <div class="logo_parceiro_rodape"></div>
+                    <div class="logo_parceiro_rodape"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+  
+      <!-- VLibras Widget -->
+  <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+  
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  
 </body>
 </html>

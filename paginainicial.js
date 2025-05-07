@@ -1,29 +1,46 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Script iniciado"); 
-    
-    const texts = document.querySelectorAll('.sliding-text');
-    console.log("Textos encontrados:", texts.length); 
-    
-    let currentIndex = 0;
-
-    function cycleTexts() {
-        console.log("Alternando para texto:", currentIndex); 
-        
-        
-        texts.forEach(text => text.classList.remove('active'));
-        
-        
-        texts[currentIndex].classList.add('active');
-        
-       
-        currentIndex = (currentIndex + 1) % texts.length;
-    }
-
-    
-    setInterval(cycleTexts, 4000);
-    
+  console.log("Script iniciado");
+  
+  const texts = document.querySelectorAll('.sliding-text');
+  const indicators = document.querySelectorAll('.indicator');
+  console.log("Textos encontrados:", texts.length);
+  
+  let currentIndex = 0;
+  
+  function cycleTexts() {
+      console.log("Alternando para texto:", currentIndex);
+      
+     
+      texts.forEach(text => text.classList.remove('active'));
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      
+      
+      texts[currentIndex].classList.add('active');
+      indicators[currentIndex].classList.add('active');
+      
+      
+      currentIndex = (currentIndex + 1) % texts.length;
+  }
+  
+  
+  indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+          currentIndex = index;
+          cycleTexts();
+          resetInterval();
+      });
+  });
+  
    
-    cycleTexts();
+  let interval;
+  
+  function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(cycleTexts, 5000);
+  }
+  
+  resetInterval();
+  cycleTexts();
 });
 
 // numeros importantes inicio
@@ -129,110 +146,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// aqui começa a section de serviços (acho q isso vai bugar ;-;)
-
-document.addEventListener('DOMContentLoaded', function() {
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dot');
-  let currentIndex = 0;
-  let interval;
-
-  // Função para mostrar um slide específico
-  function showSlide(index) {
-    slides.forEach(slide => {
-      slide.classList.remove('active');
-    });
-    dots.forEach(dot => {
-      dot.classList.remove('active');
-    });
-    
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-    currentIndex = index;
-  }
-
-  // Função para avançar para o próximo slide
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }
-
-  // Isso aqui Configura os pontos de navegação
-  dots.forEach(dot => {
-    dot.addEventListener('click', function() {
-      const index = parseInt(this.getAttribute('data-index'));
-      showSlide(index);
-      resetInterval();
-    });
-  });
-
-  // Touch events para dispositivos móveis
-  let touchStartX = 0;
-  let touchEndX = 0;
-  
-  const contentContainer = document.querySelector('.content-container');
-  
-  contentContainer.addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-  }, false);
-  
-  contentContainer.addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-    resetInterval();
-  }, false);
-  
-  function handleSwipe() {
-    const minSwipeDistance = 50;
-    
-    if (touchStartX - touchEndX > minSwipeDistance) {
-      //  para esquerda - próximo slide
-      nextSlide();
-    } else if (touchEndX - touchStartX > minSwipeDistance) {
-      //  para direita - slide anterior
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    }
-  }
-
-  // Iniciar o carrossel automático
-  function startInterval() {
-    interval = setInterval(nextSlide, 5000);
-  }
-
-  // Reiniciar o intervalo quando o usuário interage
-  function resetInterval() {
-    clearInterval(interval);
-    startInterval();
-  }
-
-  // Pausar o carrossel ao passar o mouse
-  contentContainer.addEventListener('mouseenter', function() {
-    clearInterval(interval);
-  });
-  
-  contentContainer.addEventListener('mouseleave', function() {
-    startInterval();
-  });
-
-  // Iniciar o carrossel
-  startInterval();
-
-  // Verificar o redimensionamento da janela
-  window.addEventListener('resize', function() {
-    // Ajustar altura da content-container se necessário em dispositivos móveis
-    const windowWidth = window.innerWidth;
-    const contentContainer = document.querySelector('.content-container');
-    
-    if (windowWidth <= 900) {
-      // Ajustar altura com base no conteúdo visível
-      const activeSlide = document.querySelector('.slide.active');
-      if (activeSlide) {
-        const slideHeight = activeSlide.scrollHeight;
-        contentContainer.style.minHeight = (slideHeight + 40) + 'px';
-      }
-    } else {
-      contentContainer.style.minHeight = '';
-    }
-  });
-});
