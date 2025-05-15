@@ -37,7 +37,7 @@ body, html {
 .logo {
   display: flex;
   align-items: center;
-  margin-right: auto; /* Empurra o conteúdo seguinte para a direita */
+  margin-right: auto;
 }
 
 .logo img {
@@ -73,7 +73,7 @@ body, html {
   color: #e67e22;
 }
 
-/* Ícone de acessibilidade ao lado dos links, mas com espaço */
+/* Ícone de acessibilidade fixo no canto direito */
 .icone_acessibilidade {
   display: flex;
   align-items: center;
@@ -81,10 +81,10 @@ body, html {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.328);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: 30px; /* Espaço entre os links e o ícone */
+  margin-left: auto; /* Move para o canto direito */
 }
 
 .icone_acessibilidade:hover {
@@ -96,23 +96,6 @@ body, html {
   width: 24px;
   height: 24px;
   fill: rgb(0, 0, 0);
-}
-
-/* Botão "Nos Contate" no canto direito */
-.nos_contate {
-  background-image: linear-gradient(to left, #ff8661b8, #fbb9029d);
-  border: 1px solid rgba(255, 255, 255, 0.307);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  margin-left: auto; /* Empurra o botão para a extrema direita */
-}
-
-.nos_contate:hover {
-  background-color: #c0392b;
 }
 
 /* Painel de controles de acessibilidade */
@@ -249,6 +232,7 @@ body, html {
     height: 28px;
   }
 }
+
 
 .body {
   background-color: #fdfbe9; /* tom de fundo suave como na imagem */

@@ -36,7 +36,7 @@ body, html {
 .logo {
   display: flex;
   align-items: center;
-  margin-right: auto; /* Empurra o conteúdo seguinte para a direita */
+  margin-right: auto;
 }
 
 .logo img {
@@ -72,7 +72,7 @@ body, html {
   color: #e67e22;
 }
 
-/* Ícone de acessibilidade ao lado dos links, mas com espaço */
+/* Ícone de acessibilidade fixo no canto direito */
 .icone_acessibilidade {
   display: flex;
   align-items: center;
@@ -80,10 +80,10 @@ body, html {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.328);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: 30px; /* Espaço entre os links e o ícone */
+  margin-left: auto; /* Move para o canto direito */
 }
 
 .icone_acessibilidade:hover {
@@ -95,23 +95,6 @@ body, html {
   width: 24px;
   height: 24px;
   fill: rgb(0, 0, 0);
-}
-
-/* Botão "Nos Contate" no canto direito */
-.nos_contate {
-  background-image: linear-gradient(to left, #ff8661b8, #fbb9029d);
-  border: 1px solid rgba(255, 255, 255, 0.307);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  margin-left: auto; /* Empurra o botão para a extrema direita */
-}
-
-.nos_contate:hover {
-  background-color: #c0392b;
 }
 
 /* Painel de controles de acessibilidade */
@@ -237,6 +220,18 @@ body, html {
   .nos_contate {
     margin: 10px auto 0;
   }
+  
+  .painel_acessibilidade {
+    width: 200px;
+    right: 10px;
+  }
+  
+  .botao_controle_fonte {
+    width: 28px;
+    height: 28px;
+  }
+}
+
   
   .painel_acessibilidade {
     width: 200px;
@@ -448,8 +443,8 @@ body, html {
 }
 
 .tabela_institucional th {
-  background: linear-gradient(135deg, #FABB5C 0%, #FF8761 100%);
-  color: white;
+  background-color: #f0f5fa;
+  color: rgb(0, 0, 0);
 }
 
 .tabela_institucional tr:nth-child(even) {
