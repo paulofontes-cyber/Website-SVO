@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+   </button> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profissionais</title>
+    <link rel="icon" href="logo/Logo/favicon/favicon_48x48.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="acessibilidade.js"></script>
+    <script src="whats.js"></script>
+    <link rel="stylesheet" href="curriculo.css">
+    <style>
+        @keyframes surgir {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 0.9; transform: translateY(0); }
+        }
+        .botao-topo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(145deg, #f3a621, #d29819);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            opacity: 0.9;
+            z-index: 9999;
+            outline: none;
+            padding: 0;
+            overflow: visible;
+        }
+        
+        .botao-topo:hover {
+            background: linear-gradient(145deg, #fffb12, #efa506);
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            opacity: 1;
+        }
+        
+        .botao-topo:active {
+            transform: scale(0.95);
+        }
+        
+        .botao-topo.visivel {
+            display: flex;
+            animation: surgir 0.5s forwards;
+        }
+        
+        .circulo-progresso {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            top: -5px;
+            left: -5px;
+        }
+        
+        .circulo-base {
+            transition: stroke-dashoffset 0.3s;
+        }
+        
+        .circulo-valor {
+            transition: stroke-dashoffset 0.3s;
+        }
+        
+        .icone-seta {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+    </style>
+</head>
+
+
+
+<body>
+
+
+
+    <a href="javascript:history.back()" class="botao-voltar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Voltar
+        
+    </a>
+   
+    <img src="logo/Logo/logo 2.png" alt="" class="gov_symbol">
+   
+
+    <style>
+    .botao-voltar {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: #f3a621;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        margin: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .botao-voltar:hover {
+        background: #efa506;
+        transform: translateY(-2px);
+    }
+
+    .botao-voltar svg {
+        width: 20px;
+        height: 20px;
+    }
+    </style>
+
+
+    
+        <!-- Cabeçalho do Perfil Profissional -->
+    <header class="topo_perfil">
+        <div class="container_perfil">
+            <div class="foto_perfil_container">
+                <img src="imagens/kenny.jpeg" alt="Dra. Kenny Salinas" class="foto_perfil">
+            </div>
+            <div class="info_perfil">
+                <h1>Dra. Kenny Salinas</h1>
+                <p class="cargo_perfil">Médica Patologista</p>
+                <div class="contato_rapido">
+                    <div class="contato_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>(79) 3243-7089</span>
+                    </div>
+                    <div class="contato_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>kenny.salinas@svo.org</span>
+                    </div>
+                    <div class="contato_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 8v4l3 3"></path>
+                        </svg>
+                        <span>Na instituição desde 2018</span>
+                    </div>
+                </div>
+                <div class="badges_perfil">
+                    <span class="badge">Patologia</span>
+                    <span class="badge">Medicina Legal</span>
+                    <span class="badge">Necropsia Clínica</span>
+                    <span class="badge">Anatomia Patológica</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="conteudo_perfil">
+        <div class="container_conteudo">
+            <div class="sidebar_perfil">
+                <nav class="menu_perfil">
+                    <ul>
+                        <li><a href="#resumo" class="ativo">Resumo</a></li>
+                        <li><a href="#formacao">Formação Acadêmica</a></li>
+                        <li><a href="#experiencia">Experiência Profissional</a></li>
+                        <li><a href="#especializacoes">Especializações</a></li>
+                        <li><a href="#publicacoes">Publicações</a></li>
+                        <li><a href="#atividades">Atividades no SVO</a></li>
+                        <li><a href="#premios">Prêmios e Reconhecimentos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="card_contato">
+                    <h3>Contato Direto</h3>
+                    <div class="contato_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>(79) 3243-7089</span>
+                    </div>
+                    <div class="contato_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>kenny.salinas@svo.org</span>
+                    </div>
+                    <div class="contato_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>SVO - Serviço de Verificação de Óbitos<br>Rua Campo do Brito, 551<br>São José, Aracaju - SE</span>
+                    </div>
+                    <div class="contato_item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>Atendimento: Segunda a Sexta<br>08:00 - 17:00</span>
+                    </div>
+                    <a href="#contato" class="botao_contato">Agendar consulta</a>
+                </div>
+            </div>
+            
+            <div class="principal_perfil">
+                <section id="resumo" class="secao_perfil">
+                    <h2>Resumo</h2>
+                    <div class="cartao_conteudo">
+                        <p>A Dra. Kenny Salinas é uma renomada médica patologista com mais de 10 anos de experiência na área de patologia forense e anatomia patológica. Especialista em diagnósticos post-mortem, atua desde 2018 como patologista no Serviço de Verificação de Óbitos (SVO) de Sergipe, onde coordena a equipe de necropsia clínica e é responsável pela análise de casos complexos.</p>
+                        
+                        <p>Com formação pela Universidade Federal de Sergipe e especialização em Patologia Forense pela Universidade de São Paulo, a Dra. Kenny possui vasta experiência na identificação de causas de morte natural, contribuindo significativamente para o avanço das estatísticas epidemiológicas do estado e para a vigilância em saúde pública.</p>
+                        
+                        <p>Além de sua atividade no SVO, é professora convidada em cursos de medicina e colaboradora em projetos de pesquisa relacionados à patologia regional. Suas contribuições para o campo da medicina diagnóstica post-mortem são nacionalmente reconhecidas, tendo publicado diversos artigos em revistas especializadas.</p>
+                        
+                        <blockquote class="citacao_perfil">
+                            "A determinação precisa da causa mortis não é apenas um ato técnico, mas um compromisso com a saúde pública e com as famílias que buscam respostas."
+                        </blockquote>
+                    </div>
+                </section>
+                
+                <section id="formacao" class="secao_perfil">
+                    <h2>Formação Acadêmica</h2>
+                    <div class="cartao_conteudo">
+                        <div class="linha_tempo">
+                            <div class="item_linha_tempo">
+                                <div class="periodo">2008 - 2013</div>
+                                <div class="conteudo_linha_tempo">
+                                    <h3>Graduação em Medicina</h3>
+                                    <p>Universidade Federal de Sergipe (UFS)</p>
+                                    <p>Trabalho de Conclusão: "Análise das principais causas de óbito em pacientes idosos: um estudo retrospectivo em Aracaju"</p>
+                                </div>
+                            </div>
+                            
+                            <div class="item_linha_tempo">
+                                <div class="periodo">2014 - 2017</div>
+                                <div class="conteudo_linha_tempo">
+                                    <h3>Residência em Patologia</h3>
+                                    <p>Hospital Universitário da Universidade Federal de Sergipe</p>
+                                    <p>Especialização em análises anatomopatológicas e citopatológicas</p>
+                                </div>
+                            </div>
+                            
+                            <div class="item_linha_tempo">
+                                <div class="periodo">2017 - 2018</div>
+                                <div class="conteudo_linha_tempo">
+                                    <h3>Especialização em Patologia Forense</h3>
+                                    <p>Universidade de São Paulo (USP)</p>
+                                    <p>Título da monografia: "Diagnóstico diferencial de mortes súbitas cardíacas: desafios na necropsia clínica"</p>
+                                </div>
+                            </div>
+                            
+                            <div class="item_linha_tempo">
+                                <div class="periodo">2019 - 2021</div>
+                                <div class="conteudo_linha_tempo">
+                                    <h3>Mestrado em Ciências da Saúde</h3>
+                                    <p>Universidade Federal de Sergipe (UFS)</p>
+                                    <p>Dissertação: "Análise epidemiológica das causas de morte natural mal definidas em Sergipe e o impacto do SVO na qualificação dos dados"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="experiencia" class="secao_perfil">
+                    <h2>Experiência Profissional</h2>
+                    <div class="cartao_conteudo">
+                        <div class="linha_tempo">
+                            <div class="item_linha_tempo">
+                                <div class="periodo">2018 - Presente</div>
+                                <div class="conteudo_linha_tempo">
+                                    <h3>Médica Patologista</h3>
+                                    <p>Serviço de Verificação de Óbitos (SVO) - Sergipe</p>
+                                    <ul class="lista_perfil">
+                                        <li>Realização de necropsias clínicas</li>
+                                        <li>Coordenação da equipe de análise patológica</li>
+                                        <li>Elaboração de laudos periciais para casos complexos</li>
+                                        <li>Integração com equipes de vigilância epidemiológica</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="item_linha_tempo">
+                                <div class="periodo">2016 - 2018</div>
+                                <div class="conteudo_linha_tempo">
+                                    <h3>Médica Patologista</h3>
+                                    <p>Hospital Universitário - Universidade Federal de Sergipe</p>
+                                    <ul class="lista_perfil">
+                                        <li>Análises anatomopatológicas de biópsias e peças cirúrgicas</li>
+                                        <li>Participação em discussões de casos clínicos</li>
+                                        <li>Supervisão de residentes em patologia</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="item_linha_tempo">
+                                <div class="periodo">2017 - Presente</div>
+                                <div class="conteudo_linha_tempo">
+                                    <h3>Professora Convidada</h3>
+                                    <p>Faculdade de Medicina - Universidade Tiradentes</p>
+                                    <ul class="lista_perfil">
+                                        <li>Disciplina de Patologia Geral</li>
+                                        <li>Disciplina de Medicina Legal</li>
+                                        <li>Orientação de trabalhos de conclusão de curso</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="especializacoes" class="secao_perfil">
+                    <h2>Especializações e Certificações</h2>
+                    <div class="cartao_conteudo">
+                        <div class="grid_certificados">
+                            <div class="card_certificado">
+                                <div class="icone_certificado">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="8" r="7"></circle>
+                                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="info_certificado">
+                                    <h3>Patologia Clínica e Anatomia Patológica</h3>
+                                    <p>Sociedade Brasileira de Patologia (SBP)</p>
+                                    <p class="ano_certificado">2017</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card_certificado">
+                                <div class="icone_certificado">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="8" r="7"></circle>
+                                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="info_certificado">
+                                    <h3>Especialização em Citopatologia</h3>
+                                    <p>Sociedade Brasileira de Citopatologia</p>
+                                    <p class="ano_certificado">2018</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card_certificado">
+                                <div class="icone_certificado">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="8" r="7"></circle>
+                                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="info_certificado">
+                                    <h3>Curso Avançado em Patologia Cardiovascular</h3>
+                                    <p>Instituto do Coração (InCor) - USP</p>
+                                    <p class="ano_certificado">2019</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card_certificado">
+                                <div class="icone_certificado">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="8" r="7"></circle>
+                                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="info_certificado">
+                                    <h3>Certificação em Medicina Legal e Perícia Médica</h3>
+                                    <p>Associação Brasileira de Medicina Legal e Perícia Médica</p>
+                                    <p class="ano_certificado">2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="publicacoes" class="secao_perfil">
+                    <h2>Publicações e Pesquisas</h2>
+                    <div class="cartao_conteudo">
+                        <div class="publicacoes_lista">
+                            <div class="publicacao_item">
+                                <h3>Artigos em Periódicos</h3>
+                                <ul class="lista_publicacoes">
+                                    <li>
+                                        <strong>SALINAS, K.</strong>; OLIVEIRA, M.; SANTOS, J. "Perfil Epidemiológico das Causas de Morte por Doenças Cardiovasculares em Sergipe: Análise de 5 Anos". Revista Brasileira de Patologia, v. 53, n. 2, p. 118-127, 2020.
+                                    </li>
+                                    <li>
+                                        <strong>SALINAS, K.</strong>; LIMA, A. "Avaliação Histopatológica dos Pulmões em Casos de Morte por Pneumonia: Estudo Retrospectivo de 120 Casos". Arquivos de Medicina, v. 74, n. 3, p. 215-224, 2021.
+                                    </li>
+                                    <li>
+                                        <strong>SALINAS, K.</strong>; COSTA, L.; FERNANDES, R. "O Papel do Serviço de Verificação de Óbitos na Qualificação das Estatísticas de Mortalidade: Experiência de Sergipe". Cadernos de Saúde Pública, v. 37, n. 4, e00241219, 2021.
+                                    </li>
+                                    <li>
+                                        MENDES, P.; <strong>SALINAS, K.</strong> "Análise Comparativa entre Achados Clínicos e Anatomopatológicos em Casos de Óbito por Sepse". Revista de Patologia Tropical, v. 50, n. 1, p. 32-45, 2022.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="publicacao_item">
+                                <h3>Capítulos de Livros</h3>
+                                <ul class="lista_publicacoes">
+                                    <li>
+                                        <strong>SALINAS, K.</strong> "Necropsia Clínica: Técnicas e Protocolos". In: RODRIGUES, M. (Org.). Manual de Medicina Legal e Perícia Médica. São Paulo: Editora Medicina, 2020. Cap. 8, p. 183-204.
+                                    </li>
+                                    <li>
+                                        <strong>SALINAS, K.</strong>; MARTINS, F. "Patologia Forense em Casos de Morte Súbita". In: CARVALHO, L.; PINTO, A. (Orgs.). Patologia Forense: Fundamentos e Perspectivas. Rio de Janeiro: Guanabara Koogan, 2022. Cap. 12, p. 245-267.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="publicacao_item">
+                                <h3>Pesquisas em Andamento</h3>
+                                <ul class="lista_publicacoes">
+                                    <li>
+                                        "Correlação entre Alterações Anatomopatológicas e Marcadores Séricos em Vítimas de COVID-19: Estudo Prospectivo" (2022-2024)
+                                    </li>
+                                    <li>
+                                        "Avaliação Histopatológica de Órgãos Vitais em Casos de Morte Súbita em Adultos Jovens" (2021-2023)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="atividades" class="secao_perfil">
+                    <h2>Atividades no SVO</h2>
+                    <div class="cartao_conteudo">
+                        <div class="atividades_grid">
+                            <div class="atividade_card">
+                                <div class="icone_atividade">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>
+                                </div>
+                                <h3>Necropsia Clínica</h3>
+                                <p>Realização de necropsias para determinação da causa mortis em casos de morte natural sem diagnóstico definido.</p>
+                            </div>
+                            
+                                                        <div class="atividade_card">
+                                <div class="icone_atividade">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>
+                                </div>
+                                <h3>Atividades de Ensino</h3>
+                                <p>Ministração de aulas práticas e teóricas em cursos de medicina, focando em patologia e medicina legal.</p>
+                            </div>
+                            
+                            <div class="atividade_card">
+                                <div class="icone_atividade">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>
+                                </div>
+                                <h3>Participação em Conferências</h3>
+                                <p>Apresentação de trabalhos e palestras em congressos nacionais e internacionais sobre patologia e saúde pública.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="premios" class="secao_perfil">
+                    <h2>Prêmios e Reconhecimentos</h2>
+                    <div class="cartao_conteudo">
+                        <ul class="lista_premios">
+                            <li>
+                                <strong>Prêmio de Excelência em Patologia</strong> - Sociedade Brasileira de Patologia, 2021.
+                            </li>
+                            <li>
+                                <strong>Reconhecimento por Contribuições à Saúde Pública</strong> - Governo do Estado de Sergipe, 2022.
+                            </li>
+                            <li>
+                                <strong>Melhor Artigo Científico</strong> - Congresso Brasileiro de Medicina Legal, 2023.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="contato" class="secao_perfil">
+                    <h2>Contato</h2>
+                    <div class="cartao_conteudo">
+                        <p>Para agendar consultas ou obter mais informações, entre em contato através dos seguintes meios:</p>
+                        <ul class="lista_contato">
+                            <li>Telefone: (79) 3243-7089</li>
+                            <li>Email: <a href="mailto:kenny.salinas@svo.org">kenny.salinas@svo.org</a></li>
+                            <li>Endereço: Rua Campo do Brito, 551, São José, Aracaju - SE</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+
+    
+
+          <!-- Rodapé principal -->
+     <footer class="rodape_principal_svo">
+        <div class="conteudo_rodape_svo">
+            <div class="grid_rodape_svo">
+                <!-- Coluna Sobre -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Sobre SVO</h3>
+                    <p class="texto_rodape_descricao">
+                        O Serviço de Verificação de Óbitos de Sergipe é gerido pela Fundação de Saúde Parreiras Horta (FSPH), 
+                        vinculada à Secretaria de Estado da Saúde (SES), atuando na verificação de causas de mortes naturais 
+                        e contribuindo para a saúde pública.
+                    </p>
+                </div>
+                
+                <!-- Coluna Links Úteis -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Links Úteis</h3>
+                    <ul class="lista_links_rodape">
+                        <li class="item_link_rodape">
+                            <a href="https://fsph.se.gov.br/" class="link_rodape_navegacao">Fundação de Saúde Parreiras Horta</a>
+                        </li>
+                        <li class="item_link_rodape">
+                            <a href="https://www.se.gov.br/" class="link_rodape_navegacao">Governo do Estado de Sergipe</a>
+                        </li>
+                        <li class="item_link_rodape">
+                            <a href="https://www.gov.br/saude./pt-br" class="link_rodape_navegacao">Ministério da Saúde</a>
+                        </li>
+                        <li class="item_link_rodape">
+                            <a href="https://saude.se.gov.br/" class="link_rodape_navegacao">Secretaria de Estado da Saúde</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Coluna Contato -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Contato</h3>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 1a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zm-1 2h-4v18h4V3z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">(79) 3234-6023</span>
+                    </div>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm9.06 8.683L5.648 6.238 4.353 7.762l7.72 6.555 7.581-6.56-1.308-1.513-6.285 5.439z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">svo@saude.se.gov.br</span>
+                    </div>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 20.9l4.95-4.95a7 7 0 1 0-9.9 0L12 20.9zm0 2.828l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">
+                            Rua Campo do Brito, 551<br>
+                            São José, Aracaju - SE<br>
+                            CEP: 49020-380
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Coluna Horários -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Horários</h3>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">Atendimento 24 horas</span>
+                    </div>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">Liberação de óbitos: 7h às 19h</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Barra de copyright -->
+            <div class="barra_copyright_rodape">
+                <p class="texto_copyright_rodape">
+                    © 2024 SVO - Serviço de Verificação de Óbitos de Sergipe. Todos os direitos reservados.
+                </p>
+                <div class="logos_parceiros_rodape">
+                    <!-- Placeholders para logos -->
+                    <div class="logo_parceiro_rodape">FSPH - Fundação de Saúde Parreiras Horta</div>
+                    <div class="logo_parceiro_rodape"></div>
+                    <div class="logo_parceiro_rodape"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+  
+      <!-- VLibras Widget -->
+  <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+  
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+ 
+
+     <script>
+        // Obter referência ao botão
+        const botaoVoltarAoTopo = document.getElementById('botaoVoltarAoTopo');
+        
+        // Mostrar ou ocultar o botão com base na posição de rolagem
+        // E atualizar o círculo de progresso
+        window.onscroll = function() {
+            // Calcular a porcentagem da página que foi rolada
+            const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
+            const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
+            
+            // Atualizar o círculo de progresso
+            atualizarCirculoProgresso(porcentagemRolagem);
+            
+            if (posicaoRolagem > 200) {
+                if (!botaoVoltarAoTopo.classList.contains('visivel')) {
+                    botaoVoltarAoTopo.style.display = "flex";
+                    // Pequeno atraso para garantir que o display: flex seja aplicado antes da animação
+                    setTimeout(() => {
+                        botaoVoltarAoTopo.classList.add('visivel');
+                    }, 10);
+                }
+            } else {
+                botaoVoltarAoTopo.classList.remove('visivel');
+                // Aguardar a animação terminar antes de esconder completamente
+                setTimeout(() => {
+                    if (!botaoVoltarAoTopo.classList.contains('visivel')) {
+                        botaoVoltarAoTopo.style.display = "none";
+                    }
+                }, 500);
+            }
+        };
+        
+        // Função para atualizar o círculo de progresso
+        function atualizarCirculoProgresso(porcentagem) {
+            const circuloProgresso = document.getElementById('circuloProgresso');
+            const raio = circuloProgresso.r.baseVal.value;
+            const circunferencia = 2 * Math.PI * raio;
+            
+            // Ajustar o offset para mostrar o progresso (invertido para mostrar o quanto falta)
+            const deslocamento = circunferencia - (porcentagem * circunferencia);
+            circuloProgresso.style.strokeDasharray = `${circunferencia} ${circunferencia}`;
+            circuloProgresso.style.strokeDashoffset = deslocamento;
+        }
+        
+        // Inicializar o círculo de progresso
+        window.addEventListener('DOMContentLoaded', () => {
+            // Para garantir que o círculo de progresso seja inicializado corretamente na carga da página
+            const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
+            const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
+            atualizarCirculoProgresso(porcentagemRolagem);
+        });
+        
+        // Função para voltar ao topo quando o botão é clicado
+        botaoVoltarAoTopo.addEventListener('click', function() {
+            // Posição atual de rolagem
+            const posicaoInicial = window.pageYOffset;
+            // Duração da animação em milissegundos (1.5 segundos)
+            const duracao = 500;
+            // Tempo de início
+            const tempoInicial = performance.now();
+            
+            function passoRolagem(timestamp) {
+                const tempoAtual = timestamp - tempoInicial;
+                
+                // Função de easing para uma animação mais suave (easeOutCubic)
+                const progresso = 1 - Math.pow(1 - Math.min(tempoAtual / duracao, 1), 3);
+                
+                // Calcular a nova posição de rolagem
+                window.scrollTo(0, posicaoInicial * (1 - progresso));
+                
+                // Atualizar o círculo de progresso durante a animação
+                const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
+                const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
+                atualizarCirculoProgresso(porcentagemRolagem);
+                
+                // Continuar a animação se não estiver completa
+                if (tempoAtual < duracao) {
+                    window.requestAnimationFrame(passoRolagem);
+                }
+            }
+            
+            // Iniciar a animação
+            window.requestAnimationFrame(passoRolagem);
+        });
+    </script>
+  
+</body>
+</html>
