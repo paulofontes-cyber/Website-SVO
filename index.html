@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,103 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <script src="paginainicial.js"></script>
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="acessibilidade.css">
     <link rel="stylesheet" href="dark-mode.css">
     <script src="acessibilidade.js"></script>
+    <script src="whats.js"></script>
+    <style>
+        @keyframes surgir {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 0.9; transform: translateY(0); }
+        }
+        .botao-topo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(145deg, #f3a621, #d29819);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            opacity: 0.9;
+            z-index: 9999;
+            outline: none;
+            padding: 0;
+            overflow: visible;
+        }
+        
+        .botao-topo:hover {
+            background: linear-gradient(145deg, #fffb12, #efa506);
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            opacity: 1;
+        }
+        
+        .botao-topo:active {
+            transform: scale(0.95);
+        }
+        
+        .botao-topo.visivel {
+            display: flex;
+            animation: surgir 0.5s forwards;
+        }
+        
+        .circulo-progresso {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            top: -5px;
+            left: -5px;
+        }
+        
+        .circulo-base {
+            transition: stroke-dashoffset 0.3s;
+        }
+        
+        .circulo-valor {
+            transition: stroke-dashoffset 0.3s;
+        }
+        
+        .icone-seta {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+    </style>
 </head>
 
 <body>
+
+    <!-- voltar ao topo -->
+     <button class="botao-topo" id="botaoVoltarAoTopo" title="Voltar ao Topo">
+        <div class="circulo-progresso">
+            <svg class="anel-progresso" width="70" height="70">
+                <circle class="circulo-base" stroke="rgba(255, 255, 255, 0.3)" stroke-width="3" fill="transparent" r="30" cx="35" cy="35"/>
+                <circle class="circulo-valor" id="circuloProgresso" stroke="white" stroke-width="3" fill="transparent" r="30" cx="35" cy="35" stroke-dasharray="188.5 188.5" stroke-dashoffset="188.5" transform="rotate(-90, 35, 35)"/>
+            </svg>
+        </div>
+        <div class="icone-seta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </div>
+    </button>
+
+
 
     <!-- barra de navegação -->
 
@@ -32,289 +121,310 @@
             <li><a href="#Agenda">Agenda</a></li>
         </ul>
         <!-- Ícone de acessibilidade -->
-    <div class="icone_acessibilidade" id="toggle-acessibilidade" title="Opções de acessibilidade">
+        <div class="icone_acessibilidade" id="toggle-acessibilidade" title="Opções de acessibilidade">
 
-    <img src="imagens/Lowercase (1).png" alt="">
+            <img src="imagens/Lowercase (1).png" alt="">
 
-    <!-- Painel de controles de acessibilidade -->
-    <div class="painel_acessibilidade" id="controles-acessibilidade">
-    <h3>Tamanho do Texto</h3>
-    <div class="controles_texto">
-        <div class="info_tamanho_fonte">
-            Tamanho atual: <span id="tamanho-fonte-atual">16px</span>
+            <!-- Painel de controles de acessibilidade -->
+            <div class="painel_acessibilidade" id="controles-acessibilidade">
+                <h3>Tamanho do Texto</h3>
+                <div class="controles_texto">
+                    <div class="info_tamanho_fonte">
+                        Tamanho atual: <span id="tamanho-fonte-atual">16px</span>
+                    </div>
+                    <div class="botoes_controle_fonte">
+                        <button class="botao_controle_fonte" id="btn-diminuir-fonte" title="Diminuir tamanho do texto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13H5v-2h14v2z"></path>
+                            </svg>
+                        </button>
+                        <button class="botao_controle_fonte" id="btn-aumentar-fonte" title="Aumentar tamanho do texto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <button class="botao_resetar_fonte" id="btn-resetar-fonte">Restaurar tamanho padrão</button>
+            </div>
         </div>
-        <div class="botoes_controle_fonte">
-            <button class="botao_controle_fonte" id="btn-diminuir-fonte" title="Diminuir tamanho do texto">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 13H5v-2h14v2z"></path>
-                </svg>
-            </button>
-            <button class="botao_controle_fonte" id="btn-aumentar-fonte" title="Aumentar tamanho do texto">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
-                </svg>
-            </button>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </div>
-    <button class="botao_resetar_fonte" id="btn-resetar-fonte">Restaurar tamanho padrão</button>
-    </div>
-    </div>
-    <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
     </nav>
 
-    <!-- hero --> 
-<div id="Inicio">
-    <section class="hero">
-        <div class="sliding-text-wrapper">
-            <h1 class="fixed-title">Serviço de Verificação de Óbito</h1>
-            <div class="sliding-text-container">
-                <div class="sliding-text active">O SVO investiga casos de morte natural não esclarecidos, sem assistência médica ou com diagnóstico obscuro, e em casos de morte súbita sem causa externa.</div>
-                <div class="sliding-text">O SVO é responsável por emitir a Declaração de Óbito, um documento essencial para registrar a morte e outros procedimentos.</div>
-                <div class="sliding-text">O SVO também investiga óbitos relacionados a doenças que são de interesse da saúde pública, ajudando a identificar e controlar surtos e epidemias.</div>
-                <div class="sliding-text">O Serviço de Verificação de Óbito (SVO) é um serviço público que determina a causa de óbito em casos de morte natural não definida, sem assistência médica, ou com assistência médica sem diagnóstico claro.</div>
+    <!-- hero -->
+    <div id="Inicio">
+        <section class="hero">
+            <div class="sliding-text-wrapper">
+                <h1 class="fixed-title">Serviço de Verificação de Óbito</h1>
+                <div class="sliding-text-container">
+                    <div class="sliding-text active">O SVO investiga casos de morte natural não esclarecidos, sem
+                        assistência médica ou com diagnóstico obscuro, e em casos de morte súbita sem causa externa.
+                    </div>
+                    <div class="sliding-text">O SVO é responsável por emitir a Declaração de Óbito, um documento
+                        essencial para registrar a morte e outros procedimentos.</div>
+                    <div class="sliding-text">O SVO também investiga óbitos relacionados a doenças que são de interesse
+                        da saúde pública, ajudando a identificar e controlar surtos e epidemias.</div>
+                    <div class="sliding-text">O Serviço de Verificação de Óbito (SVO) é um serviço público que determina
+                        a causa de óbito em casos de morte natural não definida, sem assistência médica, ou com
+                        assistência médica sem diagnóstico claro.</div>
+                </div>
+                <div class="indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
             </div>
-            <div class="indicators">
-                <span class="indicator active"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
-            </div>
-        </div>
-    </section>
-</div>
-    
+        </section>
+    </div>
+
 
     <!-- numeros importantes -->
 
 
-<div class="counter-section">
-  <div class="counter-container">
-    <div class="counter-item">
-      <span class="counter-value" data-target="40">0</span>
-      <span class="suffix">k+</span>
-      <div class="counter-label">INVESTIGAÇÃO EPIDEMIOLÓGICA</div>
-    </div>
-    
-    <div class="counter-item">
-      <span class="counter-value" data-target="10">0</span>
-      <span class="suffix">k+</span>
-      <div class="counter-label">ATENDIMENTOS</div>
-    </div>
-    
-    <div class="counter-item">
-      <span class="counter-value" data-target="1">0</span>
-      <span class="suffix">k+</span>
-      <div class="counter-label">RECOLHIMENTOS</div>
-    </div>
-  </div>
-</div>
-
-
-<!-- noticias -->
-
- <div id="noticias">
-  <section class="news-section" data-aos="slide-up">
-    <div class="memphis-pattern"></div>
-    <h2 class="section-title">Notícias do SVO</h2>
-    
-    <div class="news-container">
-        <!-- Notícia 1 -->
-        <article class="news-card">
-            <img src="imagens/pexels-cottonbro-7584484.jpg" alt="Investigação de saúde pública" class="news-image">
-            <div class="news-content" data-aos="fade-up">
-                <h3 class="news-title">SVO investiga óbitos relacionados a doenças de interesse da saúde pública</h3>
-                <p class="news-preview">O SVO também investiga óbitos relacionados a doenças que são de interesse da saúde pública, ajudando a identificar e controlar surtos e epidemias.</p>
-                <a href="#" class="read-more">Ler mais</a>
+    <div class="counter-section">
+        <div class="counter-container">
+            <div class="counter-item">
+                <span class="counter-value" data-target="40">0</span>
+                <span class="suffix">k+</span>
+                <div class="counter-label">INVESTIGAÇÃO EPIDEMIOLÓGICA</div>
             </div>
-        </article>
-        
-        <!-- Notícia 2 -->
-        <article class="news-card">
-            <img src="imagens/pexels-jonathanborba-28736017.jpg" alt="Parceria com universidades" class="news-image">
-            <div class="news-content" data-aos="fade-up">
-                <h3 class="news-title">SVO firma parceria com universidades para ampliar pesquisas</h3>
-                <p class="news-preview">Nova parceria com instituições de ensino superior vai permitir avanços em pesquisas científicas e formação de novos profissionais na área.</p>
-                <a href="#" class="read-more">Ler mais</a>
-            </div>
-        </article>
-        
-        <!-- Notícia 3 -->
-        <article class="news-card" >
-            <img src="imagens/pexels-saul-siguenza-355267816-28510160.jpg" alt="Novos equipamentos" class="news-image">
-            <div class="news-content" data-aos="fade-up"> >
-                <h3 class="news-title">SVO recebe novos equipamentos</h3>
-                <p class="news-preview">Investimento em tecnologia e infraestrutura permitirá maior precisão nos diagnósticos e agilidade no atendimento aos casos recebidos pelo serviço.</p>
-                <a href="#" class="read-more">Ler mais</a>
-            </div>
-        </article>
-    </div>
-    
-    <a href="./noticias.html" class="view-all-btn">Ver todas as notícias</a>
-  </section>
- </div>
- 
-</div>
 
-<div id="Remoção">
-  <!-- parte da remoçao -->
-  <div class="remocao_telinha" data-aos="slide-right">
-    <div class="imagemzinha">
-      <img src="imagens/image (8).png" alt="Imagem decorativa" class="overlay-image">
-    </div>
-      
-    <div class="secao_gradiente">
-        
-        <div class="texto_da_remocao">
-            <h1 class="titulo">Solicite a remoção</h1>
-            <button class="botao_remocao">Solicitar Remoção</button>
-            <p class="texto_placeholder">Este formulário contém informações importantes e deve ser preenchido com atenção e precisão.</p>
+            <div class="counter-item">
+                <span class="counter-value" data-target="10">0</span>
+                <span class="suffix">k+</span>
+                <div class="counter-label">ATENDIMENTOS</div>
+            </div>
+
+            <div class="counter-item">
+                <span class="counter-value" data-target="1">0</span>
+                <span class="suffix">k+</span>
+                <div class="counter-label">RECOLHIMENTOS</div>
+            </div>
         </div>
     </div>
-</div>
-</div>
 
-<!-- parte profissionais -->
-<div id="Profissionais">
-  <div class="profissionais_quadro" data-aos="slide-left">
-    <div class="imagem_prof_fundo"> </div>
-    <img class="imagem_central_prof" src="imagens/image (10).png" alt="imagem central medica" data-aos="zoom-in-up">
-    <img class="imagem_canto_prof" src="imagens/image (9).png" alt="imagem medico" data-aos="zoom-in-down">
-    <div class="left-rectangle" data-aos="zoom-out-left"></div>
-    <div class="texto_prof">Equipe especializada e dedicada a oferecer o melhor atendimento.</div>
 
-    <a href="institucional.html" target="itself">
-        <button>
-        <div class="botao_prof">
-            <div class="botao_prof_texto">Profissionais</div>
-        </div>
-    </button>
-    </a>
-    
-  </div>
-</div>
-<!-- Agenda -->
+    <!-- noticias -->
 
-<div id="Agenda">
-  <section class="secao-agenda">
-    <div class="cabecalho-agenda">
-        <h2>Horários de Atendimento</h2>
+    <div id="noticias">
+        <section class="news-section" data-aos="slide-up">
+            <div class="memphis-pattern"></div>
+            <h2 class="section-title">Notícias do SVO</h2>
+
+            <div class="news-container">
+                <!-- Notícia 1 -->
+                <article class="news-card">
+                    <img src="imagens/pexels-cottonbro-7584484.jpg" alt="Investigação de saúde pública"
+                        class="news-image">
+                    <div class="news-content" data-aos="fade-up">
+                        <h3 class="news-title">SVO investiga óbitos relacionados a doenças de interesse da saúde pública
+                        </h3>
+                        <p class="news-preview">O SVO também investiga óbitos relacionados a doenças que são de
+                            interesse da saúde pública, ajudando a identificar e controlar surtos e epidemias.</p>
+                        <a href="#" class="read-more">Ler mais</a>
+                    </div>
+                </article>
+
+                <!-- Notícia 2 -->
+                <article class="news-card">
+                    <img src="imagens/pexels-jonathanborba-28736017.jpg" alt="Parceria com universidades"
+                        class="news-image">
+                    <div class="news-content" data-aos="fade-up">
+                        <h3 class="news-title">SVO firma parceria com universidades para ampliar pesquisas</h3>
+                        <p class="news-preview">Nova parceria com instituições de ensino superior vai permitir avanços
+                            em pesquisas científicas e formação de novos profissionais na área.</p>
+                        <a href="#" class="read-more">Ler mais</a>
+                    </div>
+                </article>
+
+                <!-- Notícia 3 -->
+                <article class="news-card">
+                    <img src="imagens/pexels-saul-siguenza-355267816-28510160.jpg" alt="Novos equipamentos"
+                        class="news-image">
+                    <div class="news-content" data-aos="fade-up"> >
+                        <h3 class="news-title">SVO recebe novos equipamentos</h3>
+                        <p class="news-preview">Investimento em tecnologia e infraestrutura permitirá maior precisão nos
+                            diagnósticos e agilidade no atendimento aos casos recebidos pelo serviço.</p>
+                        <a href="#" class="read-more">Ler mais</a>
+                    </div>
+                </article>
+            </div>
+
+            <a href="./noticias.html" class="view-all-btn">Ver todas as notícias</a>
+        </section>
     </div>
-    
-    <div class="container-principal">
-        <div class="conteudo-agenda">
-            <div class="grupo-dia">
-                <div class="titulo-dia">Segunda a Sexta-feira</div>
-                
-                <div class="item-horario">
-                    <div class="tipo-atendimento">Atendimento Presencial:</div>
-                    <div class="horario-atendimento">8h às 18h</div>
-                </div>
-                
-                <div class="item-horario">
-                    <div class="tipo-atendimento">Atendimento Telefônico:</div>
-                    <div class="horario-atendimento">8h às 20h</div>
-                </div>
-                
-                <div class="item-horario">
-                    <div class="tipo-atendimento">Plantão Emergencial:</div>
-                    <div class="horario-atendimento emergencia">24h</div>
-                </div>
+
+    </div>
+
+    <div id="Remoção">
+        <!-- parte da remoçao -->
+        <div class="remocao_telinha" data-aos="slide-right">
+            <div class="imagemzinha">
+                <img src="imagens/image (8).png" alt="Imagem decorativa" class="overlay-image">
             </div>
-            
-            <div class="grupo-dia">
-                <div class="titulo-dia">Sábado</div>
-                
-                <div class="item-horario">
-                    <div class="tipo-atendimento">Atendimento Presencial:</div>
-                    <div class="horario-atendimento">9h às 13h</div>
-                </div>
-                
-                <div class="item-horario">
-                    <div class="tipo-atendimento">Atendimento Telefônico:</div>
-                    <div class="horario-atendimento">9h às 16h</div>
-                </div>
-                
-                <div class="item-horario">
-                    <div class="tipo-atendimento">Plantão Emergencial:</div>
-                    <div class="horario-atendimento emergencia">24h</div>
-                </div>
-            </div>
-            
-            <div class="grupo-dia">
-                <div class="titulo-dia">Domingo e Feriados</div>
-                
-                <div class="item-horario">
-                    <div class="tipo-atendimento">Plantão Emergencial:</div>
-                    <div class="horario-atendimento emergencia">24h</div>
+
+            <div class="secao_gradiente">
+
+                <div class="texto_da_remocao">
+                    <h1 class="titulo">Solicite a remoção</h1>
+                    <button class="botao_remocao">Solicitar Remoção</button>
+                    <p class="texto_placeholder">Este formulário contém informações importantes e deve ser preenchido
+                        com atenção e precisão.</p>
                 </div>
             </div>
         </div>
-        
-        <div class="container-imagem">
-            <img src="imagens/imagem medico.jpg" alt="Equipe de atendimento" class="imagem-agenda">
-            <p class="texto-imagem">Nossa equipe está sempre pronta para atendê-lo com excelência</p>
+    </div>
+
+    <!-- parte profissionais -->
+    <div id="Profissionais">
+        <div class="profissionais_quadro" data-aos="slide-left">
+            <div class="imagem_prof_fundo"> </div>
+            <img class="imagem_central_prof" src="imagens/image (10).png" alt="imagem central medica"
+                data-aos="zoom-in-up">
+            <img class="imagem_canto_prof" src="imagens/image (9).png" alt="imagem medico" data-aos="zoom-in-down">
+            <div class="left-rectangle" data-aos="zoom-out-left"></div>
+            <div class="texto_prof">Equipe especializada e dedicada a oferecer o melhor atendimento.</div>
+
+            <a href="institucional.html" target="itself">
+                <button>
+                    <div class="botao_prof">
+                        <div class="botao_prof_texto">Profissionais</div>
+                    </div>
+                </button>
+            </a>
+
         </div>
     </div>
-  </section>
-</div>
-<!-- secção contato -->
-  <!-- Seção principal de contato -->
-  <section class="bloco_contato_principal">
-    <h2 class="titulo_contato_principal">Contato e Localização</h2>
-    <p class="subtitulo_contato_descricao">
-        Entre em contato conosco ou visite nossa unidade para obter
-        mais informações sobre nossos serviços.
-    </p>
-    
-    <div class="grupo_cartoes_contato">
-        <!-- Cartão de telefone -->
-        <div class="cartao_contato_item cartao_telefone_contato">
-            <div class="icone_contato_generico">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-            </div>
-            <h3 class="titulo_cartao_tipo">Telefone</h3>
-            <p class="info_cartao_dados">(79) 3234-6023</p>
-        </div>
-        
-        <!-- Cartão de email -->
-        <div class="cartao_contato_item cartao_email_contato">
-            <div class="icone_contato_generico">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-            </div>
-            <h3 class="titulo_cartao_tipo">E-mail</h3>
-            <p class="info_cartao_dados">svo@saude.se.gov.br</p>
-        </div>
-        
-        <!-- Cartão de localização -->
-      <div id="Contato">
-        <div class="cartao_contato_item cartao_localizacao_endereco">
-          <div class="icone_contato_generico">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-          </div>
-          <h3 class="titulo_cartao_tipo">Endereço</h3>
-          <p class="info_cartao_dados">
-              Rua Campo do Brito, 551<br>
-              São José, Aracaju - SE<br>
-              CEP: 49020-380
-          </p>
-      </div>
-  </div>
-</section>
-      </div>
+    <!-- Agenda -->
 
-      <!-- Rodapé principal -->
+    <div id="Agenda">
+        <section class="secao-agenda">
+            <div class="cabecalho-agenda">
+                <h2>Horários de Atendimento</h2>
+            </div>
+
+            <div class="container-principal">
+                <div class="conteudo-agenda">
+                    <div class="grupo-dia">
+                        <div class="titulo-dia">Segunda a Sexta-feira</div>
+
+                        <div class="item-horario">
+                            <div class="tipo-atendimento">Atendimento Presencial:</div>
+                            <div class="horario-atendimento">8h às 18h</div>
+                        </div>
+
+                        <div class="item-horario">
+                            <div class="tipo-atendimento">Atendimento Telefônico:</div>
+                            <div class="horario-atendimento">8h às 20h</div>
+                        </div>
+
+                        <div class="item-horario">
+                            <div class="tipo-atendimento">Plantão Emergencial:</div>
+                            <div class="horario-atendimento emergencia">24h</div>
+                        </div>
+                    </div>
+
+                    <div class="grupo-dia">
+                        <div class="titulo-dia">Sábado</div>
+
+                        <div class="item-horario">
+                            <div class="tipo-atendimento">Atendimento Presencial:</div>
+                            <div class="horario-atendimento">9h às 13h</div>
+                        </div>
+
+                        <div class="item-horario">
+                            <div class="tipo-atendimento">Atendimento Telefônico:</div>
+                            <div class="horario-atendimento">9h às 16h</div>
+                        </div>
+
+                        <div class="item-horario">
+                            <div class="tipo-atendimento">Plantão Emergencial:</div>
+                            <div class="horario-atendimento emergencia">24h</div>
+                        </div>
+                    </div>
+
+                    <div class="grupo-dia">
+                        <div class="titulo-dia">Domingo e Feriados</div>
+
+                        <div class="item-horario">
+                            <div class="tipo-atendimento">Plantão Emergencial:</div>
+                            <div class="horario-atendimento emergencia">24h</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-imagem">
+                    <img src="imagens/imagem medico.jpg" alt="Equipe de atendimento" class="imagem-agenda">
+                    <p class="texto-imagem">Nossa equipe está sempre pronta para atendê-lo com excelência</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- secção contato -->
+    <!-- Seção principal de contato -->
+    <section class="bloco_contato_principal">
+        <h2 class="titulo_contato_principal">Contato e Localização</h2>
+        <p class="subtitulo_contato_descricao">
+            Entre em contato conosco ou visite nossa unidade para obter
+            mais informações sobre nossos serviços.
+        </p>
+
+        <div class="grupo_cartoes_contato">
+            <!-- Cartão de telefone -->
+            <a href="tel:+557932346023" class="cartao_contato_item cartao_telefone_contato">
+                <div class="icone_contato_generico">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="titulo_cartao_tipo">Telefone</h3>
+                <p class="info_cartao_dados">(79) 3234-6023</p>
+            </a>
+
+            <!-- Cartão de email -->
+            <a href="mailto:svo@saude.se.gov.br" class="cartao_contato_item cartao_email_contato">
+                <div class="icone_contato_generico">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </div>
+                <h3 class="titulo_cartao_tipo">E-mail</h3>
+                <p class="info_cartao_dados">svo@saude.se.gov.br</p>
+            </a>
+
+            <!-- Cartão de localização -->
+            <div id="Contato">
+                <a href="https://maps.google.com/?q=Rua+Campo+do+Brito,+551,+São+José,+Aracaju+-+SE" target="_blank" class="cartao_contato_item cartao_localizacao_endereco">
+                    <div class="icone_contato_generico">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="titulo_cartao_tipo">Endereço</h3>
+                    <p class="info_cartao_dados">
+                        Rua Campo do Brito, 551<br>
+                        São José, Aracaju - SE<br>
+                        CEP: 49020-380
+                    </p>
+                </a>
+            </div>
+    </section>
+    </div>
+
+
+    <!-- Rodapé principal -->
     <footer class="rodape_principal_svo">
       <div class="conteudo_rodape_svo">
           <div class="grid_rodape_svo">
@@ -409,23 +519,114 @@
 
 
     <!-- VLibras Widget -->
-<div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
     </div>
-  </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
-<script src="dark-mode.js"></script>
+    <script src="dark-mode.js"></script>
+
+    <script>
+        // Obter referência ao botão
+        const botaoVoltarAoTopo = document.getElementById('botaoVoltarAoTopo');
+        
+        // Mostrar ou ocultar o botão com base na posição de rolagem
+        // E atualizar o círculo de progresso
+        window.onscroll = function() {
+            // Calcular a porcentagem da página que foi rolada
+            const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
+            const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
+            
+            // Atualizar o círculo de progresso
+            atualizarCirculoProgresso(porcentagemRolagem);
+            
+            if (posicaoRolagem > 200) {
+                if (!botaoVoltarAoTopo.classList.contains('visivel')) {
+                    botaoVoltarAoTopo.style.display = "flex";
+                    // Pequeno atraso para garantir que o display: flex seja aplicado antes da animação
+                    setTimeout(() => {
+                        botaoVoltarAoTopo.classList.add('visivel');
+                    }, 10);
+                }
+            } else {
+                botaoVoltarAoTopo.classList.remove('visivel');
+                // Aguardar a animação terminar antes de esconder completamente
+                setTimeout(() => {
+                    if (!botaoVoltarAoTopo.classList.contains('visivel')) {
+                        botaoVoltarAoTopo.style.display = "none";
+                    }
+                }, 500);
+            }
+        };
+        
+        // Função para atualizar o círculo de progresso
+        function atualizarCirculoProgresso(porcentagem) {
+            const circuloProgresso = document.getElementById('circuloProgresso');
+            const raio = circuloProgresso.r.baseVal.value;
+            const circunferencia = 2 * Math.PI * raio;
+            
+            // Ajustar o offset para mostrar o progresso (invertido para mostrar o quanto falta)
+            const deslocamento = circunferencia - (porcentagem * circunferencia);
+            circuloProgresso.style.strokeDasharray = `${circunferencia} ${circunferencia}`;
+            circuloProgresso.style.strokeDashoffset = deslocamento;
+        }
+        
+        // Inicializar o círculo de progresso
+        window.addEventListener('DOMContentLoaded', () => {
+            // Para garantir que o círculo de progresso seja inicializado corretamente na carga da página
+            const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
+            const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
+            atualizarCirculoProgresso(porcentagemRolagem);
+        });
+        
+        // Função para voltar ao topo quando o botão é clicado
+        botaoVoltarAoTopo.addEventListener('click', function() {
+            // Posição atual de rolagem
+            const posicaoInicial = window.pageYOffset;
+            // Duração da animação em milissegundos (1.5 segundos)
+            const duracao = 500;
+            // Tempo de início
+            const tempoInicial = performance.now();
+            
+            function passoRolagem(timestamp) {
+                const tempoAtual = timestamp - tempoInicial;
+                
+                // Função de easing para uma animação mais suave (easeOutCubic)
+                const progresso = 1 - Math.pow(1 - Math.min(tempoAtual / duracao, 1), 3);
+                
+                // Calcular a nova posição de rolagem
+                window.scrollTo(0, posicaoInicial * (1 - progresso));
+                
+                // Atualizar o círculo de progresso durante a animação
+                const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
+                const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
+                atualizarCirculoProgresso(porcentagemRolagem);
+                
+                // Continuar a animação se não estiver completa
+                if (tempoAtual < duracao) {
+                    window.requestAnimationFrame(passoRolagem);
+                }
+            }
+            
+            // Iniciar a animação
+            window.requestAnimationFrame(passoRolagem);
+        });
+    </script>
 
 </body>
+
 </html>

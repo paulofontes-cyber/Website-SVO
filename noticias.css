@@ -336,27 +336,9 @@ h1 {
 }
 
 
-.botao-voltar-container {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    margin-top: 20px; /* Espaçamento acima do botão, ajuste conforme necessário */
-    margin-bottom: 20px; /* Espaçamento abaixo do botão, ajuste conforme necessário */
-}
 
-.botao-voltar {
-    background-color: #f6c233; /* Cor de fundo do botão */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: none; /* Remove o sublinhado padrão de links */
-}
 
-.botao-voltar:hover {
-    background-color: #45a049;
-}
+
 
 /*Footer*/
 
@@ -365,6 +347,7 @@ h1 {
   color: white;
   padding: 40px 20px;
   position: relative;
+  margin-top: 60px;
 }
 
 .conteudo_rodape_svo {

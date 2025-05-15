@@ -232,17 +232,6 @@ body, html {
   }
 }
 
-  
-  .painel_acessibilidade {
-    width: 200px;
-    right: 10px;
-  }
-  
-  .botao_controle_fonte {
-    width: 28px;
-    height: 28px;
-  }
-
 
 .conteudo_institucional {
   max-width: 1200px;
@@ -592,6 +581,7 @@ body, html {
   line-height: 1.5;
   font-size: 0.95rem;
 }
+
 
 
 .barra_copyright_rodape {
