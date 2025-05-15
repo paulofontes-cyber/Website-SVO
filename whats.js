@@ -2,6 +2,7 @@
     
     const settings = {
         whatsappNumber: "557981236288", //fiz alguns teste e esse mecanismo funciona! Tenho certeza que existe APIs mais eficientes que façam esse trabalho, mas é oq temos pra hoje. 
+        whatsappNumber: "5579981236288", 
         headerTitle: "Atendimento Web",
         headerSubtitle: "Normalmente responde em minutos",
         welcomeMessage: "Olá! Como posso ajudar você hoje?",
