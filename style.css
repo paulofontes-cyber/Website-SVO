@@ -1030,7 +1030,7 @@ body, html {
 }
 
 .quadro_atividades h3 {
-  color: #805c00;
+  color: #804000;
   margin-top: 5px;
   font-size: 1.4rem;
   text-align: center;
@@ -1069,7 +1069,7 @@ body, html {
 }
 
 .lista_atividades li strong {
-  color: #004080;
+  color: #804000;
   font-weight: 600;
 }
 
@@ -1103,7 +1103,7 @@ body, html {
 }
 
 .pessoa_institucional:hover .foto_institucional {
-  border-color: #fff700;
+  border-color: #FF8761;
 }
 
 .nome_institucional {
