@@ -5,27 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profissionais</title>
     <link rel="icon" href="logo/Logo/favicon/favicon_48x48.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="institucional.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="acessibilidade.js"></script>
+    <script src="whats.js"></script>
+    <style>
+        @keyframes surgir {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 0.9; transform: translateY(0); }
+        }
+        .botao-topo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(145deg, #f3a621, #d29819);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            opacity: 0.9;
+            z-index: 9999;
+            outline: none;
+            padding: 0;
+            overflow: visible;
+        }
+        
+        .botao-topo:hover {
+            background: linear-gradient(145deg, #fffb12, #efa506);
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            opacity: 1;
+        }
+        
+        .botao-topo:active {
+            transform: scale(0.95);
+        }
+        
+        .botao-topo.visivel {
+            display: flex;
+            animation: surgir 0.5s forwards;
+        }
+        
+        .circulo-progresso {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            top: -5px;
+            left: -5px;
+        }
+        
+        .circulo-base {
+            transition: stroke-dashoffset 0.3s;
+        }
+        
+        .circulo-valor {
+            transition: stroke-dashoffset 0.3s;
+        }
+        
+        .icone-seta {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+    </style>
 </head>
 <body>
+    
+    <!-- voltar ao topo -->
+     <button class="botao-topo" id="botaoVoltarAoTopo" title="Voltar ao Topo">
+        <div class="circulo-progresso">
+            <svg class="anel-progresso" width="70" height="70">
+                <circle class="circulo-base" stroke="rgba(255, 255, 255, 0.3)" stroke-width="3" fill="transparent" r="30" cx="35" cy="35"/>
+                <circle class="circulo-valor" id="circuloProgresso" stroke="white" stroke-width="3" fill="transparent" r="30" cx="35" cy="35" stroke-dasharray="188.5 188.5" stroke-dashoffset="188.5" transform="rotate(-90, 35, 35)"/>
+            </svg>
+        </div>
+        <div class="icone-seta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </div>
+    </button>
+
     <!-- barra de navegação -->
+    
+
     <nav class="navbar">
         <div class="logo">
             <img src="logo/Logo/logo svo branco.png" alt="Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="index.html" target="_itself">Inicio</a></li>
-            <li><a href="#noticias">Notícias</a></li>
-            <li><a href="#Serviços">Serviços</a></li>
-            <li><a href="#Profissionais">Profissionais</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="#profissionais">Profissionais</a></li>
             <li><a href="#Remoção">Remoção</a></li>
             <li><a href="#Agenda">Agenda</a></li>
         </ul>
-        <a href="#Contato" class="nos_contate">Nos Contate</a>
+        <!-- Ícone de acessibilidade -->
+    <div class="icone_acessibilidade" id="toggle-acessibilidade" title="Opções de acessibilidade">
+
+    <img src="imagens/Lowercase (1).png" alt="">
+
+    <!-- Painel de controles de acessibilidade -->
+    <div class="painel_acessibilidade" id="controles-acessibilidade">
+    <h3>Tamanho do Texto</h3>
+    <div class="controles_texto">
+        <div class="info_tamanho_fonte">
+            Tamanho atual: <span id="tamanho-fonte-atual">16px</span>
+        </div>
+        <div class="botoes_controle_fonte">
+            <button class="botao_controle_fonte" id="btn-diminuir-fonte" title="Diminuir tamanho do texto">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 13H5v-2h14v2z"></path>
+                </svg>
+            </button>
+            <button class="botao_controle_fonte" id="btn-aumentar-fonte" title="Aumentar tamanho do texto">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <button class="botao_resetar_fonte" id="btn-resetar-fonte">Restaurar tamanho padrão</button>
+    </div>
+    </div>
+       
 
         
         
@@ -168,45 +284,7 @@
             </div>
         </section>
         
-        <!-- Exemplo de página de profissional -->
-        <section class="bloco_institucional" id="exemplo-curriculo" style="display: none;">
-            <h2><i class="fas fa-user-md"></i> Currículo Detalhado</h2>
-            
-            <div class="moldura_institucional">
-                <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                    <img class="foto_institucional" src="/api/placeholder/150/150" alt="Dr. Nome do Médico" style="margin-right: 20px;">
-                    <div>
-                        <h3 class="nome_institucional">Dr. Nome do Médico</h3>
-                        <p class="cargo_institucional">Médico Patologista</p>
-                    </div>
-                </div>
-                
-                <h3><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h3>
-                <ul>
-                    <li>Doutorado em Patologia - Universidade XYZ (2010-2014)</li>
-                    <li>Residência Médica em Patologia - Hospital ABC (2005-2008)</li>
-                    <li>Graduação em Medicina - Universidade XYZ (1999-2004)</li>
-                </ul>
-                
-                <h3><i class="fas fa-briefcase"></i> Experiência Profissional</h3>
-                <ul>
-                    <li>Médico Patologista - Serviço de Verificação de Óbito (2015-atual)</li>
-                    <li>Professor de Patologia - Universidade XYZ (2012-atual)</li>
-                    <li>Médico Patologista - Hospital ABC (2008-2015)</li>
-                </ul>
-                
-                <h3><i class="fas fa-book"></i> Publicações Científicas</h3>
-                <ul>
-                    <li>Autor de XX artigos em periódicos internacionais</li>
-                    <li>Co-autor de X livros na área de Patologia</li>
-                    <li>Apresentação de trabalhos em congressos nacionais e internacionais</li>
-                </ul>
-                
-                <h3><i class="fas fa-envelope"></i> Contato Profissional</h3>
-                <p>Email: medico@svo.org</p>
-                <p>Telefone: (XX) XXXX-XXXX (horário comercial)</p>
-            </div>
-        </section>
+
     </div>
 
 
@@ -324,6 +402,97 @@
   <script>
     AOS.init();
   </script>
+  <script src="dark-mode.js"></script>
+
+     <script>
+        // Obter referência ao botão
+        const botaoVoltarAoTopo = document.getElementById('botaoVoltarAoTopo');
+        
+        // Mostrar ou ocultar o botão com base na posição de rolagem
+        // E atualizar o círculo de progresso
+        window.onscroll = function() {
+            // Calcular a porcentagem da página que foi rolada
+            const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
+            const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
+            
+            // Atualizar o círculo de progresso
+            atualizarCirculoProgresso(porcentagemRolagem);
+            
+            if (posicaoRolagem > 200) {
+                if (!botaoVoltarAoTopo.classList.contains('visivel')) {
+                    botaoVoltarAoTopo.style.display = "flex";
+                    // Pequeno atraso para garantir que o display: flex seja aplicado antes da animação
+                    setTimeout(() => {
+                        botaoVoltarAoTopo.classList.add('visivel');
+                    }, 10);
+                }
+            } else {
+                botaoVoltarAoTopo.classList.remove('visivel');
+                // Aguardar a animação terminar antes de esconder completamente
+                setTimeout(() => {
+                    if (!botaoVoltarAoTopo.classList.contains('visivel')) {
+                        botaoVoltarAoTopo.style.display = "none";
+                    }
+                }, 500);
+            }
+        };
+        
+        // Função para atualizar o círculo de progresso
+        function atualizarCirculoProgresso(porcentagem) {
+            const circuloProgresso = document.getElementById('circuloProgresso');
+            const raio = circuloProgresso.r.baseVal.value;
+            const circunferencia = 2 * Math.PI * raio;
+            
+            // Ajustar o offset para mostrar o progresso (invertido para mostrar o quanto falta)
+            const deslocamento = circunferencia - (porcentagem * circunferencia);
+            circuloProgresso.style.strokeDasharray = `${circunferencia} ${circunferencia}`;
+            circuloProgresso.style.strokeDashoffset = deslocamento;
+        }
+        
+        // Inicializar o círculo de progresso
+        window.addEventListener('DOMContentLoaded', () => {
+            // Para garantir que o círculo de progresso seja inicializado corretamente na carga da página
+            const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
+            const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
+            atualizarCirculoProgresso(porcentagemRolagem);
+        });
+        
+        // Função para voltar ao topo quando o botão é clicado
+        botaoVoltarAoTopo.addEventListener('click', function() {
+            // Posição atual de rolagem
+            const posicaoInicial = window.pageYOffset;
+            // Duração da animação em milissegundos (1.5 segundos)
+            const duracao = 500;
+            // Tempo de início
+            const tempoInicial = performance.now();
+            
+            function passoRolagem(timestamp) {
+                const tempoAtual = timestamp - tempoInicial;
+                
+                // Função de easing para uma animação mais suave (easeOutCubic)
+                const progresso = 1 - Math.pow(1 - Math.min(tempoAtual / duracao, 1), 3);
+                
+                // Calcular a nova posição de rolagem
+                window.scrollTo(0, posicaoInicial * (1 - progresso));
+                
+                // Atualizar o círculo de progresso durante a animação
+                const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
+                const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
+                atualizarCirculoProgresso(porcentagemRolagem);
+                
+                // Continuar a animação se não estiver completa
+                if (tempoAtual < duracao) {
+                    window.requestAnimationFrame(passoRolagem);
+                }
+            }
+            
+            // Iniciar a animação
+            window.requestAnimationFrame(passoRolagem);
+        });
+    </script>
   
 </body>
 </html>

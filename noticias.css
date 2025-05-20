@@ -1,0 +1,491 @@
+/* noticias html */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  
+body{
+    background-color: #fffde0;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  background-image: linear-gradient(to left, rgba(223, 221, 156, 0.591), rgba(255, 166, 0, 0.726));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo no canto esquerdo */
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* Links de navegação centralizados */
+.nav-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 70px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.nav-links li a:hover {
+  color: #e67e22;
+}
+
+/* Ícone de acessibilidade fixo no canto direito */
+.icone_acessibilidade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.328);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto; /* Move para o canto direito */
+}
+
+.icone_acessibilidade:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.icone_acessibilidade svg {
+  width: 24px;
+  height: 24px;
+  fill: rgb(0, 0, 0);
+}
+
+/* Painel de controles de acessibilidade */
+.painel_acessibilidade {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  padding: 15px;
+  z-index: 1000;
+  display: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.painel_acessibilidade.mostrar {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.painel_acessibilidade h3 {
+  color: #f5cd03;
+  margin-top: 0;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.controles_texto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.info_tamanho_fonte {
+  font-size: 14px;
+  color: #666;
+}
+
+.botoes_controle_fonte {
+  display: flex;
+  align-items: center;
+}
+
+.botao_controle_fonte {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.botao_controle_fonte:hover {
+  background-color: #e1e1e1;
+}
+
+.botao_controle_fonte img {
+  width: 16px;
+  height: 16px;
+}
+
+.botao_resetar_fonte {
+  background-color: #ff9100;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.botao_resetar_fonte:hover {
+  background-color: #00284d;
+}
+
+/* Ajuste responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 15px;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+  }
+  
+  .nav-container {
+    position: relative;
+    left: 0;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .icone_acessibilidade {
+    margin-left: 15px;
+  }
+  
+  .nos_contate {
+    margin: 10px auto 0;
+  }
+  
+  .painel_acessibilidade {
+    width: 200px;
+    right: 10px;
+  }
+  
+  .botao_controle_fonte {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+.body {
+  background-color: #fdfbe9; /* tom de fundo suave como na imagem */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 2rem;
+}
+
+/* Container centralizado */
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Card padrão */
+.card  {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 40px;
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  margin-top: 3rem; /* Adicionando margem no topo */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Sobreposição do texto */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.overlay h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.overlay p {
+  margin: 0.3rem 0 0;
+  font-size: 1rem;
+}
+
+/* Linha com os dois cards pequenos */
+.card-row {
+  display: flex;
+  gap: 20px;
+  min-height: 200px; /* Adicionando uma altura mínima */
+}
+
+/* Card pequeno com tamanho menor */
+.small-card {
+  position: relative;
+  width: 100%;
+  height: 275px; /* Ajustei a altura para corresponder à imagem */
+  flex: 1; /* distribui igualmente entre os dois */
+  border-radius: 20px; /* Arredondamento menor para os cards pequenos */
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.small-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.small-card .overlay {
+  padding: 0.8rem;
+}
+
+.small-card .overlay h2 {
+  font-size: 1.2rem;
+}
+
+.small-card .overlay p {
+  font-size: 0.9rem;
+}
+h1 {
+  color: #333;
+  margin-bottom: 2rem;
+  margin-top: 100px; /* Ajuste esse valor conforme necessário */
+  color: transparent; /* Torna o texto transparente para mostrar o background */
+  background-image: linear-gradient(to right, #FFA500, #FFD700); /* Laranja para amarelo dourado */
+  -webkit-background-clip: text; /* Recorta o background para o formato do texto (para navegadores WebKit) */
+  background-clip: text; /* Recorta o background para o formato do texto */
+}
+
+
+
+
+
+
+/*Footer*/
+
+.rodape_principal_svo {
+  background: linear-gradient(135deg, #FFD54F, #FFA000, #FF7043);
+  color: white;
+  padding: 40px 20px;
+  position: relative;
+  margin-top: 60px;
+}
+
+.conteudo_rodape_svo {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid_rodape_svo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+
+.coluna_rodape_svo {
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo_coluna_rodape {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.titulo_coluna_rodape::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+
+
+.texto_rodape_descricao {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+
+.lista_links_rodape {
+  list-style: none;
+}
+
+.item_link_rodape {
+  margin-bottom: 10px;
+}
+
+.link_rodape_navegacao {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.link_rodape_navegacao:hover {
+  transform: translateX(5px);
+}
+
+.link_rodape_navegacao::before {
+  content: '›';
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+
+.item_contato_rodape {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.icone_contato_rodape {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+}
+
+.texto_contato_rodape {
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+
+.barra_copyright_rodape {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.texto_copyright_rodape {
+  font-size: 0.9rem;
+}
+
+.logos_parceiros_rodape {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.logo_parceiro_rodape {
+  height: 40px;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.logo_parceiro_rodape:hover {
+  opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .grid_rodape_svo {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid_rodape_svo {
+      grid-template-columns: 1fr;
+      gap: 40px;
+  }
+  
+  .barra_copyright_rodape {
+      flex-direction: column;
+      text-align: center;
+  }
+}
