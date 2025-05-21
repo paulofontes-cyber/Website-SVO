@@ -12,6 +12,8 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="acessibilidade.js"></script>
     <script src="whats.js"></script>
+    <script src="menu.js"></script>
+    <link rel="stylesheet" href="menu.css">
     <style>
         @keyframes surgir {
             from { opacity: 0; transform: translateY(20px); }
@@ -99,58 +101,72 @@
         </div>
     </button>
 
-      <!-- barra de navegação -->
-   
+<!-- barra de navegação -->
 
     <nav class="navbar">
         <div class="logo">
             <img src="logo/Logo/logo svo branco.png" alt="Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#Inicio">Inicio</a></li>
             <li><a href="#noticias">Notícias</a></li>
-            <li><a href="institucional.html">Profissionais</a></li>
+            <li><a href="#Profissionais">Profissionais</a></li>
             <li><a href="#Remoção">Remoção</a></li>
-            <li><a href="#footer">Contato</a></li>
+            <li><a href="#Agenda">Agenda</a></li>
         </ul>
         <!-- Ícone de acessibilidade -->
-    <div class="icone_acessibilidade" id="toggle-acessibilidade" title="Opções de acessibilidade">
+        <div class="icone_acessibilidade" id="toggle-acessibilidade" title="Opções de acessibilidade">
 
-    <img src="imagens/Lowercase (1).png" alt="">
+            <img src="imagens/Lowercase (1).png" alt="">
 
-    <!-- Painel de controles de acessibilidade -->
-    <div class="painel_acessibilidade" id="controles-acessibilidade">
-    <h3>Tamanho do Texto</h3>
-    <div class="controles_texto">
-        <div class="info_tamanho_fonte">
-            Tamanho atual: <span id="tamanho-fonte-atual">16px</span>
+            <!-- Painel de controles de acessibilidade -->
+            <div class="painel_acessibilidade" id="controles-acessibilidade">
+                <h3>Tamanho do Texto</h3>
+                <div class="controles_texto">
+                    <div class="info_tamanho_fonte">
+                        Tamanho atual: <span id="tamanho-fonte-atual">16px</span>
+                    </div>
+                    <div class="botoes_controle_fonte">
+                        <button class="botao_controle_fonte" id="btn-diminuir-fonte" title="Diminuir tamanho do texto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13H5v-2h14v2z"></path>
+                            </svg>
+                        </button>
+                        <button class="botao_controle_fonte" id="btn-aumentar-fonte" title="Aumentar tamanho do texto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <button class="botao_resetar_fonte" id="btn-resetar-fonte">Restaurar tamanho padrão</button>
+            </div>
         </div>
-        <div class="botoes_controle_fonte">
-            <button class="botao_controle_fonte" id="btn-diminuir-fonte" title="Diminuir tamanho do texto">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 13H5v-2h14v2z"></path>
-                </svg>
-            </button>
-            <button class="botao_controle_fonte" id="btn-aumentar-fonte" title="Aumentar tamanho do texto">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
-                </svg>
-            </button>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </div>
-    <button class="botao_resetar_fonte" id="btn-resetar-fonte">Restaurar tamanho padrão</button>
-    </div>
-    </div>
-        
-
-        
-        
-    <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
     </nav>
+
+    <!-- Sidebar mobile -->
+<aside class="sidebar" id="sidebar">
+  
+    
+    <ul class="nav-links-mobile">
+        <li><a href="#Inicio">Inicio</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#Profissionais">Profissionais</a></li>
+        <li><a href="#Remoção">Remoção</a></li>
+        <li><a href="#Agenda">Agenda</a></li>
+    </ul>
+    
+    <div class="sidebar-footer">
+        © 2025 SVO
+    </div>
+</aside>
+
+   
 
     <section>
   <div class="container">

@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="dark-mode.css">
     <script src="acessibilidade.js"></script>
     <script src="whats.js"></script>
+    <script src="menu.js"></script>
+    <link rel="stylesheet" href="menu.css">
     <style>
         @keyframes surgir {
             from { opacity: 0; transform: translateY(20px); }
@@ -114,7 +116,7 @@
             <img src="logo/Logo/logo svo branco.png" alt="Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="#Inicio">Inicio</a></li>
+            <li><a href="">Inicio</a></li>
             <li><a href="#noticias">Notícias</a></li>
             <li><a href="#Profissionais">Profissionais</a></li>
             <li><a href="#Remoção">Remoção</a></li>
@@ -154,6 +156,23 @@
             <span></span>
         </div>
     </nav>
+
+    <!-- Sidebar mobile -->
+<aside class="sidebar" id="sidebar">
+  
+    
+    <ul class="nav-links-mobile">
+        <li><a href="#Inicio">Inicio</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#Profissionais">Profissionais</a></li>
+        <li><a href="#Remoção">Remoção</a></li>
+        <li><a href="#Agenda">Agenda</a></li>
+    </ul>
+    
+    <div class="sidebar-footer">
+        © 2025 SVO
+    </div>
+</aside>
 
     <!-- hero -->
     <div id="Inicio">
@@ -290,16 +309,11 @@
             <div class="left-rectangle" data-aos="zoom-out-left"></div>
             <div class="texto_prof">Equipe especializada e dedicada a oferecer o melhor atendimento.</div>
 
-            <a href="institucional.html" target="itself">
-                <button>
-                    <div class="botao_prof">
-                        <div class="botao_prof_texto">Profissionais</div>
-                    </div>
-                </button>
-            </a>
-
+            <a href="institucional.html" class="botao_prof" target="itself">Profissionais</a>
+        <h1 class="titulo_prof_0">Profissionais</h1>
         </div>
     </div>
+
     <!-- Agenda -->
 
     <div id="Agenda">

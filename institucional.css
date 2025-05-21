@@ -84,7 +84,8 @@ body, html {
   background-color: rgba(0, 0, 0, 0.328);
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: auto; /* Move para o canto direito */
+  margin-left: auto;
+  /* Move para o canto direito */
 }
 
 .icone_acessibilidade:hover {
@@ -187,51 +188,7 @@ body, html {
   background-color: #00284d;
 }
 
-/* Ajuste responsivo para dispositivos móveis */
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 10px 15px;
-  }
-  
-  .logo {
-    margin-bottom: 10px;
-  }
-  
-  .nav-container {
-    position: relative;
-    left: 0;
-    transform: none;
-    width: 100%;
-    justify-content: center;
-    margin: 10px 0;
-  }
-  
-  .nav-links {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .icone_acessibilidade {
-    margin-left: 15px;
-  }
-  
-  .nos_contate {
-    margin: 10px auto 0;
-  }
-  
-  .painel_acessibilidade {
-    width: 200px;
-    right: 10px;
-  }
-  
-  .botao_controle_fonte {
-    width: 28px;
-    height: 28px;
-  }
-}
+
 
 
 .conteudo_institucional {
