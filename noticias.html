@@ -1,93 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notícias</title>
+    <title>Notícias - SVO</title>
     <link rel="icon" href="logo/Logo/favicon/favicon_48x48.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="noticias.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="acessibilidade.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="menu.css">
     <script src="acessibilidade.js"></script>
     <script src="whats.js"></script>
     <script src="menu.js"></script>
-    <link rel="stylesheet" href="menu.css">
-    <style>
-        @keyframes surgir {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 0.9; transform: translateY(0); }
-        }
-        .botao-topo {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(145deg, #f3a621, #d29819);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            transition: all 0.4s ease;
-            opacity: 0.9;
-            z-index: 9999;
-            outline: none;
-            padding: 0;
-            overflow: visible;
-        }
-        
-        .botao-topo:hover {
-            background: linear-gradient(145deg, #fffb12, #efa506);
-            transform: scale(1.15) translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-            opacity: 1;
-        }
-        
-        .botao-topo:active {
-            transform: scale(0.95);
-        }
-        
-        .botao-topo.visivel {
-            display: flex;
-            animation: surgir 0.5s forwards;
-        }
-        
-        .circulo-progresso {
-            position: absolute;
-            width: 70px;
-            height: 70px;
-            top: -5px;
-            left: -5px;
-        }
-        
-        .circulo-base {
-            transition: stroke-dashoffset 0.3s;
-        }
-        
-        .circulo-valor {
-            transition: stroke-dashoffset 0.3s;
-        }
-        
-        .icone-seta {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-        
-        
-    </style>
 </head>
 <body>
 
-    <!-- voltar ao topo -->
-     <button class="botao-topo" id="botaoVoltarAoTopo" title="Voltar ao Topo">
+    <!-- Botão voltar ao topo -->
+    <button class="botao-topo" id="botaoVoltarAoTopo" title="Voltar ao Topo">
         <div class="circulo-progresso">
             <svg class="anel-progresso" width="70" height="70">
                 <circle class="circulo-base" stroke="rgba(255, 255, 255, 0.3)" stroke-width="3" fill="transparent" r="30" cx="35" cy="35"/>
@@ -101,24 +35,21 @@
         </div>
     </button>
 
-<!-- barra de navegação -->
-
+    <!-- Barra de navegação -->
     <nav class="navbar">
         <div class="logo">
             <img src="logo/Logo/logo svo branco.png" alt="Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="#Inicio">Inicio</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="#noticias">Notícias</a></li>
-            <li><a href="#Profissionais">Profissionais</a></li>
-            <li><a href="#Remoção">Remoção</a></li>
-            <li><a href="#Agenda">Agenda</a></li>
+            <li><a href="index.html#Profissionais">Profissionais</a></li>
+            <li><a href="index.html#Remoção">Remoção</a></li>
+            <li><a href="index.html#Agenda">Agenda</a></li>
         </ul>
         <!-- Ícone de acessibilidade -->
         <div class="icone_acessibilidade" id="toggle-acessibilidade" title="Opções de acessibilidade">
-
             <img src="imagens/Lowercase (1).png" alt="">
-
             <!-- Painel de controles de acessibilidade -->
             <div class="painel_acessibilidade" id="controles-acessibilidade">
                 <h3>Tamanho do Texto</h3>
@@ -150,252 +81,208 @@
     </nav>
 
     <!-- Sidebar mobile -->
-<aside class="sidebar" id="sidebar">
-  
-    
-    <ul class="nav-links-mobile">
-        <li><a href="#Inicio">Inicio</a></li>
-        <li><a href="#noticias">Notícias</a></li>
-        <li><a href="#Profissionais">Profissionais</a></li>
-        <li><a href="#Remoção">Remoção</a></li>
-        <li><a href="#Agenda">Agenda</a></li>
-    </ul>
-    
-    <div class="sidebar-footer">
-        © 2025 SVO
-    </div>
-</aside>
-
-   
-
-    <section>
-  <div class="container">
-    <h1>Notícias de Hoje</h1>
-
-    <div class="card">
-      <img src="./imagens/noticias.1.png" alt="Nova Unidade SVO">
-      <div class="overlay">
-        <h2>Jorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-        <p>Jorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-
-    <div class="card-row">
-      <div class="small-card">
-        <img src="./imagens/noticias.2.png" alt="SVO firma parceria">
-        <div class="overlay">
-          <h2>Jorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-          <p></p>
+    <aside class="sidebar" id="sidebar">
+        <ul class="nav-links-mobile">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#noticias">Notícias</a></li>
+            <li><a href="index.html#Profissionais">Profissionais</a></li>
+            <li><a href="index.html#Remoção">Remoção</a></li>
+            <li><a href="index.html#Agenda">Agenda</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            © 2025 SVO
         </div>
-      </div>
+    </aside>
 
-      <div class="small-card">
-        <img src="./imagens/noticias.3.png" alt="SVO recebe equipamentos">
-        <div class="overlay">
-          <h2>SVO recebe novos equipamentos</h2>
-          <p></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-       <section>
-       <div class="container">
-        <h1>Notícias de Semana</h1>
-        <div class="card">
-         <img src="./imagens/noticias1.png" alt="Nova Unidade SVO">
-         <div class="overlay">
-          <h2>Jorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-          <p>Jorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-         </div>
-        </div>
-      
-        <div class="card-row">
-         <div class="small-card">
-          <img src="./imagens/noticias 2.png" alt="SVO firma parceria">
-          <div class="overlay">
-           <h2>Jorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-           <p></p>
-          </div>
-         </div>
-      
-         <div class="small-card">
-          <img src="./imagens/noticias 3.png" alt="SVO recebe equipamentos">
-          <div class="overlay">
-           <h2>Jorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-           <p></p>
-          </div>
-         </div>
-        </div>
-       </div>
-       </section>
-           <section>
-       <div class="container">
-        <h1>Notícias do Mes</h1>
-        <div class="card">
-         <img src="./imagens/noticias 11 (1).png" alt="Nova Unidade SVO">
-         <div class="overlay">
-          <h2>Nova Unidade SVO</h2>
-          <p>Jorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-         </div>
-        </div>
-      
-        <div class="card-row">
-         <div class="small-card">
-          <img src="./imagens/noticias 11 (2).png" alt="SVO firma parceria">
-          <div class="overlay">
-           <h2>Lorem ipsum dolor sit amet consectetur</h2>
-           <p></p>
-          </div>
-         </div>
-      
-         <div class="small-card">
-          <img src="./imagens/noticias 11 (2).png" alt="SVO firma parceria">
-          <div class="overlay">
-           <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit </h2>
-           <p></p>
-          </div>
-         </div>
-        </div>
-       </div>
-       </section>
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <!-- Header da página -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Notícias de Saúde</h1>
+                <p class="page-subtitle">Mantenha-se informado com as últimas notícias e atualizações do setor de saúde</p>
+            </div>
+        </section>
 
-</div>
+        <!-- Loading indicator -->
+        <div class="loading-container" id="loadingContainer">
+            <div class="loading-spinner"></div>
+            <p>Carregando notícias...</p>
+        </div>
+
+        <!-- Container de notícias -->
+        <section class="news-grid-section">
+            <div class="container">
+                <!-- Notícia principal (destaque) -->
+                <article class="featured-news" id="featuredNews">
+                    <div class="news-image-container">
+                        <img src="/placeholder.svg?height=300&width=600" alt="Notícia em destaque" class="news-image">
+                        <div class="news-category">Saúde</div>
+                    </div>
+                    <div class="news-content">
+                        <h2 class="news-title">Carregando notícia principal...</h2>
+                        <p class="news-excerpt">Aguarde enquanto carregamos as últimas notícias de saúde.</p>
+                        <div class="news-meta">
+                            <span class="news-date">Carregando...</span>
+                            <a href="#" class="read-more-btn" target="_blank" rel="noopener noreferrer">
+                                Ler mais
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 17l10-10"/>
+                                    <path d="M7 7h10v10"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Grid de notícias secundárias -->
+                <div class="news-grid" id="newsGrid">
+                    <!-- As notícias serão inseridas aqui via JavaScript -->
+                </div>
+
+                <!-- Botão carregar mais -->
+                <div class="load-more-container">
+                    <button class="load-more-btn" id="loadMoreBtn">
+                        Carregar mais notícias
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 5v14"/>
+                            <path d="M19 12l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="rodape_principal_svo">
+        <div class="conteudo_rodape_svo">
+            <div class="grid_rodape_svo">
+                <!-- Coluna Sobre -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Sobre SVO</h3>
+                    <p class="texto_rodape_descricao">
+                        O Serviço de Verificação de Óbitos de Sergipe é gerido pela Fundação de Saúde Parreiras Horta (FSPH), 
+                        vinculada à Secretaria de Estado da Saúde (SES), atuando na verificação de causas de mortes naturais 
+                        e contribuindo para a saúde pública.
+                    </p>
+                </div>
+                
+                <!-- Coluna Links Úteis -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Links Úteis</h3>
+                    <ul class="lista_links_rodape">
+                        <li class="item_link_rodape">
+                            <a href="https://fsph.se.gov.br/" class="link_rodape_navegacao">Fundação de Saúde Parreiras Horta</a>
+                        </li>
+                        <li class="item_link_rodape">
+                            <a href="https://www.se.gov.br/" class="link_rodape_navegacao">Governo do Estado de Sergipe</a>
+                        </li>
+                        <li class="item_link_rodape">
+                            <a href="https://www.gov.br/saude./pt-br" class="link_rodape_navegacao">Ministério da Saúde</a>
+                        </li>
+                        <li class="item_link_rodape">
+                            <a href="https://saude.se.gov.br/" class="link_rodape_navegacao">Secretaria de Estado da Saúde</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Coluna Contato -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Contato</h3>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 1a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zm-1 2h-4v18h4V3z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">(79) 3234-6023</span>
+                    </div>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm9.06 8.683L5.648 6.238 4.353 7.762l7.72 6.555 7.581-6.56-1.308-1.513-6.285 5.439z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">svo@saude.se.gov.br</span>
+                    </div>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 20.9l4.95-4.95a7 7 0 1 0-9.9 0L12 20.9zm0 2.828l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">
+                            Rua Campo do Brito, 551<br>
+                            São José, Aracaju - SE<br>
+                            CEP: 49020-380
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Coluna Horários -->
+                <div class="coluna_rodape_svo">
+                    <h3 class="titulo_coluna_rodape">Horários</h3>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">Atendimento 24 horas</span>
+                    </div>
+                    <div class="item_contato_rodape">
+                        <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
+                        </svg>
+                        <span class="texto_contato_rodape">Liberação de óbitos: 7h às 19h</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Barra de copyright -->
+            <div class="barra_copyright_rodape">
+                <p class="texto_copyright_rodape">
+                    © 2024 SVO - Serviço de Verificação de Óbitos de Sergipe. Todos os direitos reservados.
+                </p>
+                <div class="logos_parceiros_rodape">
+                    <div class="logo_parceiro_rodape">FSPH - Fundação de Saúde Parreiras Horta</div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- VLibras Widget -->
-<div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
     </div>
-  </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
-   
-      <!-- Rodapé principal -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
-      <div id="footer">
-<footer class="rodape_principal_svo">
-      <div class="conteudo_rodape_svo">
-          <div class="grid_rodape_svo">
-              <!-- Coluna Sobre -->
-              <div class="coluna_rodape_svo">
-                  <h3 class="titulo_coluna_rodape">Sobre SVO</h3>
-                  <p class="texto_rodape_descricao">
-                      O Serviço de Verificação de Óbitos de Sergipe é gerido pela Fundação de Saúde Parreiras Horta (FSPH), 
-                      vinculada à Secretaria de Estado da Saúde (SES), atuando na verificação de causas de mortes naturais 
-                      e contribuindo para a saúde pública.
-                  </p>
-              </div>
-              
-              <!-- Coluna Links Úteis -->
-              <div class="coluna_rodape_svo">
-                  <h3 class="titulo_coluna_rodape">Links Úteis</h3>
-                  <ul class="lista_links_rodape">
-                      <li class="item_link_rodape">
-                          <a href="https://fsph.se.gov.br/" class="link_rodape_navegacao">Fundação de Saúde Parreiras Horta</a>
-                      </li>
-                      <li class="item_link_rodape">
-                          <a href="https://www.se.gov.br/" class="link_rodape_navegacao">Governo do Estado de Sergipe</a>
-                      </li>
-                      <li class="item_link_rodape">
-                          <a href="https://www.gov.br/saude./pt-br" class="link_rodape_navegacao">Ministério da Saúde</a>
-                      </li>
-                      <li class="item_link_rodape">
-                          <a href="https://saude.se.gov.br/" class="link_rodape_navegacao">Secretaria de Estado da Saúde</a>
-                      </li>
-                  </ul>
-              </div>
-              
-              <!-- Coluna Contato -->
-              <div class="coluna_rodape_svo">
-                  <h3 class="titulo_coluna_rodape">Contato</h3>
-                  <div class="item_contato_rodape">
-                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                          <path d="M12 1a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zm-1 2h-4v18h4V3z"></path>
-                      </svg>
-                      <span class="texto_contato_rodape">(79) 3234-6023</span>
-                  </div>
-                  <div class="item_contato_rodape">
-                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                          <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm9.06 8.683L5.648 6.238 4.353 7.762l7.72 6.555 7.581-6.56-1.308-1.513-6.285 5.439z"></path>
-                      </svg>
-                      <span class="texto_contato_rodape">svo@saude.se.gov.br</span>
-                  </div>
-                  <div class="item_contato_rodape">
-                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                          <path d="M12 20.9l4.95-4.95a7 7 0 1 0-9.9 0L12 20.9zm0 2.828l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"></path>
-                      </svg>
-                      <span class="texto_contato_rodape">
-                          Rua Campo do Brito, 551<br>
-                          São José, Aracaju - SE<br>
-                          CEP: 49020-380
-                      </span>
-                  </div>
-              </div>
-              
-              <!-- Coluna Horários -->
-              <div class="coluna_rodape_svo">
-                  <h3 class="titulo_coluna_rodape">Horários</h3>
-                  <div class="item_contato_rodape">
-                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                          <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
-                      </svg>
-                      <span class="texto_contato_rodape">Atendimento 24 horas</span>
-                  </div>
-                  <div class="item_contato_rodape">
-                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                          <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
-                      </svg>
-                      <span class="texto_contato_rodape">Liberação de óbitos: 7h às 19h</span>
-                  </div>
-              </div>
-          </div>
-          
-          <!-- Barra de copyright -->
-          <div class="barra_copyright_rodape">
-              <p class="texto_copyright_rodape">
-                  © 2024 SVO - Serviço de Verificação de Óbitos de Sergipe. Todos os direitos reservados.
-              </p>
-              <div class="logos_parceiros_rodape">
-                  <!-- Placeholders para logos -->
-                  <div class="logo_parceiro_rodape">FSPH - Fundação de Saúde Parreiras Horta</div>
-                  <div class="logo_parceiro_rodape"></div>
-                  <div class="logo_parceiro_rodape"></div>
-              </div>
-          </div>
-      </div>
-  </footer>
-      </div>
-
-          <script>
-        // Obter referência ao botão
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="dark-mode.js"></script>
+    <script src="noticias.js"></script>
+    <script>
+        // Script do botão voltar ao topo (mantido do original)
         const botaoVoltarAoTopo = document.getElementById('botaoVoltarAoTopo');
         
-        // Mostrar ou ocultar o botão com base na posição de rolagem
-        // E atualizar o círculo de progresso
         window.onscroll = function() {
-            // Calcular a porcentagem da página que foi rolada
             const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
             const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
             
-            // Atualizar o círculo de progresso
             atualizarCirculoProgresso(porcentagemRolagem);
             
             if (posicaoRolagem > 200) {
                 if (!botaoVoltarAoTopo.classList.contains('visivel')) {
                     botaoVoltarAoTopo.style.display = "flex";
-                    // Pequeno atraso para garantir que o display: flex seja aplicado antes da animação
                     setTimeout(() => {
                         botaoVoltarAoTopo.classList.add('visivel');
                     }, 10);
                 }
             } else {
                 botaoVoltarAoTopo.classList.remove('visivel');
-                // Aguardar a animação terminar antes de esconder completamente
                 setTimeout(() => {
                     if (!botaoVoltarAoTopo.classList.contains('visivel')) {
                         botaoVoltarAoTopo.style.display = "none";
@@ -404,63 +291,117 @@
             }
         };
         
-        // Função para atualizar o círculo de progresso
         function atualizarCirculoProgresso(porcentagem) {
             const circuloProgresso = document.getElementById('circuloProgresso');
             const raio = circuloProgresso.r.baseVal.value;
             const circunferencia = 2 * Math.PI * raio;
             
-            // Ajustar o offset para mostrar o progresso (invertido para mostrar o quanto falta)
             const deslocamento = circunferencia - (porcentagem * circunferencia);
             circuloProgresso.style.strokeDasharray = `${circunferencia} ${circunferencia}`;
             circuloProgresso.style.strokeDashoffset = deslocamento;
         }
         
-        // Inicializar o círculo de progresso
         window.addEventListener('DOMContentLoaded', () => {
-            // Para garantir que o círculo de progresso seja inicializado corretamente na carga da página
             const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
             const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
             atualizarCirculoProgresso(porcentagemRolagem);
         });
         
-        // Função para voltar ao topo quando o botão é clicado
         botaoVoltarAoTopo.addEventListener('click', function() {
-            // Posição atual de rolagem
             const posicaoInicial = window.pageYOffset;
-            // Duração da animação em milissegundos (1.5 segundos)
             const duracao = 500;
-            // Tempo de início
             const tempoInicial = performance.now();
             
             function passoRolagem(timestamp) {
                 const tempoAtual = timestamp - tempoInicial;
-                
-                // Função de easing para uma animação mais suave (easeOutCubic)
                 const progresso = 1 - Math.pow(1 - Math.min(tempoAtual / duracao, 1), 3);
                 
-                // Calcular a nova posição de rolagem
                 window.scrollTo(0, posicaoInicial * (1 - progresso));
                 
-                // Atualizar o círculo de progresso durante a animação
                 const posicaoRolagem = document.documentElement.scrollTop || document.body.scrollTop;
                 const alturaRolagem = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const porcentagemRolagem = (alturaRolagem > 0) ? (1 - (posicaoRolagem / alturaRolagem)) : 0;
                 atualizarCirculoProgresso(porcentagemRolagem);
                 
-                // Continuar a animação se não estiver completa
                 if (tempoAtual < duracao) {
                     window.requestAnimationFrame(passoRolagem);
                 }
             }
             
-            // Iniciar a animação
             window.requestAnimationFrame(passoRolagem);
         });
+
+        // Estilos para o botão voltar ao topo
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes surgir {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 0.9; transform: translateY(0); }
+            }
+            .botao-topo {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(145deg, #f3a621, #d29819);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                display: none;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                transition: all 0.4s ease;
+                opacity: 0.9;
+                z-index: 9999;
+                outline: none;
+                padding: 0;
+                overflow: visible;
+            }
+            
+            .botao-topo:hover {
+                background: linear-gradient(145deg, #fffb12, #efa506);
+                transform: scale(1.15) translateY(-5px);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+                opacity: 1;
+            }
+            
+            .botao-topo:active {
+                transform: scale(0.95);
+            }
+            
+            .botao-topo.visivel {
+                display: flex;
+                animation: surgir 0.5s forwards;
+            }
+            
+            .circulo-progresso {
+                position: absolute;
+                width: 70px;
+                height: 70px;
+                top: -5px;
+                left: -5px;
+            }
+            
+            .circulo-base {
+                transition: stroke-dashoffset 0.3s;
+            }
+            
+            .circulo-valor {
+                transition: stroke-dashoffset 0.3s;
+            }
+            
+            .icone-seta {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
-    
-<script src="dark-mode.js"></script>   
-<script src="noticias.js"></script>
 </body>
 </html>
