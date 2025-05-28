@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="icon" href="logo/Logo/favicon/favicon_48x48.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <script src="acessibilidade.js"></script>
+    <script src="whats.js"></script>
+    <script src="menu.js"></script>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <!-- barra de navegação -->
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo/Logo/logo svo branco.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="institucional.html">Institucional</a></li>
+            <li><a href="formulario.html">Remoção</a></li>
+            
+        </ul>
+        <!-- Ícone de acessibilidade -->
+        <div class="icone_acessibilidade" id="toggle-acessibilidade" title="Opções de acessibilidade">
+
+            <img src="imagens/Lowercase (1).png" alt="">
+
+            <!-- Painel de controles de acessibilidade -->
+            <div class="painel_acessibilidade" id="controles-acessibilidade">
+                <h3>Tamanho do Texto</h3>
+                <div class="controles_texto">
+                    <div class="info_tamanho_fonte">
+                        Tamanho atual: <span id="tamanho-fonte-atual">16px</span>
+                    </div>
+                    <div class="botoes_controle_fonte">
+                        <button class="botao_controle_fonte" id="btn-diminuir-fonte" title="Diminuir tamanho do texto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13H5v-2h14v2z"></path>
+                            </svg>
+                        </button>
+                        <button class="botao_controle_fonte" id="btn-aumentar-fonte" title="Aumentar tamanho do texto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <button class="botao_resetar_fonte" id="btn-resetar-fonte">Restaurar tamanho padrão</button>
+            </div>
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Sidebar mobile -->
+<aside class="sidebar" id="sidebar">
+  
+    
+    <ul class="nav-links-mobile">
+        <li><a href="#Inicio">Inicio</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#Profissionais">Profissionais</a></li>
+        <li><a href="#Remoção">Remoção</a></li>
+        <li><a href="#Agenda">Agenda</a></li>
+    </ul>
+    
+    <div class="sidebar-footer">
+        © 2025 SVO
+    </div>
+</aside>   
+    <header class="cabecalho-principal">
+        <div class="container text-center">
+            <h1><i class="fas fa-clipboard-list me-3"></i>Formulário de Remoção</h1>
+            <p class="mb-0">Serviço de Verificação de Óbitos - SVO</p>
+        </div>
+    </header>
+<body>
+    <div class="container-formulario">
+        <div class="barra-progresso-container">
+            <div class="etapas-navegacao">
+                <div class="etapa-item ativa" data-etapa="1">
+                    <div class="numero-etapa">1</div>
+                    <span class="d-none d-md-inline">Triagem</span>
+                </div>
+                <div class="etapa-item" data-etapa="2">
+                    <div class="numero-etapa">2</div>
+                    <span class="d-none d-md-inline">Dados Pessoais</span>
+                </div>
+                <div class="etapa-item" data-etapa="3">
+                    <div class="numero-etapa">3</div>
+                    <span class="d-none d-md-inline">Documentação</span>
+                </div>
+                <div class="etapa-item" data-etapa="4">
+                    <div class="numero-etapa">4</div>
+                    <span class="d-none d-md-inline">Endereço</span>
+                </div>
+                <div class="etapa-item" data-etapa="5">
+                    <div class="numero-etapa">5</div>
+                    <span class="d-none d-md-inline">Finalização</span>
+                </div>
+            </div>
+            <div class="linha-progresso">
+                <div class="progresso-preenchido" style="width: 20%"></div>
+            </div>
+            <div class="text-center mt-2">
+                <small>Etapa <span id="etapa-atual">1</span> de 5</small>
+            </div>
+        </div>
+
+        <form id="formulario-funerario">
+            <!-- ETAPA 1: TRIAGEM INTERATIVA -->
+            <div class="secao-formulario ativa" data-secao="1">
+                <h3><i class="fas fa-search icone-secao"></i>Triagem Interativa</h3>
+                
+                <div class="mb-4">
+                    <label class="form-label campo-obrigatorio">O falecido possuía plano funerário?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="plano-sim" name="plano_funerario" value="sim" class="form-check-input">
+                            <label for="plano-sim">Sim</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="plano-nao" name="plano_funerario" value="nao" class="form-check-input">
+                            <label for="plano-nao">Não</label>
+                        </div>
+                    </div>
+                    <div class="alerta-vermelho" id="alerta-plano">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>ATENÇÃO:</strong> Neste cenário, o SVO não realiza o recolhimento do corpo.
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label campo-obrigatorio">O falecido fazia uso de medicamentos?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="medicamentos-sim" name="uso_medicamentos" value="sim" class="form-check-input">
+                            <label for="medicamentos-sim">Sim</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="medicamentos-nao" name="uso_medicamentos" value="nao" class="form-check-input">
+                            <label for="medicamentos-nao">Não</label>
+                        </div>
+                    </div>
+                    <div class="subcampos" id="subcampos-medicamentos">
+                        <div class="mb-3">
+                            <label for="lista-medicamentos" class="form-label">Lista de medicamentos</label>
+                            <textarea class="form-control" id="lista-medicamentos" rows="4" placeholder="Descreva os medicamentos utilizados pelo falecido..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prescricoes" class="form-label">Prescrições médicas (PDF/IMG)</label>
+                            <input type="file" class="form-control" id="prescricoes" multiple accept=".pdf,.jpg,.jpeg,.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label campo-obrigatorio">O falecido estava acompanhado no momento do óbito?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="acompanhado-sim" name="estava_acompanhado" value="sim" class="form-check-input">
+                            <label for="acompanhado-sim">Sim</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="acompanhado-nao" name="estava_acompanhado" value="nao" class="form-check-input">
+                            <label for="acompanhado-nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label campo-obrigatorio">O corpo foi movido do local do óbito?</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="movido-sim" name="corpo_movido" value="sim" class="form-check-input">
+                            <label for="movido-sim">Sim</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="movido-nao" name="corpo_movido" value="nao" class="form-check-input">
+                            <label for="movido-nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETAPA 2: DADOS PESSOAIS -->
+            <div class="secao-formulario" data-secao="2">
+                <h3><i class="fas fa-user icone-secao"></i>Dados Pessoais do Declarante</h3>
+                
+                <div class="alerta-amarelo">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>DOCUMENTAÇÃO NECESSÁRIA NO LOCAL:</strong><br>
+                    Apresentar documento de identidade com foto e CPF originais no atendimento presencial.
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="nome-declarante" class="form-label campo-obrigatorio">Nome completo do declarante</label>
+                        <input type="text" class="form-control" id="nome-declarante" required>
+                        <div class="mensagem-erro">Este campo é obrigatório</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="tipo-documento" class="form-label campo-obrigatorio">Tipo de documento</label>
+                        <select class="form-control" id="tipo-documento" required>
+                            <option value="">Selecione...</option>
+                            <option value="rg">RG</option>
+                            <option value="cnh">CNH</option>
+                            <option value="carteira-trabalho">Carteira de Trabalho</option>
+                        </select>
+                        <div class="mensagem-erro">Selecione um tipo de documento</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="numero-documento" class="form-label campo-obrigatorio">Número do documento</label>
+                        <input type="text" class="form-control" id="numero-documento" required>
+                        <div class="mensagem-erro">Este campo é obrigatório</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cpf-declarante" class="form-label campo-obrigatorio">CPF do declarante</label>
+                        <input type="text" class="form-control" id="cpf-declarante" placeholder="000.000.000-00" required>
+                        <div class="mensagem-erro">CPF inválido</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="telefone-contato" class="form-label campo-obrigatorio">Telefone para contato</label>
+                        <input type="text" class="form-control" id="telefone-contato" placeholder="(00) 00000-0000" required>
+                        <div class="mensagem-erro">Telefone inválido</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETAPA 3: DOCUMENTAÇÃO -->
+            <div class="secao-formulario" data-secao="3">
+                <h3><i class="fas fa-file-alt icone-secao"></i>Documentação</h3>
+                
+                <div class="alerta-amarelo">
+                    <i class="fas fa-home me-2"></i>
+                    <strong>REQUISITO PARA REMOÇÃO:</strong><br>
+                    É obrigatória a apresentação de comprovante de residência em nome do declarante e/ou falecido.
+                </div>
+
+                <div class="mb-4">
+                    <h5>Documentação Médica (Opcional)</h5>
+                    <div class="mb-3">
+                        <label for="exames-medicos" class="form-label">Upload de exames médicos</label>
+                        <input type="file" class="form-control" id="exames-medicos" multiple accept=".pdf,.jpg,.jpeg,.png">
+                        <small class="text-muted">Aceita arquivos PDF, JPG e PNG</small>
+                    </div>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Observação:</strong> Documentos físicos deverão ser apresentados durante o atendimento presencial.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETAPA 4: ENDEREÇO -->
+            <div class="secao-formulario" data-secao="4">
+                <h3><i class="fas fa-map-marker-alt icone-secao"></i>Endereço de Remoção</h3>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="cep" class="form-label campo-obrigatorio">CEP</label>
+                        <input type="text" class="form-control" id="cep" placeholder="00000-000" required>
+                        <div class="mensagem-erro">CEP inválido</div>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label for="endereco" class="form-label campo-obrigatorio">Endereço completo</label>
+                        <input type="text" class="form-control" id="endereco" required>
+                        <div class="mensagem-erro">Este campo é obrigatório</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="numero" class="form-label campo-obrigatorio">Número</label>
+                        <input type="text" class="form-control" id="numero" required>
+                        <div class="mensagem-erro">Este campo é obrigatório</div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="complemento" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" id="complemento">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="bairro" class="form-label campo-obrigatorio">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" required>
+                        <div class="mensagem-erro">Este campo é obrigatório</div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cidade" class="form-label campo-obrigatorio">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" required>
+                        <div class="mensagem-erro">Este campo é obrigatório</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETAPA 5: FINALIZAÇÃO -->
+            <div class="secao-formulario" data-secao="5">
+                <h3><i class="fas fa-check-circle icone-secao"></i>Informações Finais</h3>
+                
+                <div class="alerta-amarelo">
+                    <i class="fas fa-users me-2"></i>
+                    <strong>DIRETRIZES DE ACOMPANHAMENTO:</strong><br>
+                    Apenas pessoas com grau de parentesco direto poderão acompanhar o corpo durante o processo.
+                </div>
+
+                <div class="alerta-vermelho" style="display: block;">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>DOCUMENTAÇÃO COMPULSÓRIA:</strong><br>
+                    A ausência de qualquer documento listado invalidará o protocolo no atendimento presencial.
+                </div>
+
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="aceito-termos" required>
+                    <label class="form-check-label" for="aceito-termos">
+                        Declaro que li e concordo com todas as informações e requisitos apresentados
+                    </label>
+                    <div class="mensagem-erro">Você deve aceitar os termos para continuar</div>
+                </div>
+            </div>
+
+            <!-- TELA DE CONFIRMAÇÃO -->
+            <div class="tela-confirmacao" id="tela-confirmacao" style="display: none;">
+                <i class="fas fa-check-circle text-success" style="font-size: 4rem;"></i>
+                <h2 class="mt-3">Protocolo Gerado com Sucesso!</h2>
+                <div class="protocolo-numero" id="numero-protocolo"></div>
+                <p class="text-muted">Guarde este número para acompanhamento do processo</p>
+                
+                <div class="mt-4">
+                    <h5>Próximos Passos:</h5>
+                    <ul class="list-unstyled text-start">
+                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Compareça ao SVO com todos os documentos originais</li>
+                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Apresente o número do protocolo no atendimento</li>
+                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Aguarde as orientações da equipe técnica</li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btn btn-primario mt-3" onclick="window.print()">
+                    <i class="fas fa-print me-2"></i>Imprimir Protocolo
+                </button>
+            </div>
+        </form>
+
+        <div class="d-flex justify-content-between p-3" id="botoes-navegacao">
+            <button type="button" class="btn btn-secundario" id="btn-anterior" onclick="etapaAnterior()" style="display: none;">
+                <i class="fas fa-arrow-left me-2"></i>Anterior
+            </button>
+            <button type="button" class="btn btn-primario" id="btn-proximo" onclick="proximaEtapa()">
+                Próximo<i class="fas fa-arrow-right ms-2"></i>
+            </button>
+        </div>
+    </div>
+
+        <!-- Rodapé principal -->
+    <footer class="rodape_principal_svo">
+      <div class="conteudo_rodape_svo">
+          <div class="grid_rodape_svo">
+              <!-- Coluna Sobre -->
+              <div class="coluna_rodape_svo">
+                  <h3 class="titulo_coluna_rodape">Sobre SVO</h3>
+                  <p class="texto_rodape_descricao">
+                      O Serviço de Verificação de Óbitos de Sergipe é gerido pela Fundação de Saúde Parreiras Horta (FSPH), 
+                      vinculada à Secretaria de Estado da Saúde (SES), atuando na verificação de causas de mortes naturais 
+                      e contribuindo para a saúde pública.
+                  </p>
+              </div>
+              
+              <!-- Coluna Links Úteis -->
+              <div class="coluna_rodape_svo">
+                  <h3 class="titulo_coluna_rodape">Links Úteis</h3>
+                  <ul class="lista_links_rodape">
+                      <li class="item_link_rodape">
+                          <a href="https://fsph.se.gov.br/" class="link_rodape_navegacao">Fundação de Saúde Parreiras Horta</a>
+                      </li>
+                      <li class="item_link_rodape">
+                          <a href="https://www.se.gov.br/" class="link_rodape_navegacao">Governo do Estado de Sergipe</a>
+                      </li>
+                      <li class="item_link_rodape">
+                          <a href="https://www.gov.br/saude./pt-br" class="link_rodape_navegacao">Ministério da Saúde</a>
+                      </li>
+                      <li class="item_link_rodape">
+                          <a href="https://saude.se.gov.br/" class="link_rodape_navegacao">Secretaria de Estado da Saúde</a>
+                      </li>
+                  </ul>
+              </div>
+              
+              <!-- Coluna Contato -->
+              <div class="coluna_rodape_svo">
+                  <h3 class="titulo_coluna_rodape">Contato</h3>
+                  <div class="item_contato_rodape">
+                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                          <path d="M12 1a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zm-1 2h-4v18h4V3z"></path>
+                      </svg>
+                      <span class="texto_contato_rodape">(79) 3234-6023</span>
+                  </div>
+                  <div class="item_contato_rodape">
+                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                          <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm9.06 8.683L5.648 6.238 4.353 7.762l7.72 6.555 7.581-6.56-1.308-1.513-6.285 5.439z"></path>
+                      </svg>
+                      <span class="texto_contato_rodape">svo@saude.se.gov.br</span>
+                  </div>
+                  <div class="item_contato_rodape">
+                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                          <path d="M12 20.9l4.95-4.95a7 7 0 1 0-9.9 0L12 20.9zm0 2.828l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"></path>
+                      </svg>
+                      <span class="texto_contato_rodape">
+                          Rua Campo do Brito, 551<br>
+                          São José, Aracaju - SE<br>
+                          CEP: 49020-380
+                      </span>
+                  </div>
+              </div>
+              
+              <!-- Coluna Horários -->
+              <div class="coluna_rodape_svo">
+                  <h3 class="titulo_coluna_rodape">Horários</h3>
+                  <div class="item_contato_rodape">
+                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                          <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
+                      </svg>
+                      <span class="texto_contato_rodape">Atendimento 24 horas</span>
+                  </div>
+                  <div class="item_contato_rodape">
+                      <svg class="icone_contato_rodape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                          <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z"></path>
+                      </svg>
+                      <span class="texto_contato_rodape">Liberação de óbitos: 7h às 19h</span>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Barra de copyright -->
+          <div class="barra_copyright_rodape">
+              <p class="texto_copyright_rodape">
+                  © 2024 SVO - Serviço de Verificação de Óbitos de Sergipe. Todos os direitos reservados.
+              </p>
+              <div class="logos_parceiros_rodape">
+                  <!-- Placeholders para logos -->
+                  <div class="logo_parceiro_rodape">FSPH - Fundação de Saúde Parreiras Horta</div>
+                  <div class="logo_parceiro_rodape"></div>
+                  <div class="logo_parceiro_rodape"></div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+    <!-- VLibras Widget -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let etapaAtual = 1;
+        const totalEtapas = 5;
+        let dadosFormulario = {};
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            configurarEventos();
+            carregarDadosSalvos();
+        });
+
+        function configurarEventos() {
+            // Eventos para campos condicionais
+            document.querySelectorAll('input[name="plano_funerario"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const alerta = document.getElementById('alerta-plano');
+                    if (this.value === 'sim') {
+                        alerta.style.display = 'block';
+                    } else {
+                        alerta.style.display = 'none';
+                    }
+                });
+            });
+
+            document.querySelectorAll('input[name="uso_medicamentos"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const subcampos = document.getElementById('subcampos-medicamentos');
+                    if (this.value === 'sim') {
+                        subcampos.style.display = 'block';
+                    } else {
+                        subcampos.style.display = 'none';
+                    }
+                });
+            });
+
+            // Máscaras de input
+            aplicarMascaras();
+
+            // Validação em tempo real
+            configurarValidacaoTempoReal();
+
+            // Auto-complete de CEP
+            document.getElementById('cep').addEventListener('blur', buscarCEP);
+        }
+
+        function aplicarMascaras() {
+            // Máscara CPF
+            document.getElementById('cpf-declarante').addEventListener('input', function(e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+                valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+                valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+                e.target.value = valor;
+            });
+
+            // Máscara Telefone
+            document.getElementById('telefone-contato').addEventListener('input', function(e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                valor = valor.replace(/(\d{2})(\d)/, '($1) $2');
+                valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
+                e.target.value = valor;
+            });
+
+            // Máscara CEP
+            document.getElementById('cep').addEventListener('input', function(e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
+                e.target.value = valor;
+            });
+        }
+
+        function configurarValidacaoTempoReal() {
+            const campos = document.querySelectorAll('input[required], select[required]');
+            campos.forEach(campo => {
+                campo.addEventListener('blur', function() {
+                    validarCampo(this);
+                });
+            });
+        }
+
+        function validarCampo(campo) {
+            const valor = campo.value.trim();
+            let valido = true;
+
+            // Validações específicas
+            if (campo.id === 'cpf-declarante') {
+                valido = validarCPF(valor);
+            } else if (campo.id === 'telefone-contato') {
+                valido = valor.length >= 14; // (00) 00000-0000
+            } else if (campo.id === 'cep') {
+                valido = valor.length === 9; // 00000-000
+            } else {
+                valido = valor !== '';
+            }
+
+            // Aplicar estilos de validação
+            if (valido) {
+                campo.classList.remove('campo-invalido');
+                campo.nextElementSibling?.style.setProperty('display', 'none');
+            } else {
+                campo.classList.add('campo-invalido');
+                campo.nextElementSibling?.style.setProperty('display', 'block');
+            }
+
+            return valido;
+        }
+
+        function validarCPF(cpf) {
+            cpf = cpf.replace(/\D/g, '');
+            if (cpf.length !== 11) return false;
+            
+            // Verificação básica (não implementação completa do algoritmo)
+            if (/^(\d)\1{10}$/.test(cpf)) return false;
+            
+            return true;
+        }
+
+        function buscarCEP() {
+            const cep = document.getElementById('cep').value.replace(/\D/g, '');
+            if (cep.length === 8) {
+                fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.erro) {
+                            document.getElementById('endereco').value = data.logradouro;
+                            document.getElementById('bairro').value = data.bairro;
+                            document.getElementById('cidade').value = data.localidade;
+                        }
+                    })
+                    .catch(error => console.log('Erro ao buscar CEP:', error));
+            }
+        }
+
+        function proximaEtapa() {
+            if (validarEtapaAtual()) {
+                salvarDadosEtapa();
+                
+                if (etapaAtual < totalEtapas) {
+                    etapaAtual++;
+                    atualizarInterface();
+                } else {
+                    finalizarFormulario();
+                }
+            }
+        }
+
+        function etapaAnterior() {
+            if (etapaAtual > 1) {
+                etapaAtual--;
+                atualizarInterface();
+            }
+        }
+
+        function validarEtapaAtual() {
+            const secaoAtual = document.querySelector(`[data-secao="${etapaAtual}"]`);
+            const camposObrigatorios = secaoAtual.querySelectorAll('input[required], select[required]');
+            let todosValidos = true;
+
+            // Validação específica para etapa 1 (radio buttons)
+            if (etapaAtual === 1) {
+                const grupos = ['plano_funerario', 'uso_medicamentos', 'estava_acompanhado', 'corpo_movido'];
+                grupos.forEach(grupo => {
+                    const selecionado = document.querySelector(`input[name="${grupo}"]:checked`);
+                    if (!selecionado) {
+                        todosValidos = false;
+                        // Destacar grupo não preenchido
+                        const container = document.querySelector(`input[name="${grupo}"]`).closest('.mb-4');
+                        container.style.border = '2px solid var(--cor-perigo)';
+                        container.style.borderRadius = '8px';
+                        container.style.padding = '1rem';
+                    }
+                });
+            } else {
+                // Validação para outras etapas
+                camposObrigatorios.forEach(campo => {
+                    if (!validarCampo(campo)) {
+                        todosValidos = false;
+                    }
+                });
+            }
+
+            // Validação específica para etapa 5 (checkbox)
+            if (etapaAtual === 5) {
+                const checkbox = document.getElementById('aceito-termos');
+                if (!checkbox.checked) {
+                    todosValidos = false;
+                    validarCampo(checkbox);
+                }
+            }
+
+            return todosValidos;
+        }
+
+        function atualizarInterface() {
+            // Atualizar seções
+            document.querySelectorAll('.secao-formulario').forEach(secao => {
+                secao.classList.remove('ativa');
+            });
+            document.querySelector(`[data-secao="${etapaAtual}"]`).classList.add('ativa');
+
+            // Atualizar barra de progresso
+            const progresso = (etapaAtual / totalEtapas) * 100;
+            document.querySelector('.progresso-preenchido').style.width = `${progresso}%`;
+            document.getElementById('etapa-atual').textContent = etapaAtual;
+
+            // Atualizar navegação de etapas
+            document.querySelectorAll('.etapa-item').forEach((item, index) => {
+                item.classList.remove('ativa', 'concluida');
+                if (index + 1 === etapaAtual) {
+                    item.classList.add('ativa');
+                } else if (index + 1 < etapaAtual) {
+                    item.classList.add('concluida');
+                }
+            });
+
+            // Atualizar botões
+            const btnAnterior = document.getElementById('btn-anterior');
+            const btnProximo = document.getElementById('btn-proximo');
+            
+            btnAnterior.style.display = etapaAtual > 1 ? 'block' : 'none';
+            
+            if (etapaAtual === totalEtapas) {
+                btnProximo.innerHTML = '<i class="fas fa-check me-2"></i>Finalizar';
+            } else {
+                btnProximo.innerHTML = 'Próximo<i class="fas fa-arrow-right ms-2"></i>';
+            }
+        }
+
+        function salvarDadosEtapa() {
+            const secaoAtual = document.querySelector(`[data-secao="${etapaAtual}"]`);
+            const campos = secaoAtual.querySelectorAll('input, select, textarea');
+            
+            campos.forEach(campo => {
+                if (campo.type === 'radio') {
+                    if (campo.checked) {
+                        dadosFormulario[campo.name] = campo.value;
+                    }
+                } else if (campo.type === 'checkbox') {
+                    dadosFormulario[campo.id] = campo.checked;
+                } else {
+                    dadosFormulario[campo.id] = campo.value;
+                }
+            });
+
+            // Salvar no localStorage
+            localStorage.setItem('dadosFormularioSVO', JSON.stringify(dadosFormulario));
+        }
+
+        function carregarDadosSalvos() {
+            const dadosSalvos = localStorage.getItem('dadosFormularioSVO');
+            if (dadosSalvos) {
+                dadosFormulario = JSON.parse(dadosSalvos);
+                
+                // Restaurar valores nos campos
+                Object.keys(dadosFormulario).forEach(chave => {
+                    const campo = document.getElementById(chave) || document.querySelector(`input[name="${chave}"]`);
+                    if (campo) {
+                        if (campo.type === 'radio') {
+                            const radioCorreto = document.querySelector(`input[name="${chave}"][value="${dadosFormulario[chave]}"]`);
+                            if (radioCorreto) radioCorreto.checked = true;
+                        } else if (campo.type === 'checkbox') {
+                            campo.checked = dadosFormulario[chave];
+                        } else {
+                            campo.value = dadosFormulario[chave];
+                        }
+                    }
+                });
+            }
+        }
+
+function finalizarFormulario() {
+    // Gerar protocolo
+    const protocolo = gerarProtocolo();
+    
+    // Ocultar formulário e mostrar confirmação
+    document.querySelectorAll('.secao-formulario').forEach(secao => {
+        secao.style.display = 'none';
+    });
+    document.getElementById('botoes-navegacao').style.display = 'none';
+    document.getElementById('tela-confirmacao').style.display = 'block';
+    document.getElementById('numero-protocolo').textContent = protocolo;
+
+    // Limpar dados salvos
+    localStorage.removeItem('dadosFormularioSVO');
+}
+
+        function gerarProtocolo() {
+            const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const numeros = '0123456789';
+            
+            let protocolo = 'SVO-';
+            
+            // 4 letras aleatórias
+            for (let i = 0; i < 4; i++) {
+                protocolo += letras.charAt(Math.floor(Math.random() * letras.length));
+            }
+            
+            protocolo += '-';
+            
+            // 4 números aleatórios
+            for (let i = 0; i < 4; i++) {
+                protocolo += numeros.charAt(Math.floor(Math.random() * numeros.length));
+            }
+            
+            return protocolo;
+        }
+    </script>
+
+    <script src="dark-mode.js"></script>
+</body>
+</html>
