@@ -195,6 +195,754 @@ html {
   background-color: #00284d;
 }
 
+/* Seção Protocolo */
+.secao_protocolo {
+  margin: 3rem 0;
+  padding: 0;
+  background: transparent;
+  position: relative;
+  
+}
+
+.container_protocolo {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+/* Círculo Amarelo/Laranja com CSS */
+.circulo_amarelo {
+  position: absolute;
+  left: -190px;
+  top: -100px;
+  width: 1000px;
+  height: 900px; 
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: -10px 0 20px rgba(14, 14, 82, 0.8), 90px 0 400px rgb(7, 7, 57);
+  
+}
+
+
+/* Elipse Azul de Transição com CSS */
+
+
+/* Lado Esquerdo com Conteúdo */
+.lado_esquerdo {
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 400px;
+}
+
+.titulo_buscar {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Campo de Input */
+.campo_busca {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input_protocolo {
+  width: 100%;
+  height: 60px;
+  background-color: #080d52; /* Azul marinho */
+  border: none;
+  border-radius: 30px;
+  padding: 0 80px 0 25px;
+  font-size: 1.1rem;
+  color: white;
+  outline: none;
+  box-shadow: 0 8px 20px rgba(10, 17, 114, 0.3);
+  transition: all 0.3s ease;
+}
+
+.input_protocolo::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+.input_protocolo:focus {
+  box-shadow: 0 8px 25px rgba(10, 17, 114, 0.5);
+  transform: translateY(-2px);
+}
+
+.botao_buscar {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border: none;
+  border-radius: 50%;
+  color: #0a1172;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.botao_buscar:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Lado Direito com Imagem */
+.lado_direito {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 58%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.overlay_cinza {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(70, 75, 95, 0.8); /* Cinza azulado semi-transparente */
+  z-index: 1;
+}
+
+.container_imagem {
+  position: absolute;
+  top: 0;
+  left: 4;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.imagem_medica {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Área de Resultados */
+.area_resultados {
+  max-width: 1400px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+  display: none;
+}
+
+.resultado_sucesso {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #4CAF50;
+  margin-top: 2rem;
+}
+
+.resultado_erro {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #f44336;
+  margin-top: 2rem;
+}
+
+.cabecalho_resultado {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.icone_resultado {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.icone_sucesso {
+  background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  color: #4CAF50;
+}
+
+.icone_erro {
+  background: linear-gradient(135deg, #FFEBEE, #FFCDD2);
+  color: #f44336;
+}
+
+.info_protocolo {
+  flex: 1;
+}
+
+.numero_protocolo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a1172;
+  margin-bottom: 0.5rem;
+}
+
+.status_protocolo {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  position: relative;
+  padding: 0 25px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  right: 50px;
+  height: 4px;
+  background: #e0e0e0;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.etapa {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.circulo_etapa {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.etapa.ativa .circulo_etapa {
+  background: linear-gradient(135deg, #FFA500, #FF8C00);
+  color: white;
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.3);
+}
+
+.etapa.concluida .circulo_etapa {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.nome_etapa {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.carregando {
+  text-align: center;
+  padding: 4rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #FFA500;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+  margin: 0 auto 1.5rem;
+}
+
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.texto_carregando {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subtexto_carregando {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* ===== VERSÃO MOBILE  ===== */
+
+@media (max-width: 768px) {
+  .secao_protocolo {
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+
+  .container_protocolo {
+    max-width: 100%;
+    height: auto;
+    min-height: 500px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Círculo amarelo adaptado para mobile */
+  .circulo_amarelo {
+    position: absolute;
+    left: -50%;
+    top: -8px;
+    width: 200%;
+    height: 250px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffa500 50%, #ff8c00 100%);
+    border-radius: 0 0 50% 50%;
+    z-index: 3;
+    box-shadow: 0 10px 30px rgba(14, 14, 82, 0.3);
+  }
+
+  /* Lado esquerdo reorganizado para mobile */
+  .lado_esquerdo {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    padding: 3rem 2rem 2rem 2rem;
+    z-index: 4;
+    text-align: center;
+  }
+
+  .titulo_buscar {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+  }
+
+  /* Campo de busca otimizado para mobile */
+  .campo_busca {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .input_protocolo {
+    width: 100%;
+    height: 55px;
+    background-color: #0a1172;
+    border: none;
+    border-radius: 27px;
+    padding: 0 70px 0 20px;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+    box-shadow: 0 8px 25px rgba(10, 17, 114, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  .input_protocolo::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+  }
+
+  .input_protocolo:focus {
+    box-shadow: 0 8px 30px rgba(10, 17, 114, 0.6);
+    transform: translateY(-1px);
+  }
+
+  .botao_buscar {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 39px;
+    height: 39px;
+    background: linear-gradient(135deg, #ffd700, #ffa500);
+    border: none;
+    border-radius: 50%;
+    color: #0a1172;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .botao_buscar:hover,
+  .botao_buscar:active {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Lado direito reorganizado para mobile */
+  .lado_direito {
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 250px;
+    z-index: 2;
+    overflow: hidden;
+    margin-top: 1rem;
+    border-radius: 10px;
+    
+  }
+
+  .overlay_cinza {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(70, 75, 95, 0.7);
+    z-index: 1;
+  }
+
+  .container_imagem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .imagem_medica {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Área de resultados mobile */
+  .area_resultados {
+    max-width: 100%;
+    margin: 1rem auto 0;
+    padding: 0 1rem;
+  }
+
+  .resultado_sucesso,
+  .resultado_erro {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+  }
+
+  .cabecalho_resultado {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .icone_resultado {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .info_protocolo {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .numero_protocolo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0a1172;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+
+  .status_protocolo {
+    color: #666;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  /* Timeline mobile - layout vertical */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    bottom: 30px;
+    width: 3px;
+    background: #e0e0e0;
+    z-index: 1;
+    border-radius: 2px;
+  }
+
+  .etapa {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    background: white;
+    padding: 0.5rem 0;
+  }
+
+  .circulo_etapa {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+  }
+
+  .etapa.ativa .circulo_etapa {
+    background: linear-gradient(135deg, #ffa500, #ff8c00);
+    color: white;
+    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.3);
+  }
+
+  .etapa.concluida .circulo_etapa {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+  }
+
+  .nome_etapa {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  /* Loading mobile */
+  .carregando {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+  }
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #ffa500;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin: 0 auto 1rem;
+  }
+
+  .texto_carregando {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtexto_carregando {
+    color: #666;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile pequeno (smartphones pequenos) */
+@media (max-width: 480px) {
+  .secao_protocolo {
+    margin: 1.5rem 0;
+    padding: 0 0.5rem;
+  }
+
+  .container_protocolo {
+    border-radius: 20px;
+    min-height: 450px;
+  }
+
+  .circulo_amarelo {
+    height: 200px;
+  }
+
+  .lado_esquerdo {
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .titulo_buscar {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .campo_busca {
+    max-width: 100%;
+  }
+
+  .input_protocolo {
+    height: 50px;
+    font-size: 0.95rem;
+    padding: 0 65px 0 18px;
+  }
+
+  .botao_buscar {
+    width: 36px;
+    height: 36px;
+    right: 7px;
+    font-size: 0.9rem;
+  }
+
+  .lado_direito {
+    height: 200px;
+    margin: 0.5rem;
+    border-radius: 15px;
+  }
+
+  .resultado_sucesso,
+  .resultado_erro {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .icone_resultado {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    margin-right: 0.8rem;
+  }
+
+  .numero_protocolo {
+    font-size: 1.2rem;
+  }
+
+  .status_protocolo {
+    font-size: 0.95rem;
+  }
+
+  .circulo_etapa {
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+
+  .nome_etapa {
+    font-size: 0.95rem;
+  }
+
+  .timeline::before {
+    left: 25px;
+  }
+
+  .carregando {
+    padding: 2rem 1rem;
+  }
+
+  .spinner {
+    width: 45px;
+    height: 45px;
+  }
+
+  .texto_carregando {
+    font-size: 1.1rem;
+  }
+
+  .subtexto_carregando {
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .container_protocolo {
+    min-height: 400px;
+  }
+
+  .circulo_amarelo {
+    height: 180px;
+  }
+
+  .lado_esquerdo {
+    padding: 2rem 1.5rem 1rem 1.5rem;
+  }
+
+  .titulo_buscar {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lado_direito {
+    height: 180px;
+  }
+}
+
+
+
 
         .cabecalho-principal {
             background: linear-gradient(135deg, var(--cor-primaria), #E6A532);

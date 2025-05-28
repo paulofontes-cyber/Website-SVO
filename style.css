@@ -842,13 +842,13 @@ html {
 
 /* Agenda */
         .secao-agenda {
-            max-width: 1000px;
             margin: 40px auto;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             background: #ffffff;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 100px;
         }
 
         
@@ -2153,3 +2153,7 @@ HEAD
     font-size: 15px;
   }
 }
+
+/*contato final*/
+
+

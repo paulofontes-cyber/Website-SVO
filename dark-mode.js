@@ -879,6 +879,230 @@ function addDarkModeCSS() {
             color: #ff6b6b;
         }
 
+        /* ===== ESTILOS PARA A SEÇÃO DE BUSCA DE PROTOCOLO ===== */
+        
+        /* Container principal */
+        body.dark-mode .secao_protocolo {
+            background-color: #1a1a1a;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        
+        body.dark-mode .container_protocolo {
+            background-color: #1e1e1e;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Círculo amarelo decorativo */
+        body.dark-mode .circulo_amarelo {
+            background: linear-gradient(135deg, #6b5102, #6b3a0c);
+            opacity: 0.7;
+            box-shadow: 0 10px 30px rgba(107, 81, 2, 0.4);
+        }
+        
+        /* Lado esquerdo */
+        body.dark-mode .lado_esquerdo {
+            background-color: transparent;
+        }
+        
+        body.dark-mode .titulo_buscar {
+            color: ${darkTheme.titleColor};
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Campo de busca */
+        body.dark-mode .campo_busca {
+            background-color: #252525;
+            border: 1px solid #444;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode .input_protocolo {
+            background-color: transparent;
+            color: ${darkTheme.textColor};
+            border-color: #444;
+        }
+        
+        body.dark-mode .input_protocolo::placeholder {
+            color: #888;
+        }
+        
+        body.dark-mode .input_protocolo:focus {
+            border-color: #FBB802;
+            box-shadow: 0 0 0 0.2rem rgba(251, 184, 2, 0.25);
+        }
+        
+        body.dark-mode .botao_buscar {
+            background: linear-gradient(135deg, #6b5102, #6b3a0c);
+            color: ${darkTheme.textColor};
+        }
+        
+        body.dark-mode .botao_buscar:hover {
+            background: linear-gradient(135deg, #FBB802, #e6a532);
+            color: #000;
+        }
+        
+        /* Lado direito com imagem */
+        body.dark-mode .lado_direito {
+            background-color: #252525;
+        }
+        
+        body.dark-mode .overlay_cinza {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        body.dark-mode .container_imagem {
+            border-color: #333;
+        }
+        
+        body.dark-mode .imagem_medica {
+            filter: brightness(0.85) contrast(1.1);
+        }
+        
+        /* Área de resultados */
+        body.dark-mode .area_resultados {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Carregamento */
+        body.dark-mode .carregando {
+            background-color: #252525;
+        }
+        
+        body.dark-mode .spinner {
+            border-color: #FBB802 transparent #FBB802 transparent;
+        }
+        
+        body.dark-mode .texto_carregando {
+            color: ${darkTheme.titleColor};
+        }
+        
+        body.dark-mode .subtexto_carregando {
+            color: #888;
+        }
+        
+        /* Resultados de sucesso */
+        body.dark-mode .resultado_sucesso {
+            background-color: #252525;
+            border-color: #333;
+        }
+        
+        body.dark-mode .cabecalho_resultado {
+            border-bottom-color: #333;
+        }
+        
+        body.dark-mode .icone_sucesso {
+            background-color: rgba(40, 167, 69, 0.2);
+            color: #28a745;
+        }
+        
+        body.dark-mode .numero_protocolo {
+            color: ${darkTheme.titleColor};
+        }
+        
+        body.dark-mode .status_protocolo {
+            color: #b0b0b0;
+        }
+        
+        /* Timeline */
+        body.dark-mode .timeline {
+            background-color: #1a1a1a;
+            border-color: #333;
+        }
+        
+        body.dark-mode .etapa {
+            color: #888;
+        }
+        
+        body.dark-mode .circulo_etapa {
+            background-color: #333;
+            border-color: #444;
+            color: #888;
+        }
+        
+        body.dark-mode .etapa.concluida .circulo_etapa {
+            background-color: #28a745;
+            color: #fff;
+            border-color: #28a745;
+        }
+        
+        body.dark-mode .etapa.ativa .circulo_etapa {
+            background-color: #FBB802;
+            color: #000;
+            border-color: #FBB802;
+        }
+        
+        body.dark-mode .etapa::after {
+            background-color: #444;
+        }
+        
+        body.dark-mode .etapa.concluida::after {
+            background-color: #28a745;
+        }
+        
+        body.dark-mode .nome_etapa {
+            color: #888;
+        }
+        
+        body.dark-mode .etapa.concluida .nome_etapa {
+            color: #28a745;
+        }
+        
+        body.dark-mode .etapa.ativa .nome_etapa {
+            color: #FBB802;
+        }
+        
+        /* Resultados de erro */
+        body.dark-mode .resultado_erro {
+            background-color: #252525;
+            border-color: #333;
+        }
+        
+        body.dark-mode .icone_erro {
+            background-color: rgba(220, 53, 69, 0.2);
+            color: #dc3545;
+        }
+        
+        /* Dicas para consulta no dark mode */
+        body.dark-mode .resultado_erro ul {
+            color: #b0b0b0;
+        }
+        
+        body.dark-mode .resultado_erro h6 {
+            color: #b0b0b0;
+        }
+        
+        body.dark-mode .resultado_erro div[style*="background: linear-gradient(135deg, #fff3cd, #ffeaa7)"] {
+            background: linear-gradient(135deg, #2d2a1b, #332b15) !important;
+            border-left: 4px solid #6b5102 !important;
+        }
+        
+        body.dark-mode .resultado_erro div[style*="margin-top: 1rem; text-align: center;"] button {
+            background: linear-gradient(135deg, #6b5102, #6b3a0c) !important;
+            color: ${darkTheme.textColor} !important;
+        }
+        
+        body.dark-mode .resultado_erro div[style*="margin-top: 1rem; text-align: center;"] button:hover {
+            background: linear-gradient(135deg, #FBB802, #e6a532) !important;
+            color: #000 !important;
+        }
+        
+        /* Próximos passos no dark mode */
+        body.dark-mode .resultado_sucesso div[style*="background: linear-gradient(135deg, #f8f9fa, #e9ecef)"] {
+            background: linear-gradient(135deg, #252525, #1e1e1e) !important;
+            border-left: 4px solid #6b5102 !important;
+        }
+        
+        body.dark-mode .resultado_sucesso div[style*="background: linear-gradient(135deg, #f8f9fa, #e9ecef)"] h5 {
+            color: ${darkTheme.titleColor} !important;
+        }
+        
+        body.dark-mode .resultado_sucesso div[style*="background: linear-gradient(135deg, #f8f9fa, #e9ecef)"] p {
+            color: #b0b0b0 !important;
+        }
+
         /* ===== ESTILOS PARA A PÁGINA DE PERFIL PROFISSIONAL ===== */
         
         /* Botão voltar */

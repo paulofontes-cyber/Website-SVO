@@ -120,9 +120,9 @@
         </div>
 
         <form id="formulario-funerario">
-            <!-- ETAPA 1: TRIAGEM INTERATIVA -->
+            <!-- ETAPA 1: TRIAGEM  -->
             <div class="secao-formulario ativa" data-secao="1">
-                <h3><i class="fas fa-search icone-secao"></i>Triagem Interativa</h3>
+                <h3><i class="fas fa-search icone-secao"></i>Questonário </h3>
                 
                 <div class="mb-4">
                     <label class="form-label campo-obrigatorio">O falecido possuía plano funerário?</label>
@@ -365,6 +365,43 @@
             </button>
         </div>
     </div>
+
+<!-- Seção Buscar Protocolo  -->
+<section class="secao_protocolo">
+  <div class="container_protocolo">
+    
+    <!-- Círculo Amarelo-->
+    <div class="circulo_amarelo"></div>
+    
+  
+    
+    <!-- Lado Esquerdo com Conteúdo -->
+    <div class="lado_esquerdo">
+      <h2 class="titulo_buscar">BUSCAR PROTOCOLO</h2>
+      
+      <div class="campo_busca">
+        <input type="text" id="input_protocolo" class="input_protocolo" placeholder="Digite o número do protocolo" maxlength="14">
+        <button type="button" id="botao_buscar" class="botao_buscar">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Lado Direito com Imagem da Médica -->
+    <div class="lado_direito">
+      <div class="overlay_cinza"></div>
+      <div class="container_imagem">
+        <img src="imagens/imagem protocolo.webp" alt="Médica profissional" class="imagem_medica">
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- Área de Resultados -->
+  <div id="area_resultados" class="area_resultados">
+    <!-- Resultados aparecerão aqui -->
+  </div>
+</section>
 
         <!-- Rodapé principal -->
     <footer class="rodape_principal_svo">
@@ -778,6 +815,311 @@ function finalizarFormulario() {
             
             return protocolo;
         }
+    </script>
+
+    <script>
+// JavaScript para Seção Protocolo - Versão Revisada e Completa
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script de protocolo carregado');
+    
+    // Elementos do DOM
+    const inputProtocolo = document.getElementById('input_protocolo');
+    const botaoBuscar = document.getElementById('botao_buscar');
+    const areaResultados = document.getElementById('area_resultados');
+    
+    // Verificar se os elementos existem
+    if (!inputProtocolo) {
+        console.error('Elemento input_protocolo não encontrado');
+        return;
+    }
+    
+    if (!botaoBuscar) {
+        console.error('Elemento botao_buscar não encontrado');
+        return;
+    }
+    
+    if (!areaResultados) {
+        console.error('Elemento area_resultados não encontrado');
+        return;
+    }
+    
+    console.log('Todos os elementos encontrados, configurando eventos...');
+    
+    // Configurar eventos
+    configurarEventos();
+    
+    function configurarEventos() {
+        // Evento do botão buscar
+        botaoBuscar.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Botão buscar clicado');
+            executarBusca();
+        });
+        
+        // Buscar ao pressionar Enter
+        inputProtocolo.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                console.log('Enter pressionado');
+                executarBusca();
+            }
+        });
+        
+        // Formatação automática do protocolo
+        inputProtocolo.addEventListener('input', function(e) {
+            formatarInputProtocolo(e.target);
+        });
+        
+        // Efeitos visuais no foco
+        inputProtocolo.addEventListener('focus', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 8px 25px rgba(10, 17, 114, 0.5)';
+        });
+        
+        inputProtocolo.addEventListener('blur', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '0 8px 20px rgba(10, 17, 114, 0.3)';
+        });
+        
+        console.log('Eventos configurados com sucesso');
+    }
+    
+    function formatarInputProtocolo(input) {
+        let valor = input.value.replace(/[^A-Za-z0-9-]/g, '').toUpperCase();
+        
+        // Aplicar formato SVO-XXXX-XXXX
+        if (valor.length > 0) {
+            // Se não começar com SVO-, adicionar
+            if (!valor.startsWith('SVO-')) {
+                if (valor.length <= 3) {
+                    valor = 'SVO-' + valor;
+                } else {
+                    // Pegar os primeiros 4 caracteres após SVO-
+                    let parte1 = valor.substring(0, 4);
+                    let resto = valor.substring(4);
+                    valor = 'SVO-' + parte1;
+                    
+                    // Adicionar segundo hífen se necessário
+                    if (resto.length > 0) {
+                        valor += '-' + resto;
+                    }
+                }
+            } else {
+                // Já começa com SVO-, verificar segundo hífen
+                if (valor.length > 8 && valor.charAt(8) !== '-') {
+                    valor = valor.substring(0, 8) + '-' + valor.substring(8);
+                }
+            }
+        }
+        
+        // Limitar a 14 caracteres (SVO-XXXX-XXXX)
+        input.value = valor.substring(0, 14);
+    }
+    
+    function executarBusca() {
+        const protocolo = inputProtocolo.value.trim();
+        console.log('Executando busca para protocolo:', protocolo);
+        
+        if (!protocolo) {
+            mostrarErro('Por favor, digite um número de protocolo');
+            return;
+        }
+        
+        if (!validarFormatoProtocolo(protocolo)) {
+            mostrarErro('Formato inválido. Use o formato: SVO-XXXX-XXXX');
+            return;
+        }
+        
+        mostrarCarregamento();
+        simularBusca(protocolo);
+    }
+    
+    function validarFormatoProtocolo(protocolo) {
+        // Aceitar formatos mais flexíveis para teste
+        const regex = /^SVO-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
+        const isValid = regex.test(protocolo);
+        console.log('Validando protocolo:', protocolo, 'Válido:', isValid);
+        return isValid;
+    }
+    
+    function mostrarCarregamento() {
+        console.log('Mostrando carregamento...');
+        areaResultados.style.display = 'block';
+        areaResultados.innerHTML = `
+            <div class="carregando">
+                <div class="spinner"></div>
+                <h4 class="texto_carregando">Buscando protocolo...</h4>
+                <p class="subtexto_carregando">Consultando nossa base de dados</p>
+            </div>
+        `;
+        
+        // Scroll suave para os resultados
+        setTimeout(() => {
+            areaResultados.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }, 100);
+    }
+    
+    function simularBusca(protocolo) {
+        console.log('Simulando busca para:', protocolo);
+        
+        // Simular tempo de resposta do servidor
+        setTimeout(() => {
+            const statusPossivel = ['recebido', 'em_analise', 'aprovado', 'concluido'];
+            const statusAleatorio = statusPossivel[Math.floor(Math.random() * statusPossivel.length)];
+            
+            // 85% chance de sucesso
+            if (Math.random() > 0.15) {
+                console.log('Busca bem-sucedida, status:', statusAleatorio);
+                mostrarSucesso(protocolo, statusAleatorio);
+            } else {
+                console.log('Protocolo não encontrado');
+                mostrarErro('Protocolo não encontrado no sistema');
+            }
+        }, 2000);
+    }
+    
+    function mostrarSucesso(protocolo, status) {
+        console.log('Mostrando resultado de sucesso');
+        const statusInfo = obterInfoStatus(status);
+        
+        areaResultados.innerHTML = `
+            <div class="resultado_sucesso">
+                <div class="cabecalho_resultado">
+                    <div class="icone_resultado icone_sucesso">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="info_protocolo">
+                        <div class="numero_protocolo">${protocolo}</div>
+                        <div class="status_protocolo">${statusInfo.mensagem}</div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    ${gerarTimeline(statusInfo.etapa)}
+                </div>
+                
+                <div style="margin-top: 2.5rem; padding: 1.5rem; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 12px; border-left: 4px solid #FFA500;">
+                    <h5 style="color: #333; margin-bottom: 1rem;">
+                        <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>Próximos passos:
+                    </h5>
+                    <p style="margin: 0; color: #666; line-height: 1.6;">${statusInfo.proximosPassos}</p>
+                </div>
+            </div>
+        `;
+    }
+    
+    function mostrarErro(mensagem) {
+        console.log('Mostrando erro:', mensagem);
+        areaResultados.style.display = 'block';
+        areaResultados.innerHTML = `
+            <div class="resultado_erro">
+                <div class="cabecalho_resultado">
+                    <div class="icone_resultado icone_erro">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="info_protocolo">
+                        <div class="numero_protocolo">Erro na consulta</div>
+                        <div class="status_protocolo">${mensagem}</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #fff3cd, #ffeaa7); border-radius: 12px; border-left: 4px solid #ffc107;">
+                    <h6 style="color: #856404; margin-bottom: 1rem;">
+                        <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>Dicas para consulta:
+                    </h6>
+                    <ul style="margin: 0; padding-left: 1.5rem; color: #856404;">
+                        <li>Verifique se o número do protocolo está correto</li>
+                        <li>O formato deve ser: SVO-XXXX-XXXX</li>
+                        <li>Use apenas letras e números</li>
+                        <li>Entre em contato conosco se o problema persistir</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: 1rem; text-align: center;">
+                    <button onclick="document.getElementById('input_protocolo').focus()" style="background: #FFA500; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600;">
+                        Tentar Novamente
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        // Scroll para os resultados
+        setTimeout(() => {
+            areaResultados.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }, 100);
+    }
+    
+    function obterInfoStatus(status) {
+        const statusMap = {
+            'recebido': {
+                etapa: 1,
+                mensagem: 'Protocolo recebido e registrado no sistema',
+                proximosPassos: 'Sua solicitação foi recebida com sucesso e está aguardando análise inicial. Nossa equipe entrará em contato em breve para dar continuidade ao processo.'
+            },
+            'em_analise': {
+                etapa: 2,
+                mensagem: 'Documentação em análise pela equipe técnica',
+                proximosPassos: 'Nossa equipe especializada está analisando sua documentação e solicitação. Este processo pode levar de 2 a 5 dias úteis. Você será notificado sobre qualquer atualização.'
+            },
+            'aprovado': {
+                etapa: 3,
+                mensagem: 'Solicitação aprovada, processando procedimentos',
+                proximosPassos: 'Parabéns! Sua solicitação foi aprovada. Estamos processando os procedimentos finais. Você receberá instruções detalhadas sobre os próximos passos em breve.'
+            },
+            'concluido': {
+                etapa: 4,
+                mensagem: 'Processo concluído com sucesso',
+                proximosPassos: 'Seu processo foi concluído com êxito. Verifique seu email para instruções finais ou compareça ao local indicado com toda a documentação necessária.'
+            }
+        };
+        
+        return statusMap[status] || statusMap['recebido'];
+    }
+    
+    function gerarTimeline(etapaAtual) {
+        const etapas = [
+            { nome: 'Recebido', icone: 'fa-file-alt' },
+            { nome: 'Em Análise', icone: 'fa-search' },
+            { nome: 'Aprovado', icone: 'fa-check-circle' },
+            { nome: 'Concluído', icone: 'fa-flag-checkered' }
+        ];
+        
+        return etapas.map((etapa, index) => {
+            const numeroEtapa = index + 1;
+            let classeEtapa = '';
+            
+            if (numeroEtapa < etapaAtual) {
+                classeEtapa = 'concluida';
+            } else if (numeroEtapa === etapaAtual) {
+                classeEtapa = 'ativa';
+            }
+            
+            return `
+                <div class="etapa ${classeEtapa}">
+                    <div class="circulo_etapa">
+                        <i class="fas ${etapa.icone}"></i>
+                    </div>
+                    <div class="nome_etapa">${etapa.nome}</div>
+                </div>
+            `;
+        }).join('');
+    }
+    
+    // Função para testar a funcionalidade (pode ser removida em produção)
+    window.testarProtocolo = function() {
+        inputProtocolo.value = 'SVO-TEST-1234';
+        executarBusca();
+    };
+    
+    console.log('Script de protocolo configurado com sucesso!');
+    console.log('Para testar, digite: testarProtocolo() no console');
+});
     </script>
 
     <script src="dark-mode.js"></script>
