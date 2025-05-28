@@ -22,11 +22,12 @@
                                     /* Botão flutuante do WhatsApp */
                                     .whatsapp-float {
                                         position: fixed;
-                                        width: 60px;
-                                        height: 60px;
-                                        bottom: 200px;
+                                        width: 45px;
+                                        height: 45px;
+                                        bottom: 300px;
+                                       
     
-                                        ${settings.position}: 40px;
+                                        ${settings.position}: 10px;
                                         background-color: ${settings.themeColor};
                                         color: #FFF;
                                         border-radius: 50px;
@@ -49,13 +50,13 @@
                                     /* Caixa de chat */
                                     .chat-box {
                                         position: fixed;
-                                        bottom: 40px;
-                                        ${settings.position}: 40px;
+                                        bottom: 150px;
+                                        ${settings.position}: 10px;
                                         width: 320px;
                                         background-color: #E8E8E8;
                                         border-radius: 15px;
                                         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-                                        z-index: 999;
+                                        z-index: 5000;
                                         display: none;
                                         overflow: hidden;
                                         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;

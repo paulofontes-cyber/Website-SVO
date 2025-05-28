@@ -276,7 +276,7 @@ body, html {
   left: 0;
   right: 0;
   height: 8px;
-  background: linear-gradient(135deg, #FABB5C 0%, #FF8761 100%);
+  background: linear-gradient(135deg, #edbb27 0%, #FF8761 100%);
 }
 
 .quadro_atividades h3 {
@@ -440,6 +440,12 @@ body, html {
 
 .organograma_institucional {
   margin: 30px 0;
+}
+
+
+table.tabelinha_cor > thead {
+  background-color: #ffffff ;
+  color: #180000;
 }
 
 /*Footer*/

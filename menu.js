@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebar.classList.remove('active');
         menuToggle.classList.remove('active');
         overlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restaura o scroll do body
+        document.body.style.overflow = ''; 
     }
     
     // Gerenciar cliques no menu hamburguer
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebar.classList.toggle('active');
         overlay.classList.toggle('active');
         
-        // Impedir rolagem do corpo quando o sidebar estiver aberto
+        
         if (sidebar.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
         } else {
