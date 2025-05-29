@@ -729,6 +729,7 @@
             const btnProximo = document.getElementById('btn-proximo');
             
             btnAnterior.style.display = etapaAtual > 1 ? 'block' : 'none';
+            btnProximo.style.display = etapaAtual > 1 ? 'block' : 'none';
             
             if (etapaAtual === totalEtapas) {
                 btnProximo.innerHTML = '<i class="fas fa-check me-2"></i>Finalizar';

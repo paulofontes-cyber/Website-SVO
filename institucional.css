@@ -33,7 +33,7 @@ body, html {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo no canto esquerdo */
+
 .logo {
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@ body, html {
   height: 50px;
 }
 
-/* Links de navegação centralizados */
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -73,7 +73,7 @@ body, html {
   color: #e67e22;
 }
 
-/* Ícone de acessibilidade fixo no canto direito */
+
 .icone_acessibilidade {
   display: flex;
   align-items: center;
@@ -85,7 +85,7 @@ body, html {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-left: auto;
-  /* Move para o canto direito */
+  
 }
 
 .icone_acessibilidade:hover {
@@ -374,41 +374,7 @@ body, html {
   justify-content: center;
 }
 
-.tabela_institucional {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 20px 0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,64,128,0.1);
-}
 
-.tabela_institucional th, .tabela_institucional td {
-  padding: 15px;
-  text-align: left;
-}
-
-.tabela_institucional th {
-  background-color: #f0f5fa;
-  color: rgb(0, 0, 0);
-}
-
-.tabela_institucional tr:nth-child(even) {
-  background-color: #f0f5fa;
-}
-
-.tabela_institucional tr:nth-child(odd) {
-  background-color: #fff;
-}
-
-.tabela_institucional tr:hover {
-  background-color: #e1eef9;
-}
-
-.tabela_institucional td {
-  border-bottom: 1px solid #ddd;
-}
 
 .moldura_institucional {
   border: 1px solid #bedcf3;
@@ -438,15 +404,7 @@ body, html {
   box-shadow: 0 6px 12px rgba(0,64,128,0.25);
 }
 
-.organograma_institucional {
-  margin: 30px 0;
-}
 
-
-table.tabelinha_cor > thead {
-  background-color: #ffffff ;
-  color: #180000;
-}
 
 /*Footer*/
 
@@ -597,3 +555,275 @@ table.tabelinha_cor > thead {
       text-align: center;
   }
 }
+
+        :root {
+            --cor-primaria-azul: #f6e03b;
+            --cor-secundaria-roxo: #f68d5c;
+            --cor-fundo-claro: #f37b0b;
+            --cor-texto-escuro: #1e293b;
+            --cor-texto-medio: #64748b;
+            --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.228);
+            --sombra-elevada: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .fas, .fa-solid, .fa {
+            font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome" !important;
+            font-weight: 900 !important;
+            font-style: normal !important;
+            display: inline-block !important;
+        }
+
+        .secaoEstruturaInstitucional {
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 0;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: var(--sombra-suave);
+        }
+
+
+        .tituloSecaoAdministrativa {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--cor-texto-escuro);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .textoDescricaoEstrutura {
+            font-size: 1.2rem;
+            color: var(--cor-texto-medio);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .controlesNavegacaoSetas {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .botaoNavegacaoSeta {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #cbd5e1;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--sombra-suave);
+        }
+
+        .botaoNavegacaoSeta:hover:not(:disabled) {
+            border-color: var(--cor-primaria-azul);
+            background: #eff6ff;
+            transform: scale(1.05);
+            box-shadow: var(--sombra-elevada);
+        }
+
+        .botaoNavegacaoSeta:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .botaoNavegacaoSeta i {
+            font-size: 1.2rem;
+            color: var(--cor-texto-medio);
+        }
+
+        .seta-esquerda::before {
+            content: "‹";
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .seta-direita::before {
+            content: "›";
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .indicadorPaginaAtual {
+            font-size: 0.9rem;
+            color: var(--cor-texto-medio);
+            margin-left: 1rem;
+        }
+
+        .containerCartoesAdministrativos {
+            position: relative;
+            z-index: 10;
+        }
+
+        .cartaoSuperintendente {
+            background: rgb(255, 255, 255);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 1.5rem;
+            box-shadow: var(--sombra-elevada);
+            transition: all 0.5s ease;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .cartaoSuperintendente:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--sombra-elevada);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .cartaoSuperintendente:nth-child(even) {
+            transform: translateX(20px);
+        }
+
+        .cartaoSuperintendente:nth-child(even):hover {
+            transform: translateX(20px) translateY(-8px) scale(1.02);
+        }
+
+        .conteudoCartaoAdmin {
+            padding: 2rem;
+        }
+
+        .containerIconeAdmin {
+            flex-shrink: 0;
+            margin-right: 1.5rem;
+        }
+
+        .fundoIconeAdministrativo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--cor-primaria-azul), var(--cor-secundaria-roxo));
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.3s ease;
+        }
+
+        .cartaoSuperintendente:hover .fundoIconeAdministrativo {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--sombra-elevada);
+        }
+
+        .iconeAdministrativo {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .informacoesSuperintendente {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .tituloCargoAdmin {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--cor-texto-escuro);
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .cartaoSuperintendente:hover .tituloCargoAdmin {
+            color: var(--cor-primaria-azul);
+        }
+
+        .detalhesContatoAdmin {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .itemContatoAdmin {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--cor-texto-medio);
+        }
+
+        .iconeContatoAdmin {
+            width: 18px;
+            height: 18px;
+            color: #94a3b8;
+            flex-shrink: 0;
+        }
+
+        .textoContatoAdmin {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .containerCartoesVisiveis {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.5s ease;
+        }
+
+        .containerCartoesVisiveis.animacaoSaida {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .containerCartoesVisiveis.animacaoEntrada {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        /* Responsividade para a nova seção */
+        @media (max-width: 768px) {
+            .tituloSecaoAdministrativa {
+                font-size: 2.5rem;
+            }
+
+            .textoDescricaoEstrutura {
+                font-size: 1.1rem;
+            }
+
+            .cartaoSuperintendente:nth-child(even) {
+                transform: none;
+            }
+
+            .cartaoSuperintendente:nth-child(even):hover {
+                transform: translateY(-8px) scale(1.02);
+            }
+
+            .conteudoCartaoAdmin {
+                padding: 1.5rem;
+            }
+
+            .fundoIconeAdministrativo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .iconeAdministrativo {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .secaoEstruturaInstitucional {
+                padding: 3rem 0;
+            }
+
+            .tituloSecaoAdministrativa {
+                font-size: 2rem;
+            }
+
+            .conteudoCartaoAdmin {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .containerIconeAdmin {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                align-self: center;
+            }
+        }

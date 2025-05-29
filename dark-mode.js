@@ -664,6 +664,205 @@ function addDarkModeCSS() {
             color: ${darkTheme.titleColor};
         }
 
+        /* ===== NOVA SEÇÃO DE ESTRUTURA ADMINISTRATIVA ===== */
+        
+        /* Seção principal */
+        body.dark-mode .secaoEstruturaInstitucional {
+            background: linear-gradient(135deg, #1e1e1e 0%, #252525 100%);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Título da seção */
+        body.dark-mode .tituloSecaoAdministrativa {
+            color: ${darkTheme.titleColor};
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Texto de descrição */
+        body.dark-mode .textoDescricaoEstrutura {
+            color: #b0b0b0;
+        }
+        
+        /* Controles de navegação */
+        body.dark-mode .controlesNavegacaoSetas {
+            background-color: transparent;
+        }
+        
+        body.dark-mode .botaoNavegacaoSeta {
+            background: #252525;
+            border: 2px solid #444;
+            color: ${darkTheme.textColor};
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode .botaoNavegacaoSeta:hover:not(:disabled) {
+            background: #333;
+            border-color: #FBB802;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
+        }
+        
+        body.dark-mode .botaoNavegacaoSeta:disabled {
+            background: #1a1a1a;
+            border-color: #333;
+            color: #666;
+            opacity: 0.5;
+        }
+        
+        body.dark-mode .botaoNavegacaoSeta i {
+            color: ${darkTheme.textColor};
+        }
+        
+        body.dark-mode .botaoNavegacaoSeta:hover:not(:disabled) i {
+            color: #FBB802;
+        }
+        
+        /* Indicador de página */
+        body.dark-mode .indicadorPaginaAtual {
+            color: #888;
+        }
+        
+        /* Container de cartões */
+        body.dark-mode .containerCartoesAdministrativos {
+            background-color: transparent;
+        }
+        
+        /* Cartões de superintendente */
+        body.dark-mode .cartaoSuperintendente {
+            background: linear-gradient(145deg, #252525 0%, #2c2c2c 100%);
+            border: 1px solid #333;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        body.dark-mode .cartaoSuperintendente:hover {
+            background: linear-gradient(145deg, #2c2c2c 0%, #333 100%);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border-color: rgba(251, 184, 2, 0.3);
+        }
+        
+        /* Conteúdo do cartão */
+        body.dark-mode .conteudoCartaoAdmin {
+            background-color: transparent;
+        }
+        
+        /* Container do ícone */
+        body.dark-mode .containerIconeAdmin {
+            background-color: transparent;
+        }
+        
+        /* Fundo do ícone administrativo */
+        body.dark-mode .fundoIconeAdministrativo {
+            background: linear-gradient(135deg, #6b5102, #6b3a0c);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode .cartaoSuperintendente:hover .fundoIconeAdministrativo {
+            background: linear-gradient(135deg, #FBB802, #e6a532);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Ícone administrativo */
+        body.dark-mode .iconeAdministrativo {
+            color: ${darkTheme.textColor};
+        }
+        
+        body.dark-mode .cartaoSuperintendente:hover .iconeAdministrativo {
+            color: #000;
+        }
+        
+        /* Informações do superintendente */
+        body.dark-mode .informacoesSuperintendente {
+            background-color: transparent;
+        }
+        
+        /* Título do cargo */
+        body.dark-mode .tituloCargoAdmin {
+            color: ${darkTheme.titleColor};
+        }
+        
+        body.dark-mode .cartaoSuperintendente:hover .tituloCargoAdmin {
+            color: #FBB802;
+        }
+        
+        /* Detalhes de contato */
+        body.dark-mode .detalhesContatoAdmin {
+            background-color: transparent;
+        }
+        
+        /* Item de contato */
+        body.dark-mode .itemContatoAdmin {
+            color: #b0b0b0;
+        }
+        
+        /* Ícone de contato */
+        body.dark-mode .iconeContatoAdmin {
+            color: #888;
+        }
+        
+        body.dark-mode .cartaoSuperintendente:hover .iconeContatoAdmin {
+            color: #FBB802;
+        }
+        
+        /* Texto de contato */
+        body.dark-mode .textoContatoAdmin {
+            color: #b0b0b0;
+        }
+        
+        body.dark-mode .cartaoSuperintendente:hover .textoContatoAdmin {
+            color: ${darkTheme.textColor};
+        }
+        
+        /* Animações do container */
+        body.dark-mode .containerCartoesVisiveis {
+            background-color: transparent;
+        }
+        
+        body.dark-mode .containerCartoesVisiveis.animacaoSaida {
+            opacity: 0;
+        }
+        
+        body.dark-mode .containerCartoesVisiveis.animacaoEntrada {
+            opacity: 0;
+        }
+        
+        /* Fallbacks para emojis quando Font Awesome não carrega */
+        body.dark-mode .icone-emoji {
+            color: #FBB802;
+        }
+        
+        body.dark-mode .icone-emoji-pequeno {
+            color: #888;
+        }
+        
+        body.dark-mode .cartaoSuperintendente:hover .icone-emoji-pequeno {
+            color: #FBB802;
+        }
+        
+        /* Responsividade para dark mode */
+        @media (max-width: 768px) {
+            body.dark-mode .secaoEstruturaInstitucional {
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            }
+            
+            body.dark-mode .cartaoSuperintendente {
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            }
+            
+            body.dark-mode .cartaoSuperintendente:hover {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body.dark-mode .fundoIconeAdministrativo {
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            }
+            
+            body.dark-mode .cartaoSuperintendente:hover .fundoIconeAdministrativo {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            }
+        }
+
         /* ===== ESTILOS PARA A PÁGINA DO FORMULÁRIO ===== */
         
         /* Cabeçalho do formulário */
@@ -1581,8 +1780,8 @@ function addDarkModeCSS() {
             border-color: #FBB802;
         }
 
-        /* ===== ESTILOS PARA A NOVA SEÇÃO DE SERVIÇOS ===== */
-
+                /* ===== SEÇÃO DE SERVIÇOS DO SVO ===== */
+        
         /* Container principal */
         body.dark-mode .containerPrincipal {
             background-color: transparent;
@@ -1596,10 +1795,6 @@ function addDarkModeCSS() {
                 0 25px 50px rgba(0, 0, 0, 0.3),
                 0 10px 25px rgba(251, 184, 2, 0.1),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-
-        body.dark-mode .caixaServicos::before {
-            background: linear-gradient(90deg, #6b5102 0%, #6b3a0c 50%, #6b3608 100%);
         }
 
         /* Título da seção */
@@ -1622,10 +1817,6 @@ function addDarkModeCSS() {
             border: 2px solid transparent;
         }
 
-        body.dark-mode .itemServico::before {
-            background: linear-gradient(90deg, transparent, rgba(251, 184, 2, 0.2), transparent);
-        }
-
         body.dark-mode .itemServico:hover {
             background: linear-gradient(135deg, #8b6b02 0%, #FBB802 100%);
             box-shadow: 
@@ -1633,14 +1824,6 @@ function addDarkModeCSS() {
                 0 8px 20px rgba(0, 0, 0, 0.25);
             border-color: rgba(251, 184, 2, 0.3);
             color: #000;
-        }
-
-        body.dark-mode .itemServico.ativo {
-            background: linear-gradient(135deg, #5a4201 0%, #6b5102 100%);
-            box-shadow: 
-                0 5px 15px rgba(90, 66, 1, 0.4),
-                inset 0 2px 4px rgba(0, 0, 0, 0.2);
-            color: ${darkTheme.textColor};
         }
 
         /* Título do item */
@@ -1685,66 +1868,6 @@ function addDarkModeCSS() {
                 0 15px 30px rgba(251, 184, 2, 0.15);
         }
 
-        /* Animações específicas para dark mode */
-        body.dark-mode .pulseEffect {
-            animation: pulseDark 2s infinite;
-        }
-
-        @keyframes pulseDark {
-            0% {
-                box-shadow: 0 8px 20px rgba(107, 81, 2, 0.3);
-            }
-            50% {
-                box-shadow: 0 8px 20px rgba(107, 81, 2, 0.5);
-            }
-            100% {
-                box-shadow: 0 8px 20px rgba(107, 81, 2, 0.3);
-            }
-        }
-
-        /* Ajustes para estados específicos no dark mode */
-        body.dark-mode .itemServico.ativo:hover {
-            background: linear-gradient(135deg, #6b5102 0%, #8b6b02 100%);
-            color: ${darkTheme.textColor};
-        }
-
-        body.dark-mode .itemServico.ativo:hover .tituloItem {
-            color: ${darkTheme.textColor};
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Melhorias para acessibilidade no dark mode */
-        body.dark-mode .itemServico:focus {
-            outline: 2px solid #FBB802;
-            outline-offset: 2px;
-        }
-
-        body.dark-mode .conteudoResposta.aberto {
-            border-top: 1px solid rgba(251, 184, 2, 0.2);
-        }
-
-        /* Ajustes para media queries no dark mode */
-        @media (max-width: 768px) {
-            body.dark-mode .caixaServicos {
-                box-shadow: 
-                    0 15px 30px rgba(0, 0, 0, 0.4),
-                    0 5px 15px rgba(251, 184, 2, 0.1);
-            }
-        }
-
-        @media (max-width: 480px) {
-            body.dark-mode .itemServico {
-                box-shadow: 
-                    0 6px 15px rgba(107, 81, 2, 0.3),
-                    0 2px 6px rgba(0, 0, 0, 0.2);
-            }
-            
-            body.dark-mode .itemServico:hover {
-                box-shadow: 
-                    0 10px 25px rgba(107, 81, 2, 0.4),
-                    0 5px 15px rgba(0, 0, 0, 0.25);
-            }
-        }
     `
   document.head.appendChild(style)
 }
