@@ -223,7 +223,7 @@ html {
   background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
   border-radius: 50%;
   z-index: 3;
-  box-shadow: -10px 0 20px rgba(14, 14, 82, 0.8), 90px 0 400px rgb(7, 7, 57);
+  box-shadow: 80px 0 900px rgba(14, 14, 82, 0.8), 100px 0 900px rgb(7, 7, 57);
   
 }
 
