@@ -190,7 +190,7 @@ function addDarkModeCSS() {
         
         /* Hero Section */
         body.dark-mode .hero {
-            background-image: ${darkTheme.heroBackground}, url("imagens/pexels-shvetsa-4586984 (1).webp");
+            background-image: ${darkTheme.heroBackground}, url("imagens/novahero.webp");
         }
         
         /* Counter Section */
