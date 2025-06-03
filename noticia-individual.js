@@ -8,7 +8,7 @@ class IndividualNewsManager {
   init() {
     this.loadNewsFromURL()
     this.setupEventListeners()
-}
+  }
 
   setupEventListeners() {
     const shareBtn = document.getElementById("shareBtn")
@@ -168,11 +168,18 @@ class IndividualNewsManager {
       this.src = "/placeholder.svg?height=500&width=1000"
     }
 
-    // Atualizar resumo
+    // Atualizar resumo - apenas o resumo, sem duplicar o conteúdo
     document.getElementById("articleExcerpt").textContent = this.newsData.description
 
-    // Atualizar conteúdo
-    document.getElementById("articleBody").innerHTML = this.newsData.content || this.generateContentFromDescription()
+    // Atualizar conteúdo - apenas o conteúdo principal, sem incluir o resumo
+    const articleBody = document.getElementById("articleBody")
+
+    // Verificar se há conteúdo, caso contrário gerar a partir da descrição
+    if (this.newsData.content) {
+      articleBody.innerHTML = this.newsData.content
+    } else {
+      articleBody.innerHTML = this.generateContentFromDescription()
+    }
 
     // Atualizar link original
     const originalLink = document.getElementById("originalLink")
@@ -219,10 +226,8 @@ class IndividualNewsManager {
   }
 
   generateContentFromDescription() {
-    // Gerar conteúdo expandido baseado na descrição
-    const description = this.newsData.description
+    // Gerar conteúdo expandido baseado na descrição, sem repetir a descrição
     return `
-      <p>${description}</p>
       <p>Esta notícia foi obtida através de fontes confiáveis de saúde e representa informações importantes para o conhecimento público. Para mais detalhes e informações atualizadas, recomendamos consultar as fontes oficiais.</p>
       <h3>Importância da Informação</h3>
       <p>Manter-se informado sobre questões de saúde é fundamental para tomar decisões conscientes sobre o bem-estar pessoal e coletivo. O SVO está comprometido em fornecer informações relevantes e atualizadas para a população.</p>

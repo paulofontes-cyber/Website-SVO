@@ -26,12 +26,11 @@ class NewsManager {
     this.showLoading()
 
     try {
-      // Tentar múltiplas APIs de notícias de saúde
       const newsData = await this.fetchHealthNews()
 
       if (newsData && newsData.length > 0) {
         this.allNews = newsData
-        this.displayFeaturedNews()
+        this.displayFeaturedNewsGrid() // Nova função para o grid
         this.displayNewsGrid()
         this.hideLoading()
       } else {
@@ -48,17 +47,14 @@ class NewsManager {
 
   async fetchHealthNews() {
     const apis = [
-      // API do G1 Saúde
       {
         url: "https://api.rss2json.com/v1/api.json?rss_url=https://g1.globo.com/rss/g1/saude/",
         parser: this.parseG1News.bind(this),
       },
-      // API do Ministério da Saúde (RSS)
       {
         url: "https://api.rss2json.com/v1/api.json?rss_url=https://www.gov.br/saude/pt-br/assuntos/noticias/RSS",
         parser: this.parseGovNews.bind(this),
       },
-      // NewsAPI como fallback
       {
         url: "https://newsapi.org/v2/everything?q=saúde+brasil&language=pt&sortBy=publishedAt&apiKey=demo",
         parser: this.parseNewsAPI.bind(this),
@@ -130,7 +126,6 @@ class NewsManager {
   }
 
   showFallbackNews() {
-    // Notícias de exemplo quando a API falha
     this.allNews = [
       {
         title: "Ministério da Saúde lança nova campanha de vacinação",
@@ -191,45 +186,64 @@ class NewsManager {
       },
     ]
 
-    this.displayFeaturedNews()
+    this.displayFeaturedNewsGrid()
     this.displayNewsGrid()
   }
 
-  displayFeaturedNews() {
-    const featuredNews = document.getElementById("featuredNews")
-    if (!featuredNews || this.allNews.length === 0) return
+  // NOVA FUNÇÃO: Exibir notícias no grid de mosaico
+  displayFeaturedNewsGrid() {
+    const gradePrincipal = document.getElementById("gradePrincipal")
+    if (!gradePrincipal || this.allNews.length === 0) return
 
-    const news = this.allNews[0]
-    const formattedDate = this.formatDate(news.publishedAt)
-    const newsURL = this.createNewsURL(news)
+    // Pegar as primeiras 6 notícias para o grid principal
+    const featuredNews = this.allNews.slice(0, 6)
 
-    featuredNews.innerHTML = `
-    <div class="news-image-container">
-      <img src="${news.image}" alt="${news.title}" class="news-image" onerror="this.src='/placeholder.svg?height=400&width=800'">
-      <div class="news-category">${news.category}</div>
-    </div>
-    <div class="news-content">
-      <h2 class="news-title">${news.title}</h2>
-      <p class="news-excerpt">${news.description}</p>
-      <div class="news-meta">
-        <span class="news-date">${formattedDate} • ${news.source}</span>
-        <a href="${newsURL}" class="read-more-btn" target="_blank" rel="noopener noreferrer">
-          Ler mais
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 17l10-10"/>
-            <path d="M7 7h10v10"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  `
+    featuredNews.forEach((news, index) => {
+      const cartao = document.getElementById(`cartao-${index}`)
+      if (!cartao) return
+
+      const newsURL = this.createNewsURL(news)
+
+      // Atualizar imagem
+      const img = cartao.querySelector(".news-image")
+      if (img) {
+        img.src = news.image
+        img.alt = news.title
+        img.onerror = function () {
+          this.src = "/placeholder.svg?height=400&width=600"
+        }
+      }
+
+      // Atualizar conteúdo
+      const conteudo = cartao.querySelector(".conteudo-cartao")
+      if (conteudo) {
+        const h3 = conteudo.querySelector("h3")
+        if (h3) {
+          h3.textContent = news.title
+        }
+
+        // Adicionar categoria especial para o terceiro cartão (mockup)
+        if (index === 2) {
+          const etiqueta = conteudo.querySelector(".etiqueta-mockup")
+          if (etiqueta) {
+            etiqueta.textContent = news.category
+          }
+        }
+      }
+
+      // Adicionar evento de clique
+      cartao.style.cursor = "pointer"
+      cartao.onclick = () => {
+        window.open(newsURL, "_blank", "noopener,noreferrer")
+      }
+    })
   }
 
   displayNewsGrid() {
     const newsGrid = document.getElementById("newsGrid")
     if (!newsGrid) return
 
-    const startIndex = 1 // Pular a primeira notícia (já exibida como destaque)
+    const startIndex = 6 // Pular as primeiras 6 notícias (já exibidas no grid principal)
     const endIndex = Math.min(startIndex + (this.currentPage + 1) * this.itemsPerPage, this.allNews.length)
 
     // Se é a primeira página, limpar o grid
@@ -280,13 +294,8 @@ class NewsManager {
   }
 
   createNewsURL(news) {
-    // Criar um ID único baseado no título e timestamp
     const newsId = btoa(encodeURIComponent(news.title + news.publishedAt.getTime())).replace(/[^a-zA-Z0-9]/g, "")
-
-    // Salvar os dados da notícia no localStorage
     localStorage.setItem(`news_${newsId}`, JSON.stringify(news))
-
-    // Retornar URL com ID
     return `noticia-individual.html?id=${newsId}`
   }
 

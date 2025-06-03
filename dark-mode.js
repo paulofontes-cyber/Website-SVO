@@ -1868,6 +1868,55 @@ function addDarkModeCSS() {
                 0 15px 30px rgba(251, 184, 2, 0.15);
         }
 
+                /* ===== CABEÇALHO DA PÁGINA DE NOTÍCIAS ===== */
+        
+        /* Seção principal do cabeçalho */
+        body.dark-mode .page-header {
+            background: linear-gradient(135deg, #6b5102 0%, #6b3a0c 100%);
+            border-bottom: 1px solid #333;
+        }
+        
+        /* Container */
+        body.dark-mode .page-header .container {
+            background-color: transparent;
+        }
+        
+        /* Título da página */
+        body.dark-mode .page-title {
+            color: ${darkTheme.textColor};
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Subtítulo da página */
+        body.dark-mode .page-subtitle {
+            color: #e0e0e0;
+            opacity: 0.9;
+        }
+        
+        /* Decoração do cabeçalho */
+        body.dark-mode .header-decoration {
+            background-color: transparent;
+        }
+        
+        /* Círculos decorativos */
+        body.dark-mode .decoration-circle {
+            background: rgba(251, 184, 2, 0.3);
+            border: 2px solid rgba(251, 184, 2, 0.5);
+            box-shadow: 0 0 15px rgba(251, 184, 2, 0.2);
+        }
+        
+        body.dark-mode .decoration-circle:nth-child(1) {
+            background: rgba(251, 184, 2, 0.4);
+        }
+        
+        body.dark-mode .decoration-circle:nth-child(2) {
+            background: rgba(251, 184, 2, 0.3);
+        }
+        
+        body.dark-mode .decoration-circle:nth-child(3) {
+            background: rgba(251, 184, 2, 0.2);
+        }
+
     `
   document.head.appendChild(style)
 }

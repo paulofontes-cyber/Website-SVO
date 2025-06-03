@@ -45,7 +45,6 @@
             <li><a href="noticias.html">Notícias</a></li>
             <li><a href="institucional.html">Institucional</a></li>
             <li><a href="formulario.html">Remoção</a></li>
-            
         </ul>
         <!-- Ícone de acessibilidade -->
         <div class="icone_acessibilidade" id="toggle-acessibilidade" title="Opções de acessibilidade">
@@ -99,8 +98,13 @@
         <!-- Header da página -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">Notícias de Saúde</h1>
-                <p class="page-subtitle">Mantenha-se informado com as últimas notícias e atualizações do setor de saúde</p>
+                <h1 class="page-title">Notícias SVO</h1>
+                <p class="page-subtitle">Mantenha-se informado com as últimas notícias e atualizações da Fundação de Saúde Parreiras Horta</p>
+                <div class="header-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
             </div>
         </section>
 
@@ -113,41 +117,89 @@
         <!-- Container de notícias -->
         <section class="news-grid-section">
             <div class="container">
-                <!-- Notícia principal (destaque) -->
-                <article class="featured-news" id="featuredNews">
-                    <div class="news-image-container">
-                        <img src="/placeholder.svg?height=300&width=600" alt="Notícia em destaque" class="news-image">
-                        <div class="news-category">Saúde</div>
+                <!-- Título da Seção Principal -->
+                <div class="section-header" data-aos="fade-right">
+                    <h2 class="section-title">Notícias</h2>
+                    <div class="title-decoration">
+                        <div class="decoration-line"></div>
+                        <div class="decoration-dot"></div>
                     </div>
-                    <div class="news-content">
-                        <h2 class="news-title">Carregando notícia principal...</h2>
-                        <p class="news-excerpt">Aguarde enquanto carregamos as últimas notícias de saúde.</p>
-                        <div class="news-meta">
-                            <span class="news-date">Carregando...</span>
-                            <a href="#" class="read-more-btn" target="_blank" rel="noopener noreferrer">
-                                Ler mais
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M7 17l10-10"/>
-                                    <path d="M7 7h10v10"/>
-                                </svg>
-                            </a>
+                </div>
+
+                <!--  Seção Principal com Grid de Mosaico -->
+                <section class="secao-principal" data-aos="fade-up">
+                    <div class="grade-principal" id="gradePrincipal">
+                        <!-- Os cartões serão inseridos aqui via JavaScript -->
+                        <div class="cartao-principal grande" id="cartao-0">
+                            <img src="/placeholder.svg?height=400&width=600" alt="Notícia principal" class="news-image">
+                            <div class="conteudo-cartao">
+                                <h3>Carregando notícia principal...</h3>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="cartao-principal medio" id="cartao-1">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Notícia" class="news-image">
+                            <div class="conteudo-cartao">
+                                <h3>Carregando...</h3>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="cartao-principal medio mockup" id="cartao-2">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Notícia" class="news-image">
+                            <div class="conteudo-cartao">
+                                <span class="etiqueta-mockup">Novidades</span>
+                                <h3>Carregando...</h3>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="cartao-principal pequeno" id="cartao-3">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Notícia" class="news-image">
+                            <div class="conteudo-cartao">
+                                <h3>Carregando...</h3>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="cartao-principal pequeno" id="cartao-4">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Notícia" class="news-image">
+                            <div class="conteudo-cartao">
+                                <h3>Carregando...</h3>
+                            </div>
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="cartao-principal grande" id="cartao-5">
+                            <img src="/placeholder.svg?height=400&width=600" alt="Notícia" class="news-image">
+                            <div class="conteudo-cartao">
+                                <h3>Carregando...</h3>
+                            </div>
+                            <div class="card-overlay"></div>
                         </div>
                     </div>
-                </article>
+                </section>
 
-                <!-- Grid de notícias secundárias -->
-                <div class="news-grid" id="newsGrid">
+                <!-- Título da Seção Secundária -->
+                <div class="section-header secondary" data-aos="fade-right">
+                    <h2 class="section-title">Mais Notícias</h2>
+                    <div class="title-decoration">
+                        <div class="decoration-line"></div>
+                        <div class="decoration-dot"></div>
+                    </div>
+                </div>
+
+                <!-- Grid de notícias secundárias (mantido original) -->
+                <div class="news-grid" id="newsGrid" data-aos="fade-up">
                     <!-- As notícias serão inseridas aqui via JavaScript -->
                 </div>
 
                 <!-- Botão carregar mais -->
-                <div class="load-more-container">
+                <div class="load-more-container" data-aos="fade-up">
                     <button class="load-more-btn" id="loadMoreBtn">
-                        Carregar mais notícias
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 5v14"/>
-                            <path d="M19 12l-7 7-7-7"/>
-                        </svg>
+                        <span class="btn-text">Carregar mais notícias</span>
+                        <div class="btn-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 5v14"/>
+                                <path d="M19 12l-7 7-7-7"/>
+                            </svg>
+                        </div>
                     </button>
                 </div>
             </div>
@@ -259,7 +311,11 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
     </script>
     <script src="dark-mode.js"></script>
     <script src="noticias.js"></script>
@@ -403,5 +459,8 @@
         `;
         document.head.appendChild(style);
     </script>
+</body>
+</html>
+
 </body>
 </html>
