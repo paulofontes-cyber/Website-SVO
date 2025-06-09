@@ -154,6 +154,11 @@
                             <label for="medicamentos-nao">Não</label>
                         </div>
                     </div>
+                    <!-- CORREÇÃO 1: Alerta para medicamentos -->
+                    <div class="alerta-vermelho" id="alerta-medicamentos">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>IMPORTANTE:</strong> A SVO (Serviço de Verificação de Óbito) não realiza o recolhimento do corpo em casos onde há uso conhecido de medicamentos. Para mais informações, entre em contato com o serviço responsável.
+                    </div>
                     <div class="subcampos" id="subcampos-medicamentos">
                         <div class="mb-3">
                             <label for="lista-medicamentos" class="form-label">Lista de medicamentos</label>
@@ -513,6 +518,9 @@
         let etapaAtual = 1;
         const totalEtapas = 5;
         let dadosFormulario = {};
+        let protocoloGerado = null; // CORREÇÃO 3: Variável para armazenar protocolo
+        let formularioFinalizado = false; // CORREÇÃO 3: Controle de finalização
+        let medicamentosBloqueia = false; // CORREÇÃO 1: Controle de bloqueio por medicamentos
 
         // Inicialização
         document.addEventListener('DOMContentLoaded', function() {
@@ -533,13 +541,20 @@
                 });
             });
 
+            // CORREÇÃO 1: Nova lógica para medicamentos
             document.querySelectorAll('input[name="uso_medicamentos"]').forEach(radio => {
                 radio.addEventListener('change', function() {
+                    const alerta = document.getElementById('alerta-medicamentos');
                     const subcampos = document.getElementById('subcampos-medicamentos');
+                    
                     if (this.value === 'sim') {
-                        subcampos.style.display = 'block';
+                        alerta.style.display = 'block';
+                        subcampos.style.display = 'none'; // Não mostrar subcampos
+                        medicamentosBloqueia = true;
                     } else {
+                        alerta.style.display = 'none';
                         subcampos.style.display = 'none';
+                        medicamentosBloqueia = false;
                     }
                 });
             });
@@ -643,6 +658,17 @@
         }
 
         function proximaEtapa() {
+            // CORREÇÃO 3: Impedir ação se formulário já foi finalizado
+            if (formularioFinalizado) {
+                return;
+            }
+
+            // CORREÇÃO 1: Verificar bloqueio por medicamentos na etapa 1
+            if (etapaAtual === 1 && medicamentosBloqueia) {
+                alert('Não é possível prosseguir. O SVO não realiza recolhimento em casos de uso de medicamentos.');
+                return;
+            }
+
             if (validarEtapaAtual()) {
                 salvarDadosEtapa();
                 
@@ -656,6 +682,11 @@
         }
 
         function etapaAnterior() {
+            // CORREÇÃO 3: Impedir navegação se formulário finalizado
+            if (formularioFinalizado) {
+                return;
+            }
+
             if (etapaAtual > 1) {
                 etapaAtual--;
                 atualizarInterface();
@@ -703,6 +734,13 @@
         }
 
         function atualizarInterface() {
+            // CORREÇÃO 2: Manter botões sempre visíveis durante navegação
+            const botoesNavegacao = document.getElementById('botoes-navegacao');
+            
+            if (!formularioFinalizado) {
+                botoesNavegacao.style.display = 'flex';
+            }
+
             // Atualizar seções
             document.querySelectorAll('.secao-formulario').forEach(secao => {
                 secao.classList.remove('ativa');
@@ -729,7 +767,6 @@
             const btnProximo = document.getElementById('btn-proximo');
             
             btnAnterior.style.display = etapaAtual > 1 ? 'block' : 'none';
-            btnProximo.style.display = etapaAtual > 1 ? 'block' : 'none';
             
             if (etapaAtual === totalEtapas) {
                 btnProximo.innerHTML = '<i class="fas fa-check me-2"></i>Finalizar';
@@ -780,21 +817,29 @@
             }
         }
 
-function finalizarFormulario() {
-    // Gerar protocolo
-    const protocolo = gerarProtocolo();
-    
-    // Ocultar formulário e mostrar confirmação
-    document.querySelectorAll('.secao-formulario').forEach(secao => {
-        secao.style.display = 'none';
-    });
-    document.getElementById('botoes-navegacao').style.display = 'none';
-    document.getElementById('tela-confirmacao').style.display = 'block';
-    document.getElementById('numero-protocolo').textContent = protocolo;
+        function finalizarFormulario() {
+            // CORREÇÃO 3: Gerar protocolo apenas uma vez
+            if (!protocoloGerado) {
+                protocoloGerado = gerarProtocolo();
+            }
+            
+            // CORREÇÃO 3: Marcar como finalizado
+            formularioFinalizado = true;
+            
+            // Ocultar formulário e mostrar confirmação
+            document.querySelectorAll('.secao-formulario').forEach(secao => {
+                secao.style.display = 'none';
+            });
+            
+            // CORREÇÃO 3: Ocultar botões de navegação
+            document.getElementById('botoes-navegacao').style.display = 'none';
+            
+            document.getElementById('tela-confirmacao').style.display = 'block';
+            document.getElementById('numero-protocolo').textContent = protocoloGerado;
 
-    // Limpar dados salvos
-    localStorage.removeItem('dadosFormularioSVO');
-}
+            // Limpar dados salvos
+            localStorage.removeItem('dadosFormularioSVO');
+        }
 
         function gerarProtocolo() {
             const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
