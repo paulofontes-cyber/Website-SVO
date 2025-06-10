@@ -128,7 +128,7 @@
 # Universidade Tiradentes - Residência de Software
 
 # Clone o repositório
-    git clone [\[(https://github.com/paulofontes-cyber/Website-SVO.git)\]](https://github.com/paulofontes-cyber/Website-SVO.git)
+git clone [https://github.com/paulofontes-cyber/Website-SVO.git]
 
 # Abra o arquivo index.html em um navegador
 # ou utilize um servidor local como Live Server
