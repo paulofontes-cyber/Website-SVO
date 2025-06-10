@@ -24,7 +24,7 @@
                                         position: fixed;
                                         width: 45px;
                                         height: 45px;
-                                        bottom: 300px;
+                                        bottom: 350px;
                                        
     
                                         ${settings.position}: 10px;
