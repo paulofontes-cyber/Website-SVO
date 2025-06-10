@@ -3,21 +3,30 @@
 
 # 📋 Sobre o Projeto
 
-    O Website SVO é um portal institucional desenvolvido para modernizar e digitalizar os serviços do Serviço de Verificação de Óbitos, proporcionando maior acessibilidade e transparência no atendimento à população.
+    O Website SVO é um portal institucional 
+    desenvolvido para modernizar e digitalizar 
+    os serviços do Serviço de Verificação de Óbitos, 
+    proporcionando maior acessibilidade e transparência
+    no atendimento à população.
 
 
 # 🎯 Objetivo
 
-    Criar uma plataforma digital que facilite o acesso às informações institucionais e permita a solicitação online de serviços, melhorando a experiência do usuário e otimizando os processos administrativos.
+     Criar uma plataforma digital que facilite
+     o acesso às informações institucionais e permita
+     a solicitação online de serviços, melhorando a experiência
+     do usuário e otimizando os processos administrativos.
 
 
 # 🏗️ Estrutura do Website
 
     # 🏠 Página Inicial
-    A página inicial serve como portal de entrada, concentrando as informações mais relevantes:
+    A página inicial serve como portal de entrada,
+    concentrando as informações mais relevantes:
 
-    Hero Section: Destaque das principais atividades e serviços do SVO
-    Menu de Navegação: Interface responsiva localizada no topo, adaptável para dispositivos móveis
+    Hero Section: Destaque das principais atividades
+    e serviços do SVO Menu de Navegação: Interface
+    responsiva localizada no topo, adaptável para dispositivos móveis
     Central de Notícias: Resumo com manchetes e links para notícias recentes
     Informações de Atendimento: Horários de funcionamento sempre atualizados
     Contatos Essenciais: Números importantes para atendimento ao público
