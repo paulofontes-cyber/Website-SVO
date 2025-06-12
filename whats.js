@@ -50,7 +50,7 @@
                                     /* Caixa de chat */
                                     .chat-box {
                                         position: fixed;
-                                        bottom: 150px;
+                                        bottom: 160px;
                                         ${settings.position}: 10px;
                                         width: 320px;
                                         background-color: #E8E8E8;
